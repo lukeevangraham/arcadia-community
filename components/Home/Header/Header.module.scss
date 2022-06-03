@@ -1,0 +1,42 @@
+@import "../../../styles/abstracts/variables.scss";
+
+.Header {
+  // background-color: orangered;
+  position: relative;
+  border-radius: 0.7rem 0.7rem 0 0;
+  overflow: hidden;
+  height: 60vh;
+  //   background-image: linear-gradient(
+  //     to bottom right,
+  //     $color-primary,
+  //     $color-quaternary
+  //   );
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+
+  .HeaderText {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    font-size: 4rem;
+    top: 50%;
+  }
+
+  .HeaderImage {
+    // opacity: 40%;
+    z-index: 0;
+  }
+
+  .overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      to bottom right,
+      $color-primary,
+      $color-quaternary
+    );
+    z-index: 1;
+  }
+}

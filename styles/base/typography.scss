@@ -1,0 +1,10 @@
+@import "../abstracts/variables.scss";
+
+body {
+    font-family: 'Open Sans';
+}
+
+p {
+    font-size: $default-font-size;
+    line-height: 2.15;
+}
