@@ -10,8 +10,8 @@ const Header = ({ children, homeHeaderImage }) => (
       objectFit="cover"
       className={styles.HeaderImage}
     ></Image>
-    <div className={styles.HeaderText}>Hello World</div>
-    <div className={styles.overlay}></div>
+    <div className={styles.HeaderText}>Welcome To Arcadia Community Church</div>
+    <div className={styles.Overlay}></div>
     {console.log("HERE: ", homeHeaderImage)}
     {children}
   </div>
