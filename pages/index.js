@@ -6,16 +6,17 @@ import { fetchAPI } from "../lib/api";
 import styles from "./index.module.scss";
 
 export async function getStaticProps() {
-  const [homeData] = await Promise.all([
-    fetchAPI("/home?populate=*")
+  const [homeData, globalData] = await Promise.all([
+    fetchAPI("/home?populate=*"),
+    fetchAPI("/global?populate=*")
   ])
   return {
-    props: { homeData },
+    props: { homeData, globalData },
     revalidate: 1
   }
 }
 
-export default function Home({ homeData }) {
+export default function Home({ homeData, globalData }) {
 
   return (
     <>
@@ -26,8 +27,7 @@ export default function Home({ homeData }) {
       </Head>
 
       <main className={styles.main}>
-        {/* {console.log("HERE: ", homeData)} */}
-        <Layout homeHeaderImage={homeData.data.attributes.headerImage.data.attributes.url}>
+        <Layout homeHeaderImage={homeData.data.attributes.headerImage.data.attributes.url} globalData={globalData}>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa, ad
             dicta! Nisi, aspernatur hic ipsum magnam ullam quaerat facilis sequi

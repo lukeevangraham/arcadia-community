@@ -3,14 +3,15 @@ import Header from "../Home/Header/Header";
 
 import classes from "./Layout.module.scss";
 
-const Layout = ({ children, homeHeaderImage }) => (
+const Layout = ({ children, homeHeaderImage, globalData }) => (
   <>
     {homeHeaderImage ? (
       <Header homeHeaderImage={homeHeaderImage}>
-        <Toolbar />
+        {console.log("GLOBAL: ", globalData)}
+        <Toolbar globalData={globalData} />
       </Header>
     ) : (
-      <Toolbar />
+      <Toolbar globalData={globalData} />
     )}
     {children}
   </>

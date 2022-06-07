@@ -6,6 +6,8 @@
   border-radius: 0.7rem 0.7rem 0 0;
   overflow: hidden;
   height: 60vh;
+  display: grid;
+  grid-template-rows: auto;
   // background-image: linear-gradient(
   //   to bottom right,
   //   $color-primary,

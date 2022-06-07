@@ -1,0 +1,14 @@
+.Toolbar {
+  // background-color: orangered;
+  padding: 1rem;
+  z-index: 3;
+  color: #eee;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 10rem;
+
+  .Logo {
+    grid-row: 1;
+    position: relative;
+  }
+}

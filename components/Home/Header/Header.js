@@ -5,7 +5,7 @@ import styles from "./Header.module.scss";
 
 const Header = ({ children, homeHeaderImage }) => (
   <div className={styles.Header}>
-    <Toolbar />
+    {children}
     <Image
       src={homeHeaderImage}
       layout="fill"
@@ -15,7 +15,6 @@ const Header = ({ children, homeHeaderImage }) => (
     <div className={styles.HeaderText}>Welcome To Arcadia Community Church</div>
     <div className={styles.Overlay}></div>
     {console.log("HERE: ", homeHeaderImage)}
-    {children}
   </div>
 );
 
