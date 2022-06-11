@@ -1,11 +1,21 @@
+@import "../../../styles/abstracts/variables.scss";
+
 .Toolbar {
-  // background-color: orangered;
-  padding: 3rem;
+  // background-color: #03260e3e;
+  background-image: linear-gradient(to bottom right, #03260e1e, #03260e3e );
+  padding: 2rem 3rem;
   z-index: 3;
   color: #eee;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 6rem;
+  grid-row: 1 / 2;
+  border-radius: 0 0 10% 10%;
+
+  // .Top {
+  //   grid-row: 1;
+  //   background-color: orangered;
+  // }
 
   .Logo {
     grid-row: 1;
@@ -26,5 +36,6 @@
     font-size: 1.5rem;
     letter-spacing: .3rem;
     font-weight: 600;
+    text-shadow: 0 0 .7rem #111000;
   }
 }
