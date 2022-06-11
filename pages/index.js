@@ -8,7 +8,7 @@ import styles from "./index.module.scss";
 export async function getStaticProps() {
   const [homeData, globalData] = await Promise.all([
     fetchAPI("/home?populate=*"),
-    fetchAPI("/global?populate=*")
+    fetchAPI("/global?populate[0]=Navbar.logo&populate[1]=Navbar.links")
   ])
   return {
     props: { homeData, globalData },

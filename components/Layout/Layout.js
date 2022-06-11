@@ -7,7 +7,6 @@ const Layout = ({ children, homeHeaderImage, globalData }) => (
   <>
     {homeHeaderImage ? (
       <Header homeHeaderImage={homeHeaderImage}>
-        {console.log("GLOBAL: ", globalData)}
         <Toolbar globalData={globalData} />
       </Header>
     ) : (
