@@ -1,11 +1,23 @@
 // COLORS
 $color-primary: #337715;
+$color-primary-light: lighten($color-primary, 65%);
+$color-primary-dark: darken($color-primary, 20%);
+
 $color-secondary: #138F17;
+
 $color-ternary: #638F13;
+
 $color-quaternary: #118536;
+$color-quaternary-light: lighten($color-quaternary, 15%);
+$color-quaternary-dark: darken($color-quaternary, 20%);
+
 $color-quinary: #848511;
 
 $color-grey-light-1: rgb(237, 237, 237);
+$color-grey-dark: rgb(57, 57, 57);
+
+$color-white: #eee;
+$color-black: #111;
 
 
 // FONT

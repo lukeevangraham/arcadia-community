@@ -1,0 +1,30 @@
+@import "../../../styles/abstracts/variables.scss";
+
+.SideDrawer {
+  background-color: #090d07be;
+//   background-image: radial-gradient(
+//     $color-secondary,
+//     $color-quaternary
+//   );
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 200;
+  height: 100%;
+  width: 35rem;
+  max-width: 70%;
+  border-radius: 5% 0 0 5%;
+  color: $color-white;
+  padding: 5rem;
+  font-size: $default-font-size;
+  box-shadow: 0 0 2rem rgba(17, 17, 17, 0.556);
+  transition: transform .3s ease-out;
+
+  &__open {
+transform: translateX(0);
+  }
+
+  &__closed {
+    transform: translateX(100%);
+  }
+}

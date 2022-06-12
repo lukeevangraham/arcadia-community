@@ -1,4 +1,5 @@
 @import "../../../styles/abstracts/variables.scss";
+@import "../../../styles/abstracts/mixins";
 
 .Toolbar {
   background-color: #03260e3e;
@@ -57,5 +58,9 @@
     letter-spacing: 0.3rem;
     font-weight: 600;
     text-shadow: 0 0 0.7rem #111000;
+
+    @include respond(tab-port) {
+      display: none;
+    }
   }
 }

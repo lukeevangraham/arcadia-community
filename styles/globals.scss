@@ -33,7 +33,7 @@ html {
 body {
   box-sizing: border-box;
   color: $color-primary;
-  background-color: darken($color-quaternary, 20%);
+  background-color: $color-quaternary-dark;
   padding: 3rem;
 
   @include respond(tab-port) {

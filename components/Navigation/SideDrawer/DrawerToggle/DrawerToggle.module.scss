@@ -1,0 +1,49 @@
+@import "../../../../styles/abstracts/variables.scss";
+@import "../../../../styles/abstracts/mixins";
+
+.DrawerToggle {
+  background-color: $color-white;
+  height: 5.5rem;
+  width: 5.5rem;
+  position: absolute;
+  right: 3rem;
+  top: 2.25rem;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+  display: none;
+
+  @include respond(tab-port) {
+    display: block;
+  }
+
+  &__icon {
+    background-color: orangered;
+    position: relative;
+    margin-top: 2.75rem;
+
+    &,
+    &::before,
+    &::after {
+      width: 2.3rem;
+      height: 2px;
+      background-color: $color-grey-dark;
+      display: inline-block;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
+    }
+
+    &::before {
+      top: -0.7rem;
+    }
+    &::after {
+      top: 0.7rem;
+    }
+  }
+}

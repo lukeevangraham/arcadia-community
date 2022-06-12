@@ -19,7 +19,12 @@ const Header = ({ children, homeHeaderImage }) => (
     <div className={classes.Overlay}></div>
     {console.log("HERE: ", homeHeaderImage)}
     <div className={classes.Arc}>
-      <Image src={Arc} layout="fill" objectFit="fill" className={classes.ArcImage}></Image>
+      <Image
+        src={Arc}
+        layout="fill"
+        objectFit="fill"
+        className={classes.ArcImage}
+      ></Image>
     </div>
   </div>
 );
