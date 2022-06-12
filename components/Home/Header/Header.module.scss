@@ -7,7 +7,7 @@
   overflow: hidden;
   height: 60vh;
   display: grid;
-  grid-template-rows: min-content 1fr;
+  grid-template-rows: min-content min-content 1fr;
   // background-image: linear-gradient(
   //   to bottom right,
   //   $color-primary,
@@ -50,5 +50,15 @@
     z-index: 1;
     opacity: 0.43;
     border-radius: 0 0 90% 90% / 10vw;
+  }
+
+  .Arc {
+    grid-row: 2 / 3;
+    height: 4rem;
+    background-image: url("./arc.svg");
+    background-size: 100% cover;
+    background-repeat: no-repeat;
+    opacity: 18%;
+    z-index: 2;
   }
 }

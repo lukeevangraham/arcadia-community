@@ -3,14 +3,34 @@
 .Toolbar {
   background-color: #03260e3e;
   // background-image: linear-gradient(to bottom right, #03260e1e, #03260e3e );
-  padding: 2rem 3rem;
+  padding: 2rem 3rem 1rem 3rem;
   z-index: 3;
   color: #eee;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 6rem;
   grid-row: 1 / 2;
-  border-radius: 0 0 10% 10%;
+  // border-radius: 0 0 10% 10%;
+  // clip-path: polygon(
+  //   0 0,
+  //   100% 0,
+  //   100% 70%,
+  //   98% 68%,
+  //   95% 65%,
+  //   85% 60%,
+  //   75% 57%,
+  //   65% 56%,
+  //   50% 55%,
+  //   35% 56%,
+  //   25% 57%,
+  //   15% 60%,
+  //   5% 65%,
+  //   2% 68%,
+  //   0% 70%
+  // );
+  // clip-path: url("./arcClip.svg");
+  // clip-path: path("M.5,.5H1367V152c-59.5-16.33-134.14-33.52-223.7-47.5-185.12-28.89-350.72-31.05-459.55-28.25-116.33-2.8-291.56,.11-484.8,32.25C121.55,121.37,55.41,136.58,.5,151.5V.5Z");
+  // clip-path: inset(0% 45% 0% 45% round 10px);
 
   // .Top {
   //   grid-row: 1;
@@ -34,8 +54,8 @@
     list-style: none;
     text-transform: uppercase;
     font-size: 1.5rem;
-    letter-spacing: .3rem;
+    letter-spacing: 0.3rem;
     font-weight: 600;
-    text-shadow: 0 0 .7rem #111000;
+    text-shadow: 0 0 0.7rem #111000;
   }
 }
