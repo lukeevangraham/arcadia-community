@@ -8,20 +8,16 @@
   height: 60vh;
   display: grid;
   grid-template-rows: min-content min-content 1fr;
-  // background-image: linear-gradient(
-  //   to bottom right,
-  //   $color-primary,
-  //   $color-quaternary
-  // );
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
 
   .HeaderText {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    align-self: center;
+    justify-self: center;
+    grid-row: 2 / 4;
+    grid-column: 1 / 2;
+    // position: absolute;
+    // top: 64%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
     z-index: 2;
     color: #fff;
     font-size: 5rem;
@@ -55,8 +51,14 @@
   .Arc {
     position: relative;
     grid-row: 2 / 3;
-    height: 5rem;
+    grid-column: 1 / 2;
+    height: 6.4rem;
+    width: 100%;
     opacity: 18%;
-    z-index: 2;
+    z-index: 3;
+
+    .ArcImage {
+      z-index: 3;
+    }
   }
 }
