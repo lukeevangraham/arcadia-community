@@ -1,4 +1,5 @@
 @import "../../../styles/abstracts/variables.scss";
+@import "../../../styles/abstracts/mixins";
 
 .Header {
   // background-color: orangered;
@@ -8,6 +9,10 @@
   height: 60vh;
   display: grid;
   grid-template-rows: min-content min-content 1fr;
+
+  @include respond(tab-port) {
+    border-radius: 0;
+  }
 
   .HeaderText {
     align-self: center;

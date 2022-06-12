@@ -1,6 +1,11 @@
 @import "../styles/abstracts/variables.scss";
+@import "../styles/abstracts/mixins";
 
 .main {
     background-color: $color-grey-light-1;
     border-radius: .7rem;
+
+    @include respond(tab-port) {
+        border-radius: 0 0 ;
+    }
 }
