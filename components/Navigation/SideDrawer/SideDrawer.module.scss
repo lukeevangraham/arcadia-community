@@ -19,6 +19,8 @@
   font-size: $default-font-size;
   box-shadow: 0 0 2rem rgba(17, 17, 17, 0.556);
   transition: transform 0.3s ease-out;
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
 
   &__open {
     transform: translateX(0);
@@ -28,11 +30,16 @@
     transform: translateX(100%);
   }
 
-  .Logo {
+  &__logo {
+    grid-row: 1 / 2;
     // background-color: orangered;
     position: relative;
     height: 7rem;
     width: 7rem;
     margin-bottom: 6rem;
+  }
+
+  &__name {
+    grid-row: 1 / 2;
   }
 }

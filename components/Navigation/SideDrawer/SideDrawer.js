@@ -15,7 +15,7 @@ const SideDrawer = ({ open, closed, globalData }) => (
           : `${classes.SideDrawer} ${classes.SideDrawer__closed}`
       }
     >
-      <div className={classes.Logo}>
+      <div className={classes.SideDrawer__logo}>
         <Image
           src={globalData.data.attributes.Navbar.logo.data.attributes.url}
           alt={
@@ -24,6 +24,13 @@ const SideDrawer = ({ open, closed, globalData }) => (
           }
           layout="fill"
         />
+      </div>
+      <div className={classes.SideDrawer__name}>
+        arcadia
+        <br />
+        community
+        <br />
+        church
       </div>
       <NavigationItems links={globalData.data.attributes.Navbar.links} />
       {/* {globalData.data.attributes.Navbar.links.map((navLink) => (

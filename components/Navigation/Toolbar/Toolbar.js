@@ -13,6 +13,7 @@ const Toolbar = ({ globalData, drawerToggleClicked }) => (
         layout="fill"
       />
     </div>
+    <div className={classes.Name}>Arcadia <br /> Community <br /> Church</div>
     <div className={classes.DesktopOnly}>
       <NavigationItems links={globalData.data.attributes.Navbar.links} />
     </div>
