@@ -2,10 +2,10 @@
 
 .SideDrawer {
   background-color: #090d07be;
-//   background-image: radial-gradient(
-//     $color-secondary,
-//     $color-quaternary
-//   );
+  //   background-image: radial-gradient(
+  //     $color-secondary,
+  //     $color-quaternary
+  //   );
   position: fixed;
   right: 0;
   top: 0;
@@ -18,13 +18,21 @@
   padding: 5rem;
   font-size: $default-font-size;
   box-shadow: 0 0 2rem rgba(17, 17, 17, 0.556);
-  transition: transform .3s ease-out;
+  transition: transform 0.3s ease-out;
 
   &__open {
-transform: translateX(0);
+    transform: translateX(0);
   }
 
   &__closed {
     transform: translateX(100%);
+  }
+
+  .Logo {
+    // background-color: orangered;
+    position: relative;
+    height: 7rem;
+    width: 7rem;
+    margin-bottom: 6rem;
   }
 }

@@ -1,5 +1,6 @@
 import Backdrop from "../../UI/Backdrop/Backdrop";
 import NavigationItems from "../NavigationItems/NavigationItems";
+import Image from "next/image";
 
 import classes from "./SideDrawer.module.scss";
 
@@ -14,6 +15,16 @@ const SideDrawer = ({ open, closed, globalData }) => (
           : `${classes.SideDrawer} ${classes.SideDrawer__closed}`
       }
     >
+      <div className={classes.Logo}>
+        <Image
+          src={globalData.data.attributes.Navbar.logo.data.attributes.url}
+          alt={
+            globalData.data.attributes.Navbar.logo.data.attributes
+              .alternativeText
+          }
+          layout="fill"
+        />
+      </div>
       <NavigationItems links={globalData.data.attributes.Navbar.links} />
       {/* {globalData.data.attributes.Navbar.links.map((navLink) => (
         <div>{navLink.text}</div>
