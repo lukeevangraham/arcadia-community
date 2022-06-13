@@ -1,6 +1,7 @@
 import Image from "next/image";
 import NavigationItems from "../NavigationItems/NavigationItems";
 import DrawerToggle from "../SideDrawer/DrawerToggle/DrawerToggle";
+import Brandname from "../../UI/Brandname/Brandname";
 
 import classes from "./Toolbar.module.scss";
 
@@ -13,7 +14,8 @@ const Toolbar = ({ globalData, drawerToggleClicked }) => (
         layout="fill"
       />
     </div>
-    <div className={classes.Name}>Arcadia <br /> Community <br /> Church</div>
+    {/* <div className={classes.Name}>Arcadia <br /> Community <br /> Church</div> */}
+    <Brandname />
     <div className={classes.DesktopOnly}>
       <NavigationItems links={globalData.data.attributes.Navbar.links} />
     </div>

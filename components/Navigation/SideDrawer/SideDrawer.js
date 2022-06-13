@@ -1,6 +1,7 @@
+import Image from "next/image";
 import Backdrop from "../../UI/Backdrop/Backdrop";
 import NavigationItems from "../NavigationItems/NavigationItems";
-import Image from "next/image";
+import Brandname from "../../UI/Brandname/Brandname";
 
 import classes from "./SideDrawer.module.scss";
 
@@ -26,11 +27,7 @@ const SideDrawer = ({ open, closed, globalData }) => (
         />
       </div>
       <div className={classes.SideDrawer__name}>
-        arcadia
-        <br />
-        community
-        <br />
-        church
+       <Brandname />
       </div>
       <NavigationItems links={globalData.data.attributes.Navbar.links} />
       {/* {globalData.data.attributes.Navbar.links.map((navLink) => (

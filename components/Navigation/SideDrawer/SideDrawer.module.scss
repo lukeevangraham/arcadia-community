@@ -15,12 +15,14 @@
   max-width: 70%;
   border-radius: 5% 0 0 5%;
   color: $color-white;
-  padding: 5rem;
+  padding: 4rem;
   font-size: $default-font-size;
   box-shadow: 0 0 2rem rgba(17, 17, 17, 0.556);
   transition: transform 0.3s ease-out;
   display: grid;
   grid-template-rows: repeat(2, min-content);
+  row-gap: 4rem;
+  align-items: center;
 
   &__open {
     transform: translateX(0);
@@ -36,7 +38,7 @@
     position: relative;
     height: 7rem;
     width: 7rem;
-    margin-bottom: 6rem;
+    // margin-bottom: 6rem;
   }
 
   &__name {
