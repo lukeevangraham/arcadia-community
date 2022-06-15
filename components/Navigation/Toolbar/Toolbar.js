@@ -7,7 +7,6 @@ import classes from "./Toolbar.module.scss";
 
 const Toolbar = ({ globalData, drawerToggleClicked }) => (
   <div className={`${classes.Toolbar}`}>
-    {console.log("GLO: ", globalData)}
     <div className={classes.Logo}>
       <Image
         src={globalData.data.attributes.Navbar.logo.data.attributes.url}

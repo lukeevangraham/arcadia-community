@@ -11,13 +11,13 @@ const Header = ({ children, homeHeaderImage }) => (
       src={homeHeaderImage}
       layout="fill"
       objectFit="cover"
+      priority
       className={classes.HeaderImage}
     ></Image>
     <div className={classes.HeaderText}>
       Welcome To Arcadia Community Church
     </div>
     <div className={classes.Overlay}></div>
-    {console.log("HERE: ", homeHeaderImage)}
     <div className={classes.Arc}>
       <Image
         src={Arc}
