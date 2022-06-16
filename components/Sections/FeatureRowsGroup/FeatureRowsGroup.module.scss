@@ -1,0 +1,42 @@
+.FeatureRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(42rem, 1fr));
+
+  &__pictures {
+    position: relative;
+    height: 35rem;
+    border-radius: 0 10% 10% 0;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+
+    &_bg {
+      position: relative;
+      height: 100%;
+      z-index: 0;
+      grid-column: 1 / 7;
+      grid-row: 1 / 7;
+    }
+
+    &_1 {
+      position: relative;
+      overflow: hidden;
+      border-radius: 1.2rem;
+      z-index: 1;
+      grid-column: 2 / 6;
+      grid-row: 2 / 6;
+    //   margin: 2rem 0;
+    }
+
+    &_2 {
+      position: relative;
+      overflow: hidden;
+      width: 115%;
+      z-index: 2;
+      grid-column: 4 / 7;
+      grid-row: 4 / 6;
+      border-radius: 1.2rem;
+    }
+  }
+}

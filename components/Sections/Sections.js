@@ -14,7 +14,7 @@ const Section = ({ sectionData }) => {
   }
 
   // DISPLAY THE SECTION
-  return <SectionComponent data={sectionData}  />;
+  return <SectionComponent data={sectionData} />;
 };
 
 const Sections = ({ sections }) => (

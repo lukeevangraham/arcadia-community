@@ -38,8 +38,8 @@ export default function Home({ homeData, globalData }) {
             dicta! Nisi, aspernatur hic ipsum magnam ullam quaerat facilis sequi
             quod, illum quia nostrum ipsam quos numquam vero magni quisquam.
           </p>
+          <Sections sections={homeData.data.attributes.contentSections} />
         </main>
-        <Sections sections={homeData.data.attributes.contentSections} />
       </Layout>
     </>
   );
