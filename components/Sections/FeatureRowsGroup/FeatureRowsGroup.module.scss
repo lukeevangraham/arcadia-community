@@ -1,42 +1,68 @@
+@import "../../../styles/abstracts/variables.scss";
+
 .FeatureRow {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(42rem, 1fr));
+  margin: 3rem auto;
+  background-color: $color-grey-light-2;
+  border-radius: .6rem;
+  overflow: hidden;
 
   &__pictures {
-    position: relative;
-    height: 35rem;
-    border-radius: 0 10% 10% 0;
+    // height: 35rem;
+    border-radius: 6px;
     overflow: hidden;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+
+    & > div {
+      position: relative;
+      overflow: hidden;
+    }
+
+    & > div:not(:first-child) {
+      box-shadow: 0 2rem 5rem rgb(0 0 0 / 10%);
+      border-radius: 1.2rem;
+    }
 
     &_bg {
-      position: relative;
-      height: 100%;
       z-index: 0;
-      grid-column: 1 / 7;
-      grid-row: 1 / 7;
+      grid-column: 1 / 13;
+      grid-row: 1 / 13;
+      background-image: linear-gradient($color-primary, $color-secondary);
+
+      & img {
+        opacity: 50%;
+      }
     }
 
     &_1 {
-      position: relative;
-      overflow: hidden;
-      border-radius: 1.2rem;
       z-index: 1;
-      grid-column: 2 / 6;
-      grid-row: 2 / 6;
-    //   margin: 2rem 0;
+      grid-column: 2 / 8;
+      grid-row: 2 / 12;
     }
 
     &_2 {
-      position: relative;
-      overflow: hidden;
-      width: 115%;
       z-index: 2;
-      grid-column: 4 / 7;
-      grid-row: 4 / 6;
-      border-radius: 1.2rem;
+      grid-column: 7 / 12;
+      grid-row: 4 / 10;
+    }
+  }
+
+  &__Text {
+    padding: 6rem 8vw;
+    display: grid;
+    align-content: center;
+    justify-items: start;
+
+    h4 {
+      margin-bottom: 1rem;
+      color: $color-quinary;
+    }
+
+    h2 {
+      margin-bottom: 1.75rem;
     }
   }
 }

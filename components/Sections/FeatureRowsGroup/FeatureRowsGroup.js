@@ -12,13 +12,15 @@ const FeatureRowsGroup = ({ data }) => (
               src={row.bgImage.data.attributes.url}
               alt={row.bgImage.data.attributes.alternativeText}
               layout="fill"
+              objectFit="cover"
             />
           </div>
-          <div className={classes.FeatureRow__pictures_1}>
+          <div className={`${classes.FeatureRow__pictures_1}`}>
             <Image
               src={row.middleImage.data.attributes.url}
               alt={row.middleImage.data.attributes.alternativeText}
               layout="fill"
+              objectFit="cover"
             />
           </div>
           <div className={classes.FeatureRow__pictures_2}>
@@ -26,10 +28,15 @@ const FeatureRowsGroup = ({ data }) => (
               src={row.topImage.data.attributes.url}
               alt={row.topImage.data.attributes.alternativeText}
               layout="fill"
+              objectFit="cover"
             />
           </div>
         </div>
-        <div>Text</div>
+        <div className={classes.FeatureRow__Text}>
+          <h4>{row.smallHeading}</h4>
+          <h2>{row.title}</h2>
+          <p>{row.description}</p>
+        </div>
       </div>
     ))}
   </>

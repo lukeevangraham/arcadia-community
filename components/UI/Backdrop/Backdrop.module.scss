@@ -8,7 +8,7 @@
   height: 100%;
   z-index: 0;
   transition: all 0.3s ease-out;
-  touch-action: none;
+  // touch-action: none;
 
   &__show {
     backdrop-filter: blur(0.5rem);
