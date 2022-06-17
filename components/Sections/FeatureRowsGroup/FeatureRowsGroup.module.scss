@@ -1,11 +1,12 @@
 @import "../../../styles/abstracts/variables.scss";
+@import "../../../styles/abstracts/mixins";
 
 .FeatureRow {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(42rem, 1fr));
   margin: 3rem auto;
   background-color: $color-grey-light-2;
-  border-radius: .6rem;
+  border-radius: 0.6rem;
   overflow: hidden;
 
   &__pictures {
@@ -31,6 +32,7 @@
       grid-column: 1 / 13;
       grid-row: 1 / 13;
       background-image: linear-gradient($color-primary, $color-secondary);
+      min-height: 35rem;
 
       & img {
         opacity: 50%;
