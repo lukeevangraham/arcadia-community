@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Button from "../../UI/Button/Button";
 import classes from "./FeatureRowsGroup.module.scss";
 
 const FeatureRowsGroup = ({ data }) => (
@@ -36,6 +37,11 @@ const FeatureRowsGroup = ({ data }) => (
           <h4>{row.smallHeading}</h4>
           <h2>{row.title}</h2>
           <p>{row.description}</p>
+          <div className={classes.FeatureRow__Text_buttonRow}>
+            {row.Button.map((button) => (
+              <Button key={button.id} button={button} />
+            ))}
+          </div>
         </div>
       </div>
     ))}

@@ -66,5 +66,17 @@
     h2 {
       margin-bottom: 1.75rem;
     }
+
+    &_buttonRow {
+      height: 5rem;
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 1rem;
+
+      & > * {
+        margin-right: 1rem;
+      }
+    }
   }
 }

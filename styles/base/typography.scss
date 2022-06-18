@@ -1,32 +1,34 @@
 @import "../abstracts/variables.scss";
 
 body {
-    font-family: 'Nunito Sans';
+  font-family: "Nunito Sans";
 }
 
 h1 {
-    font-size: 3.052rem;
+  font-size: 3.052rem;
 }
 
 h2 {
-    font-size: 2.9rem;
-    font-weight: 300;
-    font-style: italic;
+  font-size: 2.9rem;
+  font-weight: 300;
+  font-style: italic;
 }
 
 h3 {
-    font-size: 1.953rem;
+  font-size: 1.953rem;
 }
 
 h4 {
-    font-size: 1.563rem;
+  font-size: 1.563rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09rem;
 }
 
 h5 {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 p {
-    font-size: $default-font-size;
-    line-height: 2.15;
+  font-size: $default-font-size;
+  line-height: 2.15;
 }
