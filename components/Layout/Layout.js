@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Toolbar from "../Navigation/Toolbar/Toolbar";
 import Header from "../Home/Header/Header";
+import Footer from "../Footer/Footer";
 import SideDrawer from "../Navigation/SideDrawer/SideDrawer";
 
 import classes from "./Layout.module.scss";
@@ -34,6 +35,7 @@ const Layout = ({ children, homeHeaderImage, globalData }) => {
         globalData={globalData}
       />
       {children}
+      <Footer globalData={globalData} />
     </div>
   );
 };

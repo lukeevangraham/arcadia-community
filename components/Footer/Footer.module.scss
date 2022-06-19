@@ -1,0 +1,48 @@
+@import "../../styles/abstracts/variables.scss";
+
+.Footer {
+  background-color: $color-grey-dark;
+  color: $color-white;
+  font-size: $default-font-size;
+  padding: 4rem 4rem;
+  border-radius: 10% 10% 0 0 ;
+
+  &__columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 2.5rem;
+
+    &_header {
+      text-transform: uppercase;
+      font-weight: 100;
+      font-size: calc(100% + 2px);
+      margin-bottom: 0.4rem;
+      letter-spacing: 1.5px;
+    }
+
+    & > * {
+      display: flex;
+      flex-direction: column;
+      // align-items: flex-start;
+    }
+
+    &__Logo {
+      position: relative;
+      height: 6rem;
+      width: 6rem;
+      margin: 1rem 0;
+      // margin: 5rem auto;
+    }
+  }
+
+  &__bottomText {
+    font-size: calc(100% - 3px);
+    text-align: center;
+    margin-top: 5rem;
+
+    &_gww {
+      margin-top: 0.8rem;
+      opacity: 0.5;
+    }
+  }
+}
