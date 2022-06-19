@@ -29,7 +29,7 @@ const Footer = ({ globalData }) => (
       &copy; {new Date().getFullYear()} Arcadia Community Church
       <div className={classes.Footer__bottomText_gww}>
         {" "}
-        <a href="http://grahamwebworks.com" target="_blank">
+        <a rel="noreferrer" href="http://grahamwebworks.com" target="_blank">
           Graham Web Works
         </a>
       </div>
