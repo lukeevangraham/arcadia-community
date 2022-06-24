@@ -1,14 +1,15 @@
 import Head from "next/head";
 import Layout from "../../components/Layout/Layout";
 import EventCard from "../../components/Events/EventCard/EventCard";
-import { fetchAPI } from "../../lib/api";
+import { fetchAPI, getSortedEventsData } from "../../lib/api";
 
 import classes from "./index.module.scss";
 
 export async function getStaticProps() {
   const [globalData, eventsData] = await Promise.all([
     fetchAPI("/global?populate=deep"),
-    fetchAPI("/events?populate=deep"),
+    getSortedEventsData()
+
   ]);
   return {
     props: { globalData, eventsData },
@@ -29,7 +30,7 @@ export default function Events({ globalData, eventsData }) {
         <main>
           <div className={classes.Events}>
             <div className={classes.Events__cards}>
-              {eventsData.data.map((event) => (
+              {eventsData.map((event) => (
                 <EventCard key={event.id} event={event} />
               ))}
             </div>

@@ -1,36 +1,128 @@
 @import "../../../styles/abstracts/variables.scss";
 
 .EventCard {
-//   background-color: orangered;
-background-color: $color-grey-light-2;
-position: relative;
-border-radius: 8%;
-overflow: hidden;
+  //   background-color: orangered;
+  background-image: linear-gradient(
+    to bottom right,
+    $color-secondary-light-1,
+    $color-secondary-light-2
+  );
+  background-color: $color-white;
+  position: relative;
+  border-radius: 8%;
+  overflow: hidden;
+  // border: 1.5px solid rgba($color-primary, 0.5);
 
   &__image {
     position: relative;
     height: 60%;
-    border-radius: 8%;
+    // border-radius: 8%;
     overflow: hidden;
     // height: 5rem;
     // width: 5rem;
+    z-index: 1;
   }
 
   &__title {
     position: absolute;
     top: 59%;
-    right: 1.5rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    // right: 1.5rem;
     font-size: 2.25rem;
     color: $color-grey-light-2;
-    max-width: 95%;
+    max-width: 90%;
+    text-align: left;
     font-weight: 300;
     text-transform: uppercase;
+    transform: skewY(-5deg);
+    z-index: 3;
 
     span {
-        background-color: $color-quaternary-dark;
-        padding: .6rem 1.5rem;
-        box-decoration-break: clone;
-        border-radius: .7rem;
+      background-image: linear-gradient(
+        to bottom right,
+        $color-quaternary-dark,
+        $color-grey-dark
+      );
+      padding: 0.6rem 1.5rem;
+      box-decoration-break: clone;
+      border-radius: 0.7rem;
     }
+  }
+
+  &__dateBox {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 4rem 1rem 1rem 1rem;
+    background-color: $color-primary;
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 0 0 9px;
+    width: 10rem;
+    height: 45%;
+    z-index: 0;
+    letter-spacing: 1.5px;
+
+    &_month {
+      font-size: 1.6rem;
+      // line-height: 1;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    &_day {
+      margin-top: -0.5rem;
+      font-size: 2.9rem;
+      font-weight: 300;
+    }
+
+    &_dayOfWeek {
+      margin-top: -0.5rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+  }
+
+  &__timeAndPlace {
+    position: absolute;
+    bottom: 0;
+    padding: 1.5rem 1rem 1.5rem 2.5rem;
+    width: calc(100% - 10rem);
+    color: $color-black;
+    font-size: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    // background-color: orangered;
+
+    // align-items: center;
+
+    & > * {
+      display: flex;
+      height: 1.6rem;
+      align-items: center;
+
+      &:first-child {
+        margin-bottom: 1rem;
+      }
+
+      svg {
+        width: 1.8rem;
+        margin-right: 0.7rem;
+        fill: $color-black;
+      }
+    }
+
+    &_time {
+      // background-color: orangered;
+      // display: flex;
+      // height: 1.8rem;
+      // align-items: flex-start;
+    }
+    // display: flex;
   }
 }
