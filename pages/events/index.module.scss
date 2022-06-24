@@ -1,0 +1,11 @@
+.Events {
+  // background-color: orangered;
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, .33fr));
+    grid-auto-rows: 30rem;
+
+    padding: 2rem;
+  }
+}

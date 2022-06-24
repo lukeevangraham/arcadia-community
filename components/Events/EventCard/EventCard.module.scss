@@ -1,0 +1,36 @@
+@import "../../../styles/abstracts/variables.scss";
+
+.EventCard {
+//   background-color: orangered;
+background-color: $color-grey-light-2;
+position: relative;
+border-radius: 8%;
+overflow: hidden;
+
+  &__image {
+    position: relative;
+    height: 60%;
+    border-radius: 8%;
+    overflow: hidden;
+    // height: 5rem;
+    // width: 5rem;
+  }
+
+  &__title {
+    position: absolute;
+    top: 59%;
+    right: 1.5rem;
+    font-size: 2.25rem;
+    color: $color-grey-light-2;
+    max-width: 95%;
+    font-weight: 300;
+    text-transform: uppercase;
+
+    span {
+        background-color: $color-quaternary-dark;
+        padding: .6rem 1.5rem;
+        box-decoration-break: clone;
+        border-radius: .7rem;
+    }
+  }
+}

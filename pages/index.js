@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import Layout from "../components/Layout/Layout";
 import Sections from "../components/Sections/Sections";
 import { fetchAPI } from "../lib/api";
