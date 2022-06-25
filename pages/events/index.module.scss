@@ -4,9 +4,9 @@
   &__cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
-    grid-auto-rows: 30rem;
+    grid-auto-rows: 34rem;
     gap: 2rem;
-justify-content: center;
+    justify-content: center;
 
     padding: 3rem;
   }

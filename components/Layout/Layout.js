@@ -1,8 +1,10 @@
 import { useState } from "react";
+import Image from "next/image";
 import Toolbar from "../Navigation/Toolbar/Toolbar";
 import Header from "../Home/Header/Header";
 import Footer from "../Footer/Footer";
 import SideDrawer from "../Navigation/SideDrawer/SideDrawer";
+import Arc from "../Home/Header/arc.svg";
 
 import classes from "./Layout.module.scss";
 
@@ -24,17 +26,38 @@ const Layout = ({ children, homeHeaderImage, globalData }) => {
           <Toolbar
             drawerToggleClicked={sideDrawerToggleHandler}
             globalData={globalData}
+            home
           />
+          {/* <div className={classes.Arc}>
+            <Image
+              src={Arc}
+              layout="fill"
+              objectFit="fill"
+              className={classes.ArcImage}
+            ></Image>
+          </div> */}
         </Header>
       ) : (
-        <Toolbar globalData={globalData} />
+        <>
+          <Toolbar globalData={globalData} />
+          {/* <div className={classes.Arc}>
+            <Image
+              src={Arc}
+              layout="fill"
+              objectFit="fill"
+              className={classes.ArcImage}
+            ></Image>
+          </div> */}
+        </>
       )}
       <SideDrawer
         open={showSideDrawer}
         closed={sideDrawerClosedHandler}
         globalData={globalData}
       />
-      {children}
+      <div className={classes.Layout__mainWrapper}>
+        {children}
+      </div>
       <Footer globalData={globalData} />
     </div>
   );

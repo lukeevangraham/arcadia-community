@@ -1,7 +1,14 @@
 @import "../../styles/abstracts/variables.scss";
 
 .Layout {
+  // background-color: #436e6c;
+  background-color: $color-ternary-2;
+  border-radius: 0.7rem;
+  overflow: hidden;
+
+  &__mainWrapper {
     background-color: $color-grey-light-1;
-    border-radius: .7rem;
-    overflow: hidden;
+    border-radius: 10%;
+  }
+
 }

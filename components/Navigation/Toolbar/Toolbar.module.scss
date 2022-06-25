@@ -2,7 +2,7 @@
 @import "../../../styles/abstracts/mixins";
 
 .Toolbar {
-  background-color: #03260e3e;
+  // background-color: #03260e3e;
   padding: 2rem 3rem 1rem 3rem;
   z-index: 3;
   color: #eee;
@@ -11,11 +11,16 @@
   grid-template-rows: 6rem;
   grid-row: 1 / 2;
 
+  &_homeBg {
+background-color: #03260e3e;
+  }
+
   .Logo {
     grid-row: 1;
     grid-column: 1;
     position: relative;
     width: 6rem;
+    height: 100%;
     // background-color: orangered;
   }
 
