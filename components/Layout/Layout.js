@@ -55,9 +55,7 @@ const Layout = ({ children, homeHeaderImage, globalData }) => {
         closed={sideDrawerClosedHandler}
         globalData={globalData}
       />
-      <div className={classes.Layout__mainWrapper}>
-        {children}
-      </div>
+      <main className={classes.Layout__mainWrapper}>{children}</main>
       <Footer globalData={globalData} />
     </div>
   );

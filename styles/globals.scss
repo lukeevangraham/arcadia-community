@@ -1,7 +1,7 @@
 @import "abstracts/mixins";
 @import "abstracts/variables.scss";
 @import "base/typography.scss";
-// @import "base/utilities";
+@import "base/utilities";
 
 *,
 *::after,
@@ -46,4 +46,12 @@ a {
   text-decoration: none;
 }
 
+.row {
+  max-width: $grid-width;
+  margin: 0 auto;
+
+  @include respond(tab-land) {
+    padding: 0 3rem;
+  }
+}
 

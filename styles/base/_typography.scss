@@ -6,6 +6,7 @@ body {
 
 h1 {
   font-size: 3.052rem;
+  line-height: 4.5rem;
 }
 
 h2 {
@@ -16,12 +17,15 @@ h2 {
 
 h3 {
   font-size: 1.953rem;
+  text-transform: uppercase;
 }
 
 h4 {
   font-size: 1.563rem;
-  text-transform: uppercase;
-  letter-spacing: 0.09rem;
+  letter-spacing: 0.05rem;
+  font-style: italic;
+  font-weight: 600;
+  color: $color-grey-light-3;
 }
 
 h5 {

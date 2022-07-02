@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import classes from "./EventCard.module.scss";
 
@@ -6,18 +7,26 @@ export default function EventCard({ event }) {
   return (
     <>
       <div className={classes.EventCard}>
-        <div className={classes.EventCard__image}>
-          <Image
-            src={event.attributes.image.data.attributes.url}
-            layout="fill"
-            objectFit="cover"
-            alt={event.attributes.image.data.attributes.alternateText}
-          />
-        </div>
-        {console.log("CARD: ", event)}
-        <div className={classes.EventCard__title}>
-          <span>{event.attributes.title}</span>
-        </div>
+        <Link href={`events/${event.attributes.Slug}`}>
+          <a>
+            <div className={classes.EventCard__image}>
+              <Image
+                src={event.attributes.image.data.attributes.url}
+                layout="fill"
+                objectFit="cover"
+                alt={event.attributes.image.data.attributes.alternateText}
+              />
+            </div>
+          </a>
+        </Link>
+        {console.log("EVENT: ", event)}
+        <Link href={`events/${event.attributes.Slug}`}>
+          <a>
+            <div className={classes.EventCard__title}>
+              <span>{event.attributes.title}</span>
+            </div>
+          </a>
+        </Link>
         <div className={classes.EventCard__dateBox}>
           <div className={classes.EventCard__dateBox_month}>
             {new Date(event.attributes.startDate).toLocaleDateString("en-US", {

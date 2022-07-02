@@ -8,8 +8,7 @@ import classes from "./index.module.scss";
 export async function getStaticProps() {
   const [globalData, eventsData] = await Promise.all([
     fetchAPI("/global?populate=deep"),
-    getSortedEventsData()
-
+    getSortedEventsData(),
   ]);
   return {
     props: { globalData, eventsData },
@@ -27,15 +26,17 @@ export default function Events({ globalData, eventsData }) {
       </Head>
 
       <Layout globalData={globalData}>
-        <main>
-          <div className={classes.Events}>
-            <div className={classes.Events__cards}>
-              {eventsData.map((event) => (
-                <EventCard key={event.id} event={event} />
-              ))}
-            </div>
+        <div className={classes.Events}>
+          <div className="u-section-heading">
+            <h1>Upcoming Events</h1>
+            <h4>"Let us consider one another in order to stir up love and good works" Hebrews 10:24</h4>
           </div>
-        </main>
+          <div className={classes.Events__cards}>
+            {eventsData.map((event) => (
+              <EventCard key={event.id} event={event} />
+            ))}
+          </div>
+        </div>
       </Layout>
     </>
   );

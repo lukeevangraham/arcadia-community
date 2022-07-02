@@ -9,8 +9,10 @@ export async function getStaticProps() {
   };
 }
 
-const Give = ({ globalData }) => (
-  <Layout globalData={globalData}>Give Page</Layout>
+const Resources = ({ globalData }) => (
+  <Layout globalData={globalData}>
+    <div>Resources</div>
+  </Layout>
 );
 
-export default Give;
+export default Resources;
