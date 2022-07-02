@@ -19,7 +19,7 @@ const Ministries = ({ globalData, ministriesData }) => (
     <section className={classes.Ministries}>
       <div className="u-section-heading">
         <h1>Our Ministries</h1>
-        <h4>"Through love serve one another" Galatians 5:13</h4>
+        <h4>&quot;Through love serve one another&quot; Galatians 5:13</h4>
       </div>
       <div className="row">
         {ministriesData.data.map((ministry) => (

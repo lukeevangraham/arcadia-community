@@ -29,7 +29,7 @@ export default function Events({ globalData, eventsData }) {
         <div className={classes.Events}>
           <div className="u-section-heading">
             <h1>Upcoming Events</h1>
-            <h4>"Let us consider one another in order to stir up love and good works" Hebrews 10:24</h4>
+            <h4>&quot;Let us consider one another in order to stir up love and good works&quot; Hebrews 10:24</h4>
           </div>
           <div className={classes.Events__cards}>
             {eventsData.map((event) => (

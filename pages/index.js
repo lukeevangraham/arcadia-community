@@ -27,7 +27,7 @@ export default function Home({ homeData, globalData }) {
 
       <Layout
         homeHeaderImage={
-          homeData.data.attributes.headerImage.data.attributes.url
+          homeData.data.attributes.headerImage.data.attributes
         }
         globalData={globalData}
       >

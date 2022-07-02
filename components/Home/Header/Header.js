@@ -8,7 +8,8 @@ const Header = ({ children, homeHeaderImage }) => (
   <div className={classes.Header}>
     {children}
     <Image
-      src={homeHeaderImage}
+      src={homeHeaderImage.url}
+      alt={homeHeaderImage.alternativeText}
       layout="fill"
       objectFit="cover"
       priority
@@ -21,6 +22,7 @@ const Header = ({ children, homeHeaderImage }) => (
     <div className={classes.Arc}>
       <Image
         src={Arc}
+        alt="Design element"
         layout="fill"
         objectFit="fill"
         className={classes.ArcImage}

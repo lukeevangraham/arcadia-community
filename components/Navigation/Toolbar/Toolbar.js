@@ -13,6 +13,7 @@ const Toolbar = ({ globalData, drawerToggleClicked, home }) => (
         <div className={classes.Logo}>
           <Image
             src={globalData.data.attributes.Navbar.logo.data.attributes.url}
+            alt={globalData.data.attributes.Navbar.logo.data.attributes.alternativeText}
             layout="fill"
           />
         </div>
