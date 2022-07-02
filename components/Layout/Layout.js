@@ -39,7 +39,7 @@ const Layout = ({ children, homeHeaderImage, globalData }) => {
         </Header>
       ) : (
         <>
-          <Toolbar globalData={globalData} />
+          <Toolbar globalData={globalData} drawerToggleClicked={sideDrawerToggleHandler} />
           {/* <div className={classes.Arc}>
             <Image
               src={Arc}
