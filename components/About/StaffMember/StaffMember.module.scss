@@ -1,0 +1,8 @@
+.Person {
+//   background-color: orangered;
+  &__image {
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+  }
+}

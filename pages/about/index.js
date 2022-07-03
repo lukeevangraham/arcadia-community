@@ -1,18 +1,23 @@
 import Head from "next/head";
+import Image from "next/image";
+import StaffMember from "../../components/About/StaffMember/StaffMember";
 import Layout from "../../components/Layout/Layout";
 import { fetchAPI } from "../../lib/api";
 
 import classes from "./index.module.scss";
 
 export async function getStaticProps() {
-  const [globalData] = await Promise.all([fetchAPI("/global?populate=deep")]);
+  const [globalData, staffData] = await Promise.all([
+    fetchAPI("/global?populate=deep"),
+    fetchAPI("/staff-members?sort=displayOrder:asc&populate=deep"),
+  ]);
   return {
-    props: { globalData },
+    props: { globalData, staffData },
     revalidate: 1,
   };
 }
 
-const About = ({ globalData }) => (
+const About = ({ globalData, staffData }) => (
   <>
     <Head>
       <title>Create Next App</title>
@@ -20,9 +25,48 @@ const About = ({ globalData }) => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Layout globalData={globalData}>
-      <main>
-        <div className={classes.About}>About Page</div>
-      </main>
+      {console.log("STAFF: ", staffData)}
+      <div className={classes.About}>
+        <section className="u-section-heading">
+          <h1>About Us</h1>
+          <h4>
+            &quot;Let us consider one another in order to stir up love and good
+            works&quot; Hebrews 10:24
+          </h4>
+        </section>
+        <section className="row">
+          <div className="u-section-heading">
+            <h2>Our Pastors</h2>
+            <h4>
+              &quot;Let us consider one another in order to stir up love and
+              good works&quot; Hebrews 10:24
+            </h4>
+          </div>
+          <div className={classes.About__Pastors}>
+            {staffData.data
+              .filter((person) => person.attributes.jobTitle.includes("Pastor"))
+              .map((person) => (
+                <StaffMember person={person} key={person.id} />
+              ))}
+          </div>
+        </section>
+        <section>
+          <div className="u-section-heading">
+            <h2>Our Staff</h2>
+            <h4>
+              &quot;Let us consider one another in order to stir up love and
+              good works&quot; Hebrews 10:24
+            </h4>
+          </div>
+          <div className={classes.About__Pastors}>
+            {staffData.data
+              .filter((person) => !person.attributes.jobTitle.includes("Pastor"))
+              .map((person) => (
+                <StaffMember person={person} key={person.id} />
+              ))}
+          </div>
+        </section>
+      </div>
     </Layout>
   </>
 );
