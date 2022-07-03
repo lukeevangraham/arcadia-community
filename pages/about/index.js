@@ -50,7 +50,7 @@ const About = ({ globalData, staffData }) => (
               ))}
           </div>
         </section>
-        <section>
+        <section className="row">
           <div className="u-section-heading">
             <h2>Our Staff</h2>
             <h4>
