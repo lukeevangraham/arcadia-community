@@ -1,3 +1,5 @@
+@import "../../styles/abstracts/variables";
+
 .Event {
   // background-color: orangered;
   font-size: 1.6rem;
@@ -9,6 +11,31 @@
     aspect-ratio: 16 / 9;
     border-radius: 8%;
     overflow: hidden;
+  }
+
+  &__time {
+    display: flex;
+    align-items: center;
+
+    svg {
+      fill: $color-black;
+      width: 1.8rem;
+      height: 1.6rem;
+      margin-right: 0.7rem;
+      // background-color: orangered;
+    }
+  }
+
+  &__place {
+    display: flex;
+    align-items: center;
+
+    svg {
+      fill: $color-black;
+      width: 1.8rem;
+      height: 1.6rem;
+      margin-right: 0.7rem;
+    }
   }
 
   &__body {

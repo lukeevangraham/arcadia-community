@@ -1,4 +1,5 @@
 import { getAllEventsSlugs, getEventData, fetchAPI } from "../../lib/api";
+import { keepEventsCurrent } from "../../lib/events";
 import Image from "next/image";
 import Layout from "../../components/Layout/Layout";
 
@@ -30,13 +31,14 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Event({ eventData, globalData }) {
+  keepEventsCurrent([eventData]);
   return (
     <Layout globalData={globalData}>
       <div className="u-section-heading">
         <h1>Upcoming Event</h1>
         <h4>
-        &quot;Let us consider one another in order to stir up love and good works&quot;
-          Hebrews 10:24
+          &quot;Let us consider one another in order to stir up love and good
+          works&quot; Hebrews 10:24
         </h4>
       </div>
       <div className={`row ${classes.Event}`}>
@@ -49,7 +51,26 @@ export default function Event({ eventData, globalData }) {
           />
         </div>
         <h1>{eventData.attributes.title}</h1>
-        <div>{eventData.attributes.location}</div>
+        <div className={classes.Event__datebox}>
+          <div>
+            {new Date(eventData.attributes.startDate).toLocaleDateString()}
+            <br />
+          </div>
+        </div>
+        <div className={classes.Event__time}>
+          <svg>
+            <use xlinkHref="../images/sprite.svg#icon-clock"></use>
+          </svg>
+          <div>
+            {new Date(eventData.attributes.startDate).toLocaleTimeString()}
+          </div>
+        </div>
+        <div className={classes.Event__place}>
+          <svg>
+            <use xlinkHref="../images/sprite.svg#icon-location-pin"></use>
+          </svg>
+          <div>{eventData.attributes.location}</div>
+        </div>
         <div className={classes.Event__body}>
           <div
             dangerouslySetInnerHTML={{

@@ -1,5 +1,5 @@
-import Layout from "../../components/Layout/Layout";
 import { fetchAPI } from "../../lib/api";
+import Layout from "../../components/Layout/Layout";
 
 import classes from "./index.module.scss";
 
