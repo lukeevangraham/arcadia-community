@@ -1,8 +1,38 @@
+@import "../../../styles/abstracts/variables";
+
 .Person {
-//   background-color: orangered;
+  position: relative;
+  // width: 30rem;
+  // background-color: orangered;
+  border-radius: 1rem;
+  overflow: hidden;
+
   &__image {
     position: relative;
-    width: 10rem;
-    height: 10rem;
+    aspect-ratio: 4 / 5;
+    z-index: 1;
+    border-radius: .5rem;
+    overflow: hidden;
+  }
+
+  &__text {
+    background-color: $color-primary;
+    color: $color-white;
+    width: 80%;
+    margin: auto;
+    z-index: 50;
+    position: relative;
+    top: -6.5%;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+
+    &_name {
+      font-size: 2rem;
+      font-weight: 200;
+    }
+
+    &_title {
+      opacity: .7;
+    }
   }
 }

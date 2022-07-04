@@ -1,3 +1,5 @@
+@import "../../styles/abstracts/variables";
+
 .About {
   // background-color: orangered;
   // height: 100rem;
@@ -6,4 +8,68 @@
 
   padding-bottom: 4rem;
 
+  &__people {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-gap: 1.5rem;
+
+    &_staff {
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    }
+  }
+
+  &__top {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    // align-items: center;
+    // justify-items: center;
+    grid-gap: 5rem;
+
+    &_photo {
+      position: relative;
+      min-height: 25rem;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    &_text {
+      text-align: left;
+    }
+  }
+
+  &__serviceTime {
+    position: relative;
+    margin: 5.8rem 0;
+    color: $color-white;
+    border-radius: 9px;
+    overflow: hidden;
+    background-image: linear-gradient(
+      to bottom right,
+      $color-primary-dark,
+      $color-quaternary-dark
+    );
+
+    &_photo {
+      position: relative;
+      top: 0;
+      left: 0;
+      height: 35vh;
+      width: 100%;
+      opacity: 0.4;
+    }
+
+    &_text {
+      position: absolute;
+      margin: auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: left;
+      h2 {
+        margin-bottom: 0.8rem;
+      }
+      p {
+        line-height: 1.5;
+      }
+    }
+  }
 }

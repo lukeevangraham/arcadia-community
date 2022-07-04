@@ -7,17 +7,18 @@ import { fetchAPI } from "../../lib/api";
 import classes from "./index.module.scss";
 
 export async function getStaticProps() {
-  const [globalData, staffData] = await Promise.all([
+  const [globalData, staffData, aboutData] = await Promise.all([
     fetchAPI("/global?populate=deep"),
     fetchAPI("/staff-members?sort=displayOrder:asc&populate=deep"),
+    fetchAPI("/about?populate=deep"),
   ]);
   return {
-    props: { globalData, staffData },
+    props: { globalData, staffData, aboutData },
     revalidate: 1,
   };
 }
 
-const About = ({ globalData, staffData }) => (
+const About = ({ globalData, staffData, aboutData }) => (
   <>
     <Head>
       <title>Create Next App</title>
@@ -25,15 +26,63 @@ const About = ({ globalData, staffData }) => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <Layout globalData={globalData}>
-      {console.log("STAFF: ", staffData)}
       <div className={classes.About}>
         <section className="u-section-heading">
-          <h1>About Us</h1>
-          <h4>
-            &quot;Let us consider one another in order to stir up love and good
-            works&quot; Hebrews 10:24
-          </h4>
+          <div className="row">
+            <h1>About Us</h1>
+            <h4>
+              &quot;Let us consider one another in order to stir up love and
+              good works&quot; Hebrews 10:24
+            </h4>
+          </div>
         </section>
+        <section className="row">
+          <div className={classes.About__top}>
+            <div className={classes.About__top_photo}>
+              <Image
+                src={aboutData.data.attributes.topImage.data.attributes.url}
+                alt={
+                  aboutData.data.attributes.topImage.data.attributes
+                    .alternativeText
+                }
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+            <div className={classes.About__top_text}>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: aboutData.data.attributes.topText,
+                }}
+              ></div>
+            </div>
+          </div>
+        </section>
+
+        {console.log(
+          "ABOUT DA: ",
+          aboutData.data.attributes.serviceTimeBg.data.attributes.url
+        )}
+
+        <section className={classes.About__serviceTime}>
+          <div className={classes.About__serviceTime_photo}>
+            <Image
+              src={aboutData.data.attributes.serviceTimeBg.data.attributes.url}
+              alt={
+                aboutData.data.attributes.serviceTimeBg.data.attributes
+                  .alternativeText
+              }
+              layout="fill"
+              objectFit="cover"
+            />
+          </div>
+          <div className={classes.About__serviceTime_text}>
+            <h2>Sunday Service Time</h2>
+            <div  dangerouslySetInnerHTML={{ __html: aboutData.data.attributes.serviceTimeText }}></div>
+          </div>
+        </section>
+
+        {/* SHOWING PASTORS AND STAFF */}
         <section className="row">
           <div className="u-section-heading">
             <h2>Our Pastors</h2>
@@ -42,7 +91,7 @@ const About = ({ globalData, staffData }) => (
               good works&quot; Hebrews 10:24
             </h4>
           </div>
-          <div className={classes.About__Pastors}>
+          <div className={classes.About__people}>
             {staffData.data
               .filter((person) => person.attributes.jobTitle.includes("Pastor"))
               .map((person) => (
@@ -58,9 +107,13 @@ const About = ({ globalData, staffData }) => (
               good works&quot; Hebrews 10:24
             </h4>
           </div>
-          <div className={classes.About__Pastors}>
+          <div
+            className={`${classes.About__people} ${classes.About__people_staff}`}
+          >
             {staffData.data
-              .filter((person) => !person.attributes.jobTitle.includes("Pastor"))
+              .filter(
+                (person) => !person.attributes.jobTitle.includes("Pastor")
+              )
               .map((person) => (
                 <StaffMember person={person} key={person.id} />
               ))}

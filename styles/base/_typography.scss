@@ -6,7 +6,9 @@ body {
 
 h1 {
   font-size: 3.052rem;
+  letter-spacing: 1px;
   line-height: 4.5rem;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -35,4 +37,5 @@ h5 {
 p {
   font-size: $default-font-size;
   line-height: 2.15;
+  font-weight: 500;
 }
