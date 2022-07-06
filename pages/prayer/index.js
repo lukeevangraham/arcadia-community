@@ -45,13 +45,13 @@ const Prayer = ({ globalData }) => {
       break;
     case 200:
       requestForm = (
-        <div>
+        <div className={classes.Prayer__success}>
           <h3>Your request was successfully delivered</h3>
         </div>
       );
       break;
     case 1:
-      requestForm = <div>Sending...</div>;
+      requestForm = <div className={classes.Prayer__success}>Sending...</div>;
       break;
     default:
       requestForm = (

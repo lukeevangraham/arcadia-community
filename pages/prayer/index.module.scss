@@ -3,6 +3,11 @@
 .Prayer {
   max-width: 60rem;
   margin: auto;
+
+  &__success {
+    margin: auto;
+    text-align: center;
+  }
   &__topText {
     p:not(:first-of-type) {
       margin-top: 3rem;
