@@ -26,17 +26,18 @@ export default function Home({ homeData, globalData }) {
       </Head>
 
       <Layout
-        homeHeaderImage={
-          homeData.data.attributes.headerImage.data.attributes
-        }
+        homeHeaderImage={homeData.data.attributes.headerImage.data.attributes}
         globalData={globalData}
       >
         <main className={styles.main}>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa, ad
-            dicta! Nisi, aspernatur hic ipsum magnam ullam quaerat facilis sequi
-            quod, illum quia nostrum ipsam quos numquam vero magni quisquam.
-          </p>
+          <div className="row">
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa, ad
+              dicta! Nisi, aspernatur hic ipsum magnam ullam quaerat facilis
+              sequi quod, illum quia nostrum ipsam quos numquam vero magni
+              quisquam.
+            </p>
+          </div>
           <Sections sections={homeData.data.attributes.contentSections} />
         </main>
       </Layout>

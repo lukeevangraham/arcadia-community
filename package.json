@@ -12,6 +12,7 @@
     "@fontsource/nunito-sans": "^4.5.8",
     "classnames": "^2.3.1",
     "next": "12.1.6",
+    "nodemailer": "^6.7.6",
     "qs": "^6.10.5",
     "react": "18.1.0",
     "react-dom": "18.1.0",

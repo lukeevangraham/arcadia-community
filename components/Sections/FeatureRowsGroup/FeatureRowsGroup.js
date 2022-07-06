@@ -6,7 +6,6 @@ const FeatureRowsGroup = ({ data }) => (
   <>
     {data.FeatureRow.map((row) => (
       <div key={row.id} className={classes.FeatureRow}>
-        {console.log("ROW: ", row)}
         <div className={classes.FeatureRow__pictures}>
           {row.bgImage.data ? (
             <div className={classes.FeatureRow__pictures_bg}>

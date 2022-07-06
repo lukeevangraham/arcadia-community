@@ -19,8 +19,6 @@ export async function getStaticProps({ params }) {
     getEventData(params.slug),
   ]);
 
-  console.log("EDATA: ", eventData);
-
   return {
     props: {
       eventData,
