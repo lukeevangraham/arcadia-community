@@ -19,7 +19,6 @@ export default function EventCard({ event }) {
             </div>
           </a>
         </Link>
-        {console.log("EVENT: ", event)}
         <Link href={`events/${event.attributes.Slug}`}>
           <a>
             <div className={classes.EventCard__title}>
