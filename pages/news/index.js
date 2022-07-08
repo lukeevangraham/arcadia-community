@@ -1,5 +1,6 @@
 import Layout from "../../components/Layout/Layout";
 import Image from "next/image";
+import Link from "next/link";
 import { fetchAPI } from "../../lib/api";
 
 import classes from "./index.module.scss";
@@ -21,14 +22,20 @@ const News = ({ globalData, newsData }) => (
       <div className={classes.Articles}>
         {newsData.data.map((article) => (
           <div className={classes.Articles__Article} key={article.id}>
-            <div className={classes.Articles__Article_image}>
-              <Image
-                src={article.attributes.image.data.attributes.url}
-                alt={article.attributes.image.data.attributes.alternativeText}
-                layout="fill"
-                objectFit="cover"
-              />
-            </div>
+            <Link href={`/news/${article.attributes.slug}`}>
+              <a>
+                <div className={classes.Articles__Article_image}>
+                  <Image
+                    src={article.attributes.image.data.attributes.url}
+                    alt={
+                      article.attributes.image.data.attributes.alternativeText
+                    }
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </div>
+              </a>
+            </Link>
             <div className={classes.Articles__Article_title}>
               {article.attributes.title}
             </div>
@@ -40,7 +47,11 @@ const News = ({ globalData, newsData }) => (
             <div className={classes.Articles__Article_excerpt}>
               {article.attributes.body
                 .replace(/<br>/g, " ")
-                .replace(/<[^>]+>/g, "").split(" ").splice(0, 16).join(" ")} ...
+                .replace(/<[^>]+>/g, "")
+                .split(" ")
+                .splice(0, 16)
+                .join(" ")}{" "}
+              ...
             </div>
           </div>
         ))}
