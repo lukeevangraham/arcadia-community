@@ -16,7 +16,8 @@ const Header = ({ children, homeHeaderImage }) => (
       className={classes.HeaderImage}
     ></Image>
     <div className={classes.HeaderText}>
-      Welcome To Arcadia Community Church
+      Join us Sundays at 10:30am <br />
+      Live and Online
     </div>
     <div className={classes.Overlay}></div>
     <div className={classes.Arc}>
