@@ -1,8 +1,10 @@
 import FeatureRowsGroup from "../Sections/FeatureRowsGroup/FeatureRowsGroup";
+import RichText from "./RichText/RichText";
 
 // MAP STRAPI SECTIONS TO SECTION COMPONENTS
 const sectionComponents = {
   "sections.feature-rows-group": FeatureRowsGroup,
+  "sections.rich-text": RichText
 };
 
 // DISPLAY A SECTION INDIVIDUALLY
