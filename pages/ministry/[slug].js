@@ -67,37 +67,57 @@ export default function Ministry({ ministryData, globalData }) {
               }}
             ></div>
             <div className={classes.Ministry__TopInfo_LeaderPhoto}>
-              <Image
-                src={ministryData.attributes.leaderPhoto.data.attributes.url}
-                alt={
-                  ministryData.attributes.leaderPhoto.data.attributes
-                    .alternativeText
-                }
-                layout="fill"
-                objectFit="contain"
-              ></Image>
+              {ministryData.attributes.leaderPhoto.data ? (
+                <Image
+                  src={ministryData.attributes.leaderPhoto.data.attributes.url}
+                  alt={
+                    ministryData.attributes.leaderPhoto.data.attributes
+                      .alternativeText
+                  }
+                  layout="fill"
+                  objectFit="contain"
+                />
+              ) : null}
             </div>
           </div>
 
-          <div className="u-section-heading">
-            <h2>{ministryData.attributes.ministryName} Events</h2>
-            <h4>&quot;Through love serve one another&quot; Galatians 5:13</h4>
-          </div>
+          {/* EVENTS SECTION */}
 
-          <div className={`${classes.Ministry__Events} u-margin-bottom-medium`}>
-            {sortedDates.map((event) => (
-              <EventCard key={event.id} event={event} />
-            ))}
-          </div>
-          <div className="u-section-heading">
-            <h2>{ministryData.attributes.ministryName} News</h2>
-            <h4>&quot;Through love serve one another&quot; Galatians 5:13</h4>
-          </div>
-          <div className={classes.Ministry__Articles}>
-            {ministryData.attributes.articles.data.map((article) => (
-              <ArticleCard article={article} key={article.id} />
-            ))}
-          </div>
+          {sortedDates.length ? (
+            <>
+              <div className="u-section-heading">
+                <h2>{ministryData.attributes.ministryName} Events</h2>
+                <h4>
+                  &quot;Through love serve one another&quot; Galatians 5:13
+                </h4>
+              </div>
+              <div
+                className={`${classes.Ministry__Events} u-margin-bottom-medium`}
+              >
+                {sortedDates.map((event) => (
+                  <EventCard key={event.id} event={event} />
+                ))}
+              </div>
+            </>
+          ) : null}
+
+          {/* ARTICLES SECTION */}
+
+          {ministryData.attributes.articles.data.length ? (
+            <>
+              <div className="u-section-heading">
+                <h2>{ministryData.attributes.ministryName} News</h2>
+                <h4>
+                  &quot;Through love serve one another&quot; Galatians 5:13
+                </h4>
+              </div>
+              <div className={classes.Ministry__Articles}>
+                {ministryData.attributes.articles.data.map((article) => (
+                  <ArticleCard article={article} key={article.id} />
+                ))}
+              </div>
+            </>
+          ) : null}
         </div>
       </div>
     </Layout>
