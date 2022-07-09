@@ -95,7 +95,7 @@ export default function Ministry({ ministryData, globalData }) {
           </div>
           <div className={classes.Ministry__Articles}>
             {ministryData.attributes.articles.data.map((article) => (
-              <ArticleCard article={article} />
+              <ArticleCard article={article} key={article.id} />
             ))}
           </div>
         </div>
