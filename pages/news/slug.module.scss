@@ -3,4 +3,10 @@
 .Article {
     // background-color: orangered;
     font-size: $default-font-size;
+
+    &__image {
+        position: relative;
+        width: 40rem;
+        aspect-ratio: 8 / 5;
+    }
 }

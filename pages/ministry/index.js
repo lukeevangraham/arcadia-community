@@ -1,4 +1,5 @@
 import { fetchAPI } from "../../lib/api";
+import Link from "next/link";
 import Layout from "../../components/Layout/Layout";
 
 import classes from "./index.module.scss";
@@ -23,7 +24,11 @@ const Ministries = ({ globalData, ministriesData }) => (
       </div>
       <div className="row">
         {ministriesData.data.map((ministry) => (
-          <div key={ministry.id}>{ministry.attributes.ministryName}</div>
+          <div key={ministry.id}>
+            <Link href={`/ministry/${ministry.attributes.Slug}`}>
+              <a>{ministry.attributes.ministryName}</a>
+            </Link>
+          </div>
         ))}
       </div>
     </section>

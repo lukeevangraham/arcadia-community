@@ -5,30 +5,5 @@
   grid-template-columns: repeat(auto-fit, minmax(30rem, 0.33fr));
   // grid-auto-rows: 34rem;
 
-  &__Article {
-    &_image {
-      position: relative;
-      //   height: 10rem;
-      width: 100%;
-      aspect-ratio: 8 / 5;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    &_title {
-      font-size: 2.3rem;
-      font-weight: 300;
-    }
-
-    &_belowTitle {
-      display: flex;
-      justify-content: space-between;
-      font-size: $default-font-size;
-      opacity: 0.7;
-    }
-
-    &_excerpt {
-      font-size: $default-font-size;
-    }
-  }
+  
 }

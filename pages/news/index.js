@@ -1,4 +1,5 @@
 import Layout from "../../components/Layout/Layout";
+import ArticleCard from "../../components/Articles/ArticleCard/ArticleCard";
 import Image from "next/image";
 import Link from "next/link";
 import { fetchAPI } from "../../lib/api";
@@ -19,41 +20,16 @@ export async function getStaticProps() {
 const News = ({ globalData, newsData }) => (
   <Layout globalData={globalData}>
     <div className="row">
+      <div className="u-section-heading">
+        <h1>Latest News</h1>
+        <h4>
+          &quot;Let us consider one another in order to stir up love and good
+          works&quot; Hebrews 10:24
+        </h4>
+      </div>
       <div className={classes.Articles}>
         {newsData.data.map((article) => (
-          <div className={classes.Articles__Article} key={article.id}>
-            <Link href={`/news/${article.attributes.slug}`}>
-              <a>
-                <div className={classes.Articles__Article_image}>
-                  <Image
-                    src={article.attributes.image.data.attributes.url}
-                    alt={
-                      article.attributes.image.data.attributes.alternativeText
-                    }
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                </div>
-              </a>
-            </Link>
-            <div className={classes.Articles__Article_title}>
-              {article.attributes.title}
-            </div>
-            {console.log("ART: ", article)}
-            <div className={classes.Articles__Article_belowTitle}>
-              <div>{article.attributes.author}</div>
-              <div>{article.attributes.dateline}</div>
-            </div>
-            <div className={classes.Articles__Article_excerpt}>
-              {article.attributes.body
-                .replace(/<br>/g, " ")
-                .replace(/<[^>]+>/g, "")
-                .split(" ")
-                .splice(0, 16)
-                .join(" ")}{" "}
-              ...
-            </div>
-          </div>
+          <ArticleCard article={article} key={article.id} />
         ))}
       </div>
     </div>

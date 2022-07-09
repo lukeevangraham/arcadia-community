@@ -7,7 +7,7 @@ export default function EventCard({ event }) {
   return (
     <>
       <div className={classes.EventCard}>
-        <Link href={`events/${event.attributes.Slug}`}>
+        <Link href={`/events/${event.attributes.Slug}`}>
           <a>
             <div className={classes.EventCard__image}>
               <Image
@@ -19,7 +19,7 @@ export default function EventCard({ event }) {
             </div>
           </a>
         </Link>
-        <Link href={`events/${event.attributes.Slug}`}>
+        <Link href={`/events/${event.attributes.Slug}`}>
           <a>
             <div className={classes.EventCard__title}>
               <span>{event.attributes.title}</span>
@@ -46,7 +46,7 @@ export default function EventCard({ event }) {
         <div className={classes.EventCard__timeAndPlace}>
           <div className={classes.EventCard__timeAndPlace_time}>
             <svg>
-              <use xlinkHref="images/sprite.svg#icon-clock"></use>
+              <use xlinkHref="/images/sprite.svg#icon-clock"></use>
             </svg>
             <div>
               {new Date(event.attributes.startDate).toLocaleTimeString(
@@ -60,7 +60,7 @@ export default function EventCard({ event }) {
           </div>
           <div className={classes.EventCard__timeAndPlace_place}>
             <svg>
-              <use xlinkHref="images/sprite.svg#icon-location-pin"></use>
+              <use xlinkHref="/images/sprite.svg#icon-location-pin"></use>
             </svg>
             <div>{event.attributes.location}</div>
           </div>
