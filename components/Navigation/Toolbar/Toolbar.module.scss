@@ -7,12 +7,12 @@
   z-index: 3;
   color: #eee;
   display: grid;
-  grid-template-columns: min-content repeat(3, 1fr);
+  grid-template-columns: min-content 1fr 4fr;
   grid-template-rows: 6rem;
   grid-row: 1 / 2;
 
   &_homeBg {
-background-color: #03260e3e;
+    background-color: #03260e3e;
   }
 
   .Logo {
@@ -28,16 +28,28 @@ background-color: #03260e3e;
     text-transform: lowercase;
     font-size: 2rem;
     font-weight: 300;
-    letter-spacing: .3rem;
+    letter-spacing: 0.3rem;
     align-self: center;
     padding: 1rem;
     line-height: 95%;
-    text-shadow: 0 0 .5rem rgba(0, 0, 0, 0.561);
+    text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.561);
   }
 
   .DesktopOnly {
     grid-column: 3 / 5;
     display: flex;
+    align-items: center;
+
+    &__Button {
+      width: 28rem;
+      text-transform: uppercase;
+      margin-left: 2rem;
+      & > * {
+        font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: .2rem;
+      }
+    }
   }
 
   @include respond(tab-port) {

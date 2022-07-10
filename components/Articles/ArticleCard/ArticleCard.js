@@ -18,7 +18,6 @@ const ArticleCard = ({ article }) => (
       </a>
     </Link>
     <div className={classes.Article_title}>{article.attributes.title}</div>
-    {console.log("ART: ", article)}
     <div className={classes.Article_belowTitle}>
       <div>{article.attributes.author}</div>
       <div>{article.attributes.dateline}</div>
