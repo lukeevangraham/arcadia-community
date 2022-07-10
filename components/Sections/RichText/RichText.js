@@ -1,7 +1,9 @@
 const RichText = ({ data }) => (
   <section>
     <div className="row">
-      <div dangerouslySetInnerHTML={{ __html: data.content }}></div>
+      <div className="u-line-width-limited">
+        <div dangerouslySetInnerHTML={{ __html: data.content }}></div>
+      </div>
     </div>
   </section>
 );
