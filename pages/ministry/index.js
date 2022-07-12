@@ -23,13 +23,17 @@ const Ministries = ({ globalData, ministriesData }) => (
         <h4>&quot;Through love serve one another&quot; Galatians 5:13</h4>
       </div>
       <div className="row">
-        {ministriesData.data.map((ministry) => (
-          <div key={ministry.id}>
-            <Link href={`/ministry/${ministry.attributes.Slug}`}>
-              <a>{ministry.attributes.ministryName}</a>
-            </Link>
-          </div>
-        ))}
+        <div className={classes.Ministries__Menu}>
+          {ministriesData.data.map((ministry) => (
+            <div key={ministry.id}>
+              <Link href={`/ministry/${ministry.attributes.Slug}`}>
+                <div className={classes.Ministries__Menu_Ministry}>
+                  <a>{ministry.attributes.ministryName}</a>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   </Layout>
