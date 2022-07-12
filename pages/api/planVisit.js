@@ -19,7 +19,7 @@ export default function handler(req, res) {
       // to: "info@arcadia.church",
       to: "luke@grahamwebworks.com",
       subject: "Visit Plan from arcadia.church",
-      text: `${req.body.name} (${req.body.email}) just sent this prayer request via arcadia.church:
+      text: `${req.body.name} (${req.body.email}) just sent this 'plan a visit' form via arcadia.church:
       
       Date of a planned visit: ${req.body.date}
       Do they have kids: ${req.body.kids}

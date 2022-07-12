@@ -47,17 +47,21 @@
     }
 
     &_radioGroup {
-      display: inline-flex;
-      // justify-content: flex-start;
-      // align-content: flex-start;
+      display: inline-flex;;
+      align-items: center;
 
-      & > input {
-        margin: 0.6rem 0.6rem 0.6rem 0;
+      & input {
+        width: min-content;
+        height: $default-font-size;
+        margin-right: .5rem;
       }
 
-      & > label:first-of-type {
-        margin-right: 2rem;
+      & label {
+        margin-right:4rem;
       }
+
+
+
     }
 
     &_button {
