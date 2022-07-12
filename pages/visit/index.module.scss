@@ -1,0 +1,97 @@
+@import "../../styles/abstracts/variables";
+
+.Visit {
+  max-width: 60rem;
+  margin: auto;
+
+  &__success {
+    margin-top: 5rem !important;
+    text-align: center;
+  }
+  &__topText {
+    p:not(:first-of-type) {
+      margin-top: 3rem;
+    }
+  }
+
+  &__form {
+    margin: 5rem auto;
+
+    p {
+      margin-top: 2rem;
+    }
+
+    .marginBottom {
+      margin-bottom: 2rem;
+    }
+
+    input,
+    textarea {
+      padding: 1.5rem 2rem;
+    }
+
+    input,
+    textarea,
+    label {
+      font-family: "Nunito Sans";
+      font-size: $default-font-size;
+      border: none;
+      margin: 0.6rem 0;
+      width: 100%;
+      //   padding: 0 2rem 1.5rem 2rem;
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      }
+    }
+
+    &_radioGroup {
+      display: inline-flex;
+      // justify-content: flex-start;
+      // align-content: flex-start;
+
+      & > input {
+        margin: 0.6rem 0.6rem 0.6rem 0;
+      }
+
+      & > label:first-of-type {
+        margin-right: 2rem;
+      }
+    }
+
+    &_button {
+      border-radius: 24%;
+      font-size: 1.8rem;
+      font-weight: 300;
+      transition: all 0.3s;
+      background-size: 300%;
+      background-image: linear-gradient(
+        120deg,
+        lighten($color-primary, 10%) 0%,
+        $color-primary 50%,
+        $color-ternary 50%,
+        darken($color-primary, 10%) 100%
+      );
+      color: $color-white;
+      padding: 1rem 1.75rem;
+      width: min-content;
+      cursor: pointer;
+      border-width: 0;
+      margin-bottom: 7rem;
+
+      &:hover {
+        transform: translateY(-3px);
+        background-position: 100%;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+      }
+
+      &:active,
+      &:focus {
+        transform: translateY(-1px);
+        outline: none;
+        box-shadow: 0 0.5 1rem rgba($color-black, 0.2);
+      }
+    }
+  }
+}
