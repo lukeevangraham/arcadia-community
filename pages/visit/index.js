@@ -60,10 +60,10 @@ const Visit = ({ globalData }) => {
         <>
           <div className={classes.Visit__topText}>
             <p>
-              Ready to check out Arcadia Community Church in person? We can't
-              wait to meet you in person. Simply fill out the form below and
-              we'll make sure to give you the <strong>VIP treatment</strong>{" "}
-              upon your first visit.
+              Ready to check out Arcadia Community Church in person? We
+              can&apos;t wait to meet you in person. Simply fill out the form
+              below and we&apos;ll make sure to give you the{" "}
+              <strong>VIP treatment</strong> upon your first visit.
             </p>
           </div>
           <form onSubmit={sendMessage} className={classes.Visit__form}>
@@ -188,7 +188,7 @@ const Visit = ({ globalData }) => {
             <h3>
               <br />
             </h3>
-            <h3>WHAT'S THE CULTURE LIKE AT ARCADIA COMMUNITY CHURCH?</h3>
+            <h3>WHAT&apos;S THE CULTURE LIKE AT ARCADIA COMMUNITY CHURCH?</h3>
             <p>
               Sunday’s at Arcadia Community Church are <strong>exciting</strong>
               , <strong>casual</strong>, and <strong>relaxed</strong>. Come as
