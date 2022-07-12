@@ -59,12 +59,7 @@ const Visit = ({ globalData }) => {
       requestForm = (
         <>
           <div className={classes.Visit__topText}>
-            <p>
-              Ready to check out Arcadia Community Church in person? We
-              can&apos;t wait to meet you in person. Simply fill out the form
-              below and we&apos;ll make sure to give you the{" "}
-              <strong>VIP treatment</strong> upon your first visit.
-            </p>
+
           </div>
           <form onSubmit={sendMessage} className={classes.Visit__form}>
             <input
@@ -208,6 +203,17 @@ const Visit = ({ globalData }) => {
               minutes to get signed in for the Arcadia Kids experience. Arcadia
               Kids is offered for kids{" "}
               <strong>ages infant through Grade 8</strong>.
+            </p>
+          </div>
+
+          <div>
+            <h2><br /></h2>
+            <h2>Let us know you&apos;re coming</h2>
+            <p>
+              Ready to check out Arcadia Community Church in person? We can&apos;t wait to
+              meet you. Simply fill out the form below and we&apos;ll make sure
+              to give you the <strong>VIP treatment</strong> upon your first
+              visit.
             </p>
           </div>
 
