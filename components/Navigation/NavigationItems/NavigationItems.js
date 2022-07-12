@@ -3,7 +3,7 @@ import Button from "../../UI/Button/Button";
 
 import classes from "./NavigationItems.module.scss";
 
-const NavigationItems = ({ links, button }) => (
+const NavigationItems = ({ links, button, fromSideDrawer }) => (
   <nav className={classes.Links}>
     {links.map((link) => (
       <li key={link.id}>
@@ -13,7 +13,13 @@ const NavigationItems = ({ links, button }) => (
       </li>
     ))}
     {button ? (
-      <div className={classes.Button}>
+      <div
+        className={
+          fromSideDrawer
+            ? `${classes.Button} ${classes.Button_ml}`
+            : classes.Button
+        }
+      >
         <Button button={button} />
       </div>
     ) : null}

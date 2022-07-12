@@ -33,7 +33,7 @@ const SideDrawer = ({ open, closed, globalData }) => (
           </div>
         </a>
       </Link>
-      <NavigationItems links={globalData.data.attributes.Navbar.links} />
+      <NavigationItems links={globalData.data.attributes.Navbar.links} button={globalData.data.attributes.Navbar.button} fromSideDrawer />
       {/* {globalData.data.attributes.Navbar.links.map((navLink) => (
         <div>{navLink.text}</div>
       ))} */}
