@@ -4,20 +4,12 @@
   // background-color: orangered;
 
   &__cards {
-    // display: grid;
-    // grid-template-columns: repeat(auto-fit, minmax(34rem, 1fr));
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(34rem, 1fr));
     // grid-auto-rows: 34rem;
-    // gap: 2rem;
-    // justify-content: center;
+    gap: 2rem;
+    justify-content: center;
+
     padding: 3rem;
-    display: flex;
-    flex-wrap: wrap;
-    // gap: 4rem;
-    justify-content: space-between;
-
-    @include respond(tab-port) {
-      flex-direction: column;
-    }
-
   }
 }
