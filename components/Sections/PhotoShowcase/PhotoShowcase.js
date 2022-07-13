@@ -8,7 +8,6 @@ const PhotoShowcase = ({ data }) => (
       {data.photos.data.map((photo, index, array) => (
         // calculate how wide the pictures should be
         <li key={photo.id} style={{ width: `${100 / (array.length / 2)}%` }}>
-          {console.log("ARR: ", array.length / 2)}
           <figure className={classes.PhotoShowcase__Group_Photo}>
             <Image
               src={photo.attributes.url}
