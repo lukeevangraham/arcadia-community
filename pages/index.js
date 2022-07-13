@@ -5,21 +5,24 @@ import EventCard from "../components/Events/EventCard/EventCard";
 import ArticleCard from "../components/Articles/ArticleCard/ArticleCard";
 import Sections from "../components/Sections/Sections";
 import { fetchAPI } from "../lib/api";
+import { streamYouTubeOptions } from "../lib/youTube";
 
 import classes from "./index.module.scss";
 
 export async function getStaticProps() {
-  const [homeData, globalData] = await Promise.all([
+  const [homeData, globalData, youTubeData] = await Promise.all([
     fetchAPI("/home?populate=deep"),
     fetchAPI("/global?populate=deep"),
+    streamYouTubeOptions("PLchW5rz4AxRI3q73zPOnHzdAYcO1k7Djh"),
   ]);
+  console.log("YTD TOP: ", youTubeData);
   return {
-    props: { homeData, globalData },
+    props: { homeData, globalData, youTubeData },
     revalidate: 1,
   };
 }
 
-export default function Home({ homeData, globalData }) {
+export default function Home({ homeData, globalData, youTubeData }) {
   return (
     <>
       <Head>
@@ -61,12 +64,21 @@ export default function Home({ homeData, globalData }) {
               <h1>Welcome To Arcadia Community Church</h1>
               <h4>&quot;Through love serve one another&quot; Galatians 5:13</h4>
             </div>
-            <p className="u-margin-bottom-medium">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa, ad
-              dicta! Nisi, aspernatur hic ipsum magnam ullam quaerat facilis
-              sequi quod, illum quia nostrum ipsam quos numquam vero magni
-              quisquam.
-            </p>
+            <div className={`${classes.main__underWelcome} u-margin-bottom-medium`}>
+              <iframe
+                src={`https://www.youtube.com/embed/${youTubeData.snippet.resourceId.videoId}`}
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+              <p className="u-margin-bottom-medium">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa,
+                ad dicta! Nisi, aspernatur hic ipsum magnam ullam quaerat
+                facilis sequi quod, illum quia nostrum ipsam quos numquam vero
+                magni quisquam.
+              </p>
+            </div>
           </div>
 
           <section className="row u-margin-bottom-medium">

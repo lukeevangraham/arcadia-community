@@ -41,6 +41,18 @@
   overflow: hidden;
   padding-top: 7rem;
 
+  &__underWelcome {
+    // height: 40rem;
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+
+    & iframe {
+      aspect-ratio: 16 / 9;
+      flex: 0 0 39%;
+    }
+  }
+
   &__Articles {
     display: flex;
     & > * {
