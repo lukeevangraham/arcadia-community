@@ -55,14 +55,11 @@
     }
   }
   &__Events {
+
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap: 2rem;
     justify-content: center;
     // padding: 3rem;
-
-    @include respond(tab-port) {
-      grid-template-columns: repeat(auto-fit, minmax(52rem, 1fr));
-    }
   }
 }
