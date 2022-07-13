@@ -9,7 +9,7 @@
   );
   background-color: $color-white;
   // position: relative;
-  border-radius: 8%;
+  border-radius: 1rem;
   overflow: hidden;
   margin-bottom: 4rem;
   display: flex;
@@ -83,7 +83,7 @@
       // padding: 1.5rem 1rem 1.5rem 3.5rem;
       // padding: 1rem;
       // width: calc(100% - 10rem);
-      color: $color-black;
+      color: $color-grey;
       font-size: 1.6rem;
       display: flex;
       flex-direction: column;
@@ -96,7 +96,7 @@
 
       & > * {
         display: flex;
-        height: 1.6rem;
+        // height: 1.6rem;
         align-items: center;
 
         &:first-child {
@@ -106,8 +106,9 @@
         svg {
           width: 1.8rem;
           margin-right: 0.7rem;
-          fill: $color-black;
+          fill: $color-grey;
           flex-shrink: 0;
+          height: 2rem;
         }
       }
 
