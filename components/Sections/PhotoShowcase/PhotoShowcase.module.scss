@@ -1,0 +1,39 @@
+.PhotoShowcase {
+  margin: 3rem auto;
+  &__Group {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    & li {
+      display: block;
+      width: 25%;
+    }
+    &_Photo {
+      width: 100%;
+      margin: 0;
+      overflow: hidden;
+      background-color: #000;
+      position: relative;
+      aspect-ratio: 1 / 1;
+
+      & div:first-child {
+        display: inherit !important;
+      }
+
+      & img {
+        opacity: 0.7;
+        width: 100%;
+        height: auto;
+        transform: scale(1.15);
+        transition: transform 0.5s, opacity 0.5s;
+
+        &:hover {
+          transform: scale(1.03);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
