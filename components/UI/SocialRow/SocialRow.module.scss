@@ -40,6 +40,7 @@
 
     & a {
       margin-left: 2.5rem;
+      height: 2rem;
     }
 
     & svg {
@@ -47,7 +48,7 @@
       width: 2rem;
       height: 2rem;
       fill: $color-grey-dark;
-      transition: fill .2s;
+      transition: fill 0.2s;
 
       &:hover {
         fill: $color-primary;
