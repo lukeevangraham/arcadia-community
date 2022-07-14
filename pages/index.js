@@ -64,13 +64,15 @@ export default function Home({ homeData, globalData, youTubeData }) {
               <h1>Welcome To Arcadia Community Church</h1>
               <h4>&quot;Through love serve one another&quot; Galatians 5:13</h4>
             </div>
-            <div className={`${classes.main__underWelcome} u-margin-bottom-medium`}>
+            <div
+              className={`${classes.main__underWelcome} u-margin-bottom-medium`}
+            >
               <iframe
                 src={`https://www.youtube.com/embed/${youTubeData.snippet.resourceId.videoId}`}
                 title="YouTube video player"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                allowFullScreen
               ></iframe>
               <p className="u-margin-bottom-medium">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa,
