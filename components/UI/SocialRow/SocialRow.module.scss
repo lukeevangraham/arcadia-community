@@ -1,0 +1,52 @@
+@import "../../../styles/abstracts/variables";
+@import "../../../styles/abstracts/mixins";
+
+.SocialRow {
+  background-color: $color-quinary-light;
+  // width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $color-grey-dark;
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 2rem 3rem;
+
+  @include respond(tab-port) {
+    display: none;
+  }
+
+  &__EmailAndPhone,
+  &__EmailAndPhone a {
+    display: flex;
+    align-items: center;
+
+    & > div {
+      margin-right: 2rem;
+    }
+
+    & svg {
+      height: 2rem;
+      width: 2rem;
+      fill: $color-grey-dark;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__Social {
+    display: flex;
+    justify-content: flex-end;
+
+    & a {
+      margin-left: 1.5rem;
+    }
+
+    & svg {
+      // flex: 0 1 2rem;
+      width: 2rem;
+      height: 2rem;
+      fill: $color-grey-dark;
+    }
+  }
+}

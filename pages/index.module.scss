@@ -51,6 +51,10 @@
       aspect-ratio: 16 / 9;
       flex: 0 0 39%;
     }
+
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
   }
 
   &__Articles {
