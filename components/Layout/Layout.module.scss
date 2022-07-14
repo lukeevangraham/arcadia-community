@@ -23,21 +23,27 @@
       display: flex;
       align-items: center;
 
+      & > div {
+        margin-right: 2rem;
+      }
+
       & svg {
         height: 2rem;
         width: 2rem;
         fill: $color-primary-dark;
+        margin-right: .5rem;
       }
     }
 
     &__Social {
-      // display: flex;
+      display: flex;
       justify-content: flex-end;
       & svg {
         // flex: 0 1 2rem;
         width: 2rem;
         height: 2rem;
         fill: $color-primary-dark;
+        margin-left: 1.5rem;
       }
     }
   }
