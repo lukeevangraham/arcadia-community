@@ -18,18 +18,18 @@ const SocialRow = () => (
     <div className={classes.SocialRow__Social}>
       <a
         href="http://www.facebook.com/arcadiacommunitychurch"
-        target={"_blank"}
+        target={"_blank"} rel="noreferrer"
       >
         <svg>
           <use xlinkHref="/images/sprite.svg#icon-facebook"></use>
         </svg>
       </a>
-      <a href="http://www.instagram.com/arcadia_church" target={"_blank"}>
+      <a href="http://www.instagram.com/arcadia_church" target={"_blank"} rel="noreferrer">
         <svg>
           <use xlinkHref="/images/sprite.svg#icon-instagram"></use>
         </svg>
       </a>
-      <a href="http://www.vimeo.com/arcadiacommunitychurch" target={"_blank"}>
+      <a href="http://www.vimeo.com/arcadiacommunitychurch" target={"_blank"} rel="noreferrer">
         <svg>
           <use xlinkHref="/images/sprite.svg#icon-vimeo"></use>
         </svg>
