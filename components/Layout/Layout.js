@@ -21,6 +21,32 @@ const Layout = ({ children, homeHeaderImage, globalData }) => {
 
   return (
     <div className={classes.Layout}>
+      <div className={classes.Layout__SocialRow}>
+        {/* <div className="row"> */}
+          <div className={classes.Layout__SocialRow__EmailAndPhone}>
+            <svg>
+              <use xlinkHref="/images/sprite.svg#icon-mail"></use>
+            </svg>
+            <div>info@arcadia.church</div>
+            <svg>
+              <use xlinkHref="/images/sprite.svg#icon-phone"></use>
+            </svg>
+            <div>(626) 445-9764</div>
+          </div>
+
+          <div className={classes.Layout__SocialRow__Social}>
+            <svg>
+              <use xlinkHref="/images/sprite.svg#icon-facebook"></use>
+            </svg>
+            <svg>
+              <use xlinkHref="/images/sprite.svg#icon-instagram"></use>
+            </svg>
+            <svg>
+              <use xlinkHref="/images/sprite.svg#icon-vimeo"></use>
+            </svg>
+          {/* </div> */}
+        </div>
+      </div>
       {homeHeaderImage ? (
         <Header homeHeaderImage={homeHeaderImage}>
           <Toolbar
@@ -39,7 +65,10 @@ const Layout = ({ children, homeHeaderImage, globalData }) => {
         </Header>
       ) : (
         <>
-          <Toolbar globalData={globalData} drawerToggleClicked={sideDrawerToggleHandler} />
+          <Toolbar
+            globalData={globalData}
+            drawerToggleClicked={sideDrawerToggleHandler}
+          />
           {/* <div className={classes.Arc}>
             <Image
               src={Arc}
