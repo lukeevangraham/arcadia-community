@@ -34,6 +34,11 @@ const SocialRow = () => (
           <use xlinkHref="/images/sprite.svg#icon-vimeo"></use>
         </svg>
       </a>
+      <a href="https://www.youtube.com/channel/UCmQ2luPyV1EFmghznWebCPA" target={"_blank"} rel="noreferrer">
+        <svg>
+          <use xlinkHref="/images/sprite.svg#icon-youtube"></use>
+        </svg>
+      </a>
     </div>
   </div>
 );

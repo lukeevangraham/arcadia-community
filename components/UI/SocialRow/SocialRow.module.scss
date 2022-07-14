@@ -39,7 +39,7 @@
     justify-content: flex-end;
 
     & a {
-      margin-left: 1.5rem;
+      margin-left: 2.5rem;
     }
 
     & svg {
@@ -47,6 +47,11 @@
       width: 2rem;
       height: 2rem;
       fill: $color-grey-dark;
+      transition: fill .2s;
+
+      &:hover {
+        fill: $color-primary;
+      }
     }
   }
 }
