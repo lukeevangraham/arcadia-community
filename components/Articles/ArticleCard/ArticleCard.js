@@ -1,19 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import DefaultBgImage from "../../UI/DefaultBgImage/DefaultBgImage";
+
 import classes from "./ArticleCard.module.scss";
 
-const ArticleCard = ({ article }) => (
+const ArticleCard = ({ article, globalData }) => (
   <div className={classes.Article} key={article.id}>
     <Link href={`/news/${article.attributes.slug}`}>
       <a>
         <div className={classes.Article_image}>
-          <Image
-            src={article.attributes.image.data.attributes.url}
-            alt={article.attributes.image.data.attributes.alternativeText}
-            layout="fill"
-            objectFit="cover"
-          />
+          {article.attributes.image.data ? (
+            <Image
+              src={article.attributes.image.data.attributes.url}
+              alt={article.attributes.image.data.attributes.alternativeText}
+              layout="fill"
+              objectFit="cover"
+            />
+          ) : (
+            <DefaultBgImage globalData={globalData} />
+          )}
         </div>
       </a>
     </Link>
