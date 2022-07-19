@@ -1,6 +1,7 @@
 import { fetchAPI, getAllNewsSlugs, getNewsData } from "../../lib/api";
 import Image from "next/image";
 import Layout from "../../components/Layout/Layout";
+import DefaultBgImage from "../../components/UI/DefaultBgImage/DefaultBgImage";
 
 import classes from "./slug.module.scss";
 
@@ -38,12 +39,16 @@ export default function Article({ newsData, globalData }) {
       <div className="row">
         <div className={classes.Article}>
           <div className={classes.Article__image}>
-            <Image
-              src={newsData.attributes.image.data.attributes.url}
-              alt={newsData.attributes.image.data.attributes.alternativeText}
-              layout="fill"
-              objectFit="cover"
-            ></Image>
+            {newsData.attributes.image.data ? (
+              <Image
+                src={newsData.attributes.image.data.attributes.url}
+                alt={newsData.attributes.image.data.attributes.alternativeText}
+                layout="fill"
+                objectFit="cover"
+              />
+            ) : (
+              <DefaultBgImage globalData={globalData} />
+            )}
           </div>
           <div>{newsData.attributes.title}</div>
           <div>{newsData.attributes.dateline}</div>
