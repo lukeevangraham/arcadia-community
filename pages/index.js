@@ -15,7 +15,6 @@ export async function getStaticProps() {
     fetchAPI("/global?populate=deep"),
     streamYouTubeOptions("PLchW5rz4AxRI3q73zPOnHzdAYcO1k7Djh"),
   ]);
-  console.log("YTD TOP: ", youTubeData);
   return {
     props: { homeData, globalData, youTubeData },
     revalidate: 1,

@@ -7,7 +7,6 @@ import { keepEventsCurrent, compareAndSortDates } from "../../lib/events";
 import EventCard from "../../components/Events/EventCard/EventCard";
 import ArticleCard from "../../components/Articles/ArticleCard/ArticleCard";
 import Layout from "../../components/Layout/Layout";
-// import DefaultBgImage from "../../components/UI/DefaultBgImage/DefaultBgImage";
 import Image from "next/image";
 import classes from "./slug.module.scss";
 
