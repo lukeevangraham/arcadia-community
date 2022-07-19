@@ -7,6 +7,7 @@ import { keepEventsCurrent, compareAndSortDates } from "../../lib/events";
 import EventCard from "../../components/Events/EventCard/EventCard";
 import ArticleCard from "../../components/Articles/ArticleCard/ArticleCard";
 import Layout from "../../components/Layout/Layout";
+// import DefaultBgImage from "../../components/UI/DefaultBgImage/DefaultBgImage";
 import Image from "next/image";
 import classes from "./slug.module.scss";
 
@@ -95,7 +96,7 @@ export default function Ministry({ ministryData, globalData }) {
                 className={`${classes.Ministry__Events} u-margin-bottom-medium`}
               >
                 {sortedDates.map((event) => (
-                  <EventCard key={event.id} event={event} />
+                  <EventCard key={event.id} event={event} globalData={globalData} />
                 ))}
               </div>
             </>
@@ -113,7 +114,7 @@ export default function Ministry({ ministryData, globalData }) {
               </div>
               <div className={classes.Ministry__Articles}>
                 {ministryData.attributes.articles.data.map((article) => (
-                  <ArticleCard article={article} key={article.id} />
+                  <ArticleCard article={article} key={article.id} globalData={globalData} />
                 ))}
               </div>
             </>
