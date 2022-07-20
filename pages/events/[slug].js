@@ -69,13 +69,17 @@ export default function Event({ eventData, globalData }) {
           </svg>
           <div>{eventData.attributes.location}</div>
         </div>
-        <div className={classes.Event__body}>
+        <div className={`${classes.Event__body} u-margin-bottom-medium`}>
           <div
             dangerouslySetInnerHTML={{
               __html: eventData.attributes.description,
             }}
           />
         </div>
+        <div
+          className={classes.Event__bottomEmbed}
+          dangerouslySetInnerHTML={{ __html: eventData.attributes.bottomEmbed }}
+        ></div>
       </div>
     </Layout>
   );

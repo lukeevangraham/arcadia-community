@@ -41,4 +41,9 @@
   &__body {
     // background-color: orangered;
   }
+
+  &__bottomEmbed {
+    border-radius: 7px;
+    overflow: hidden;
+  }
 }
