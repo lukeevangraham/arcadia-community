@@ -1,0 +1,27 @@
+@import "../../../styles/abstracts/variables";
+
+.Verse {
+  margin-top: 10rem;
+  position: relative;
+
+  &__Text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.2rem;
+    color: $color-black;
+    font-weight: 200;
+  }
+
+  &__Logo {
+    position: relative;
+    height: 15rem;
+    opacity: 0.12;
+
+    & > span > img {
+      -webkit-filter: invert(1);
+      filter: invert(1);
+    }
+  }
+}

@@ -1,9 +1,13 @@
 @import "../../styles/abstracts/variables";
 
 .Articles {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 0.33fr));
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(30rem, 0.33fr));
   // grid-auto-rows: 34rem;
+  display: flex;
+  justify-content: space-around;
 
-  
+  & > * {
+    width: 30%;
+  }
 }

@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import StaffMember from "../../components/About/StaffMember/StaffMember";
 import Layout from "../../components/Layout/Layout";
+import Verse from "../../components/Sections/Verse/Verse";
 import { fetchAPI } from "../../lib/api";
 
 import classes from "./index.module.scss";
@@ -59,10 +60,7 @@ const About = ({ globalData, staffData, aboutData }) => (
           </div>
         </section>
 
-        {console.log(
-          "ABOUT DA: ",
-          aboutData.data.attributes.serviceTimeBg.data.attributes.url
-        )}
+        {console.log("ABOUT DA: ", aboutData.data.attributes)}
 
         <section className={classes.About__serviceTime}>
           <div className={classes.About__serviceTime_photo}>
@@ -78,7 +76,11 @@ const About = ({ globalData, staffData, aboutData }) => (
           </div>
           <div className={classes.About__serviceTime_text}>
             <h2>Sunday Service Time</h2>
-            <div  dangerouslySetInnerHTML={{ __html: aboutData.data.attributes.serviceTimeText }}></div>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: aboutData.data.attributes.serviceTimeText,
+              }}
+            ></div>
           </div>
         </section>
 
@@ -99,7 +101,7 @@ const About = ({ globalData, staffData, aboutData }) => (
               ))}
           </div>
         </section>
-        <section className="row">
+        <section className="row u-margin-bottom-medium">
           <div className="u-section-heading">
             <h2>Our Staff</h2>
             <h4>
@@ -118,6 +120,21 @@ const About = ({ globalData, staffData, aboutData }) => (
                 <StaffMember person={person} key={person.id} />
               ))}
           </div>
+        </section>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.577130767618!2d-118.02988554925243!3d34.13157402089753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2dbd083e890f7%3A0x4907c229645c3830!2sArcadia%20Community%20Church!5e0!3m2!1sen!2sus!4v1658296717908!5m2!1sen!2sus"
+          width="100%"
+          height="450"
+          style={{ border: 0 }}
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <section>
+          <Verse
+            data={aboutData.data.attributes.bottomVerse}
+            globalData={globalData}
+          />
         </section>
       </div>
     </Layout>
