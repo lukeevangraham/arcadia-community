@@ -22,7 +22,6 @@
     // position: relative;
     width: 100%;
     height: 28rem;
-
   }
 
   &__image {
@@ -78,8 +77,12 @@
 
   &__Articles {
     display: flex;
+    justify-content: space-evenly;
+
     & > * {
-      max-width: 33%;
+      max-width: 30%;
+      overflow: hidden;
+      margin-bottom: 4rem;
     }
     @include respond(tab-port) {
       flex-direction: column;

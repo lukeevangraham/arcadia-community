@@ -29,7 +29,11 @@ const News = ({ globalData, newsData }) => (
       </div>
       <div className={classes.Articles}>
         {newsData.data.map((article) => (
-          <ArticleCard article={article} key={article.id} globalData={globalData} />
+          <ArticleCard
+            article={article}
+            key={article.id}
+            globalData={globalData}
+          />
         ))}
       </div>
     </div>
