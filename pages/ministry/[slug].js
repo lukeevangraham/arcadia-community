@@ -6,6 +6,7 @@ import {
 import { keepEventsCurrent, compareAndSortDates } from "../../lib/events";
 import EventCard from "../../components/Events/EventCard/EventCard";
 import ArticleCard from "../../components/Articles/ArticleCard/ArticleCard";
+import Sections from "../../components/Sections/Sections";
 import Layout from "../../components/Layout/Layout";
 import Image from "next/image";
 import classes from "./slug.module.scss";
@@ -95,7 +96,11 @@ export default function Ministry({ ministryData, globalData }) {
                 className={`${classes.Ministry__Events} u-margin-bottom-medium`}
               >
                 {sortedDates.map((event) => (
-                  <EventCard key={event.id} event={event} globalData={globalData} />
+                  <EventCard
+                    key={event.id}
+                    event={event}
+                    globalData={globalData}
+                  />
                 ))}
               </div>
             </>
@@ -111,13 +116,22 @@ export default function Ministry({ ministryData, globalData }) {
                   &quot;Through love serve one another&quot; Galatians 5:13
                 </h4>
               </div>
-              <div className={classes.Ministry__Articles}>
-                {ministryData.attributes.articles.data.map((article) => (
-                  <ArticleCard article={article} key={article.id} globalData={globalData} />
-                ))}
+              <div className="u-margin-bottom-medium">
+                <div className={classes.Ministry__Articles}>
+                  {ministryData.attributes.articles.data.map((article) => (
+                    <ArticleCard
+                      article={article}
+                      key={article.id}
+                      globalData={globalData}
+                    />
+                  ))}
+                </div>
               </div>
             </>
           ) : null}
+        </div>
+        <div className="row">
+          <Sections sections={ministryData.attributes.contentSections} />
         </div>
       </div>
     </Layout>

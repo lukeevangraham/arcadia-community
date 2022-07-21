@@ -46,8 +46,10 @@
 
   &__Articles {
     display: flex;
+    justify-content: space-evenly;
     & > * {
-      max-width: 33%;
+      max-width: 30%;
+      margin-bottom: 4rem;
     }
     @include respond(tab-port) {
       flex-direction: column;

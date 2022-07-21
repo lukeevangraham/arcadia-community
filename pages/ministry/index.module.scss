@@ -16,6 +16,10 @@
       text-align: center;
       border-radius: 8px;
 
+      &_BG {
+        background-color: orangered;
+      }
+
       &:hover {
         cursor: pointer;
       }
