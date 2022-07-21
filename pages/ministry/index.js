@@ -36,7 +36,11 @@ const Ministries = ({ globalData, ministriesData }) => (
                       {ministry.attributes.primaryPhoto.data ? (
                         <Image
                           src={
-                            "https://res.cloudinary.com/daix3hjqf/image/upload/v1658379872/1f19f114_b9d9_4008_8b9c_4865818bacab_d38a429613.jpg"
+                            ministry.attributes.primaryPhoto.data.attributes.url
+                          }
+                          alt={
+                            ministry.attributes.primaryPhoto.data.attributes
+                              .alternateText
                           }
                           layout="fill"
                           objectFit="cover"
