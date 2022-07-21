@@ -1,4 +1,6 @@
 import { fetchAPI } from "../../lib/api";
+import DefaultBgImage from "../../components/UI/DefaultBgImage/DefaultBgImage";
+import Image from "next/image";
 import Link from "next/link";
 import Layout from "../../components/Layout/Layout";
 
@@ -27,10 +29,36 @@ const Ministries = ({ globalData, ministriesData }) => (
           {ministriesData.data.map((ministry) => (
             <div key={ministry.id}>
               <Link href={`/ministry/${ministry.attributes.Slug}`}>
+                <a>
+                  <div className={classes.Ministries__Menu_Ministry}>
+                    <div className={classes.Ministries__Menu_Ministry_Image}>
+                      {console.log("MD: ", ministry)}
+                      {ministry.attributes.primaryPhoto.data ? (
+                        <Image
+                          src={
+                            "https://res.cloudinary.com/daix3hjqf/image/upload/v1658379872/1f19f114_b9d9_4008_8b9c_4865818bacab_d38a429613.jpg"
+                          }
+                          layout="fill"
+                          objectFit="cover"
+                        />
+                      ) : (
+                        <DefaultBgImage globalData={globalData} />
+                      )}
+                    </div>
+                    <div
+                      className={classes.Ministries__Menu_Ministry_Color}
+                    ></div>
+                    <h3 className={classes.Ministries__Menu_Ministry_Name}>
+                      {ministry.attributes.ministryName}
+                    </h3>
+                  </div>
+                </a>
+              </Link>
+              {/* <Link href={`/ministry/${ministry.attributes.Slug}`}>
                 <div className={classes.Ministries__Menu_Ministry}>
                   <a>{ministry.attributes.ministryName}</a>
                 </div>
-              </Link>
+              </Link> */}
             </div>
           ))}
         </div>
