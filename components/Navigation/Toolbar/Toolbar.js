@@ -7,7 +7,7 @@ import Brandname from "../../UI/Brandname/Brandname";
 
 import classes from "./Toolbar.module.scss";
 
-const Toolbar = ({ globalData, drawerToggleClicked, home }) => (
+const Toolbar = ({ globalData, drawerToggleClicked, searchClicked, home }) => (
   <div
     className={
       home
@@ -39,6 +39,7 @@ const Toolbar = ({ globalData, drawerToggleClicked, home }) => (
       <NavigationItems
         links={globalData.data.attributes.Navbar.links}
         button={globalData.data.attributes.Navbar.button}
+        searchClicked={searchClicked}
       />
     </div>
     {/* <nav className={classes.Links}>

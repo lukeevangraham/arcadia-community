@@ -1,4 +1,5 @@
 @import "../../../styles/abstracts/mixins";
+@import "../../../styles/abstracts/variables";
 
 .Links {
   // background-color: orangered;
@@ -12,6 +13,19 @@
   letter-spacing: 0.3rem;
   font-weight: 600;
   text-shadow: 0 0 0.7rem #111000;
+
+  &__Search {
+    display: flex;
+    align-items: center;
+
+    & svg {
+      fill: $color-white;
+      height: 1.8rem;
+      width: 1.8rem;
+      filter: drop-shadow(0 0 0.7rem #111000);
+      cursor: pointer;
+    }
+  }
 
   @include respond(tab-port) {
     //   display: none;

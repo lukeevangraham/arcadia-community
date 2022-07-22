@@ -1,5 +1,6 @@
 import { fetchAPI } from "../../lib/api";
 import DefaultBgImage from "../../components/UI/DefaultBgImage/DefaultBgImage";
+import MinistryCard from "../../components/Ministries/MinistryCard";
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "../../components/Layout/Layout";
@@ -29,43 +30,7 @@ const Ministries = ({ globalData, ministriesData }) => (
       <div className="row">
         <div className={classes.Ministries__Menu}>
           {ministriesData.data.map((ministry) => (
-            <div key={ministry.id}>
-              <Link href={`/ministry/${ministry.attributes.Slug}`}>
-                <a>
-                  <div className={classes.Ministries__Menu_Ministry}>
-                    <div className={classes.Ministries__Menu_Ministry_Image}>
-                      {console.log("MD: ", ministry)}
-                      {ministry.attributes.primaryPhoto.data ? (
-                        <Image
-                          src={
-                            ministry.attributes.primaryPhoto.data.attributes.url
-                          }
-                          alt={
-                            ministry.attributes.primaryPhoto.data.attributes
-                              .alternateText
-                          }
-                          layout="fill"
-                          objectFit="cover"
-                        />
-                      ) : (
-                        <DefaultBgImage globalData={globalData} />
-                      )}
-                    </div>
-                    <div
-                      className={classes.Ministries__Menu_Ministry_Color}
-                    ></div>
-                    <h3 className={classes.Ministries__Menu_Ministry_Name}>
-                      {ministry.attributes.ministryName}
-                    </h3>
-                  </div>
-                </a>
-              </Link>
-              {/* <Link href={`/ministry/${ministry.attributes.Slug}`}>
-                <div className={classes.Ministries__Menu_Ministry}>
-                  <a>{ministry.attributes.ministryName}</a>
-                </div>
-              </Link> */}
-            </div>
+            <MinistryCard globalData={globalData} ministry={ministry} />
           ))}
         </div>
       </div>

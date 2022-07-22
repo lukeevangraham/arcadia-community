@@ -3,7 +3,7 @@ import Button from "../../UI/Button/Button";
 
 import classes from "./NavigationItems.module.scss";
 
-const NavigationItems = ({ links, button, fromSideDrawer }) => (
+const NavigationItems = ({ links, button, fromSideDrawer, searchClicked }) => (
   <nav className={classes.Links}>
     {links.map((link) => (
       <li key={link.id}>
@@ -12,6 +12,11 @@ const NavigationItems = ({ links, button, fromSideDrawer }) => (
         </Link>
       </li>
     ))}
+    <li className={classes.Links__Search} onClick={searchClicked}>
+      <svg>
+        <use xlinkHref="/images/sprite.svg#icon-magnifying-glass"></use>
+      </svg>
+    </li>
     {button ? (
       <div
         className={

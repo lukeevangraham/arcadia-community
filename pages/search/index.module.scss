@@ -1,0 +1,35 @@
+@import "../../styles/abstracts/variables";
+
+.Search {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+
+  &__Articles {
+
+
+    &_wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      justify-content: space-evenly;
+      gap: 2rem;
+    }
+  }
+  &__Events {
+
+    &_wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      gap: 2rem;
+    }
+  }
+  &__Ministries {
+
+
+    &_wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      gap: 2rem;
+    }
+  }
+}

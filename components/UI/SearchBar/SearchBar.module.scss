@@ -1,0 +1,68 @@
+@import "../../../styles/abstracts/variables";
+
+.SearchBar {
+  background-color: $color-primary;
+  height: 6rem;
+  z-index: 0;
+  position: absolute;
+  top: 7rem;
+  left: 0;
+  width: 100%;
+  border-radius: 0 0 2rem 2rem;
+  transition: all 0.3s;
+  opacity: 0;
+
+  & > * {
+    height: 100%;
+  }
+
+  &__Open {
+    top: 13rem;
+    z-index: 4;
+    opacity: 1;
+  }
+
+  &__NoBg {
+    background-color: transparent;
+  }
+
+  &__Form {
+    position: relative;
+    margin-right: 10rem;
+    height: 100%;
+
+    input {
+      position: absolute;
+      right: 0rem;
+      top: 50%;
+      padding: 1rem 2rem;
+      width: 35rem;
+      font-family: "Nunito Sans";
+      border: none;
+      transform: translateY(-50%);
+
+      &:focus {
+        outline: none;
+        box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+      }
+    }
+
+    &_SearchButton {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      height: 3.8rem;
+      background-color: $color-grey-light-2;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      padding: 0 0.7rem;
+      cursor: pointer;
+
+      & > svg {
+        height: 2.2rem;
+        width: 2.2rem;
+      }
+    }
+  }
+}
