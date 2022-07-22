@@ -1,8 +1,5 @@
 import { fetchAPI } from "../../lib/api";
-import DefaultBgImage from "../../components/UI/DefaultBgImage/DefaultBgImage";
 import MinistryCard from "../../components/Ministries/MinistryCard";
-import Image from "next/image";
-import Link from "next/link";
 import Layout from "../../components/Layout/Layout";
 
 import classes from "./index.module.scss";
@@ -30,7 +27,11 @@ const Ministries = ({ globalData, ministriesData }) => (
       <div className="row">
         <div className={classes.Ministries__Menu}>
           {ministriesData.data.map((ministry) => (
-            <MinistryCard key={ministry.id} globalData={globalData} ministry={ministry} />
+            <MinistryCard
+              key={ministry.id}
+              globalData={globalData}
+              ministry={ministry}
+            />
           ))}
         </div>
       </div>
