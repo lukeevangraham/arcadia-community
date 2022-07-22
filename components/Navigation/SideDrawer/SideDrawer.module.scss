@@ -20,6 +20,11 @@
   row-gap: 4rem;
   align-items: center;
 
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   &__open {
     transform: translateX(0);
   }

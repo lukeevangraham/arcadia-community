@@ -33,11 +33,13 @@ export default function Event({ eventData, globalData }) {
   return (
     <Layout globalData={globalData}>
       <div className="u-section-heading">
-        <h1>Upcoming Event</h1>
-        <h4>
-          &quot;Let us consider one another in order to stir up love and good
-          works&quot; Hebrews 10:24
-        </h4>
+        <div className="row">
+          <h1>Upcoming Event</h1>
+          <h4>
+            &quot;Let us consider one another in order to stir up love and good
+            works&quot; Hebrews 10:24
+          </h4>
+        </div>
       </div>
       <div className={`row ${classes.Event}`}>
         {console.log("EDATA: ", eventData)}

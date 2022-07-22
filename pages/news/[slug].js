@@ -32,8 +32,10 @@ export default function Article({ newsData, globalData }) {
   return (
     <Layout globalData={globalData}>
       <div className="u-section-heading">
-        <h1>News Article</h1>
-        <h4>Sharing Insights</h4>
+        <div className="row">
+          <h1>News Article</h1>
+          <h4>Sharing Insights</h4>
+        </div>
       </div>
       {console.log("nd: ", newsData)}
       <div className="row">
