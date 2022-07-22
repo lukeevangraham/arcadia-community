@@ -30,7 +30,7 @@ const Ministries = ({ globalData, ministriesData }) => (
       <div className="row">
         <div className={classes.Ministries__Menu}>
           {ministriesData.data.map((ministry) => (
-            <MinistryCard globalData={globalData} ministry={ministry} />
+            <MinistryCard key={ministry.id} globalData={globalData} ministry={ministry} />
           ))}
         </div>
       </div>
