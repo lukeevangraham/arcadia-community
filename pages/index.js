@@ -97,7 +97,7 @@ export default function Home({ homeData, globalData, youTubeData }) {
 
           <Sections sections={homeData.data.attributes.contentSections} />
 
-          <section className="row">
+          <section className="row u-padding-top-medium">
             <div className="u-section-heading">
               <h2>Featured News</h2>
               <h4>&quot;Through love serve one another&quot; Galatians 5:13</h4>

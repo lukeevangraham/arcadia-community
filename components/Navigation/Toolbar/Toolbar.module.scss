@@ -11,6 +11,11 @@
   grid-template-rows: 6rem;
   grid-row: 1 / 2;
 
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   &_homeBg {
     background-color: #03260e3e;
   }

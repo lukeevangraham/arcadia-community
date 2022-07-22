@@ -81,9 +81,12 @@ export default function Ministry({ ministryData, globalData }) {
               ) : null}
             </div>
           </div>
+        </div>
 
-          {/* EVENTS SECTION */}
-
+        {/* EVENTS SECTION */}
+        <div
+          className={`${classes.Ministry__EventWrapper} u-padding-top-medium`}
+        >
           {sortedDates.length ? (
             <>
               <div className="u-section-heading">
@@ -93,7 +96,7 @@ export default function Ministry({ ministryData, globalData }) {
                 </h4>
               </div>
               <div
-                className={`${classes.Ministry__Events} u-margin-bottom-medium`}
+                className={`${classes.Ministry__Events} u-padding-bottom-medium`}
               >
                 {sortedDates.map((event) => (
                   <EventCard
@@ -105,9 +108,11 @@ export default function Ministry({ ministryData, globalData }) {
               </div>
             </>
           ) : null}
+        </div>
 
-          {/* ARTICLES SECTION */}
+        {/* ARTICLES SECTION */}
 
+        <div className="row u-padding-top-medium">
           {ministryData.attributes.articles.data.length ? (
             <>
               <div className="u-section-heading">
@@ -116,7 +121,7 @@ export default function Ministry({ ministryData, globalData }) {
                   &quot;Through love serve one another&quot; Galatians 5:13
                 </h4>
               </div>
-              <div className="u-margin-bottom-medium">
+              <div className="u-padding-bottom-medium">
                 <div className={classes.Ministry__Articles}>
                   {ministryData.attributes.articles.data.map((article) => (
                     <ArticleCard

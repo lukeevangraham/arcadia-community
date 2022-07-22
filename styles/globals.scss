@@ -42,8 +42,12 @@ body {
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+  color: $color-primary;
+  transition: color 0.2s;
+
+  &:hover {
+    color: $color-primary-dark;
+  }
 }
 
 .row {
@@ -54,4 +58,3 @@ a {
     padding: 0 3rem;
   }
 }
-
