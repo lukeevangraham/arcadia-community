@@ -6,6 +6,7 @@ import classes from "./MinistryCard.module.scss";
 
 const MinistryCard = ({ ministry, globalData }) => (
   <div key={ministry.id}>
+    {console.log("CLASSES: ", classes)}
     <Link href={`/ministry/${ministry.attributes.Slug}`}>
       <a>
         <div className={classes.MinistryCard}>
