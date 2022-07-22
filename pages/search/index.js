@@ -32,7 +32,7 @@ const Search = ({ globalData }) => {
   useEffect(() => {
     if (!router.isReady) return;
     getRes(router);
-  }, [router.isReady, router.query]);
+  }, [router.isReady, router.query, router]);
 
   return (
     <Layout globalData={globalData}>
