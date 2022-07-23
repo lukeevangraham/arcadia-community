@@ -73,7 +73,7 @@ export default function Home({ homeData, globalData, youTubeData }) {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
-              <p className="u-margin-bottom-medium">
+              <p>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa,
                 ad dicta! Nisi, aspernatur hic ipsum magnam ullam quaerat
                 facilis sequi quod, illum quia nostrum ipsam quos numquam vero

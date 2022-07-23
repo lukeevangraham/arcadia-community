@@ -53,10 +53,10 @@
   background-color: $color-grey-light-1;
   border-radius: 0.7rem;
   overflow: hidden;
-  padding-top: 7rem;
+  padding-top: 12rem;
 
   @include respond(tab-port) {
-    padding-top: 22rem;
+    padding-top: 26rem;
   }
 
   &__underWelcome {
