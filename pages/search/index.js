@@ -38,7 +38,30 @@ const Search = ({ globalData }) => {
         {console.log("HERE: ", results)}
         <h2 style={{ marginTop: "2rem" }}>Search: {router.query.keyword} </h2>
         <div className={classes.Search}>
-          <div className={classes.Search__Articles}>
+          {results.ministryData
+            ? results.ministryData.data.map((ministry) => (
+                <MinistryCard
+                  key={ministry.id}
+                  globalData={globalData}
+                  ministry={ministry}
+                />
+              ))
+            : null}
+          {results.articleData
+            ? results.articleData.data.map((article) => (
+                <ArticleCard
+                  key={article.id}
+                  article={article}
+                  globalData={globalData}
+                />
+              ))
+            : null}
+          {results.eventData
+            ? results.eventData.data.map((event) => (
+                <EventCard key={event.id} event={event} />
+              ))
+            : null}
+          {/* <div className={classes.Search__Articles}>
             <h3>News Articles</h3>
             <div className={classes.Search__Articles_wrapper}>
               {results.articleData ? (
@@ -87,7 +110,7 @@ const Search = ({ globalData }) => {
                 )
               ) : null}
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </Layout>
