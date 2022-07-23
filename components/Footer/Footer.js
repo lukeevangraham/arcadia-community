@@ -1,28 +1,62 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import classes from "./Footer.module.scss";
 
 const Footer = ({ globalData }) => (
   <footer className={classes.Footer}>
     <div className={classes.Footer__columns__Logo}>
-          <Image
-            src={globalData.data.attributes.Navbar.logo.data.attributes.url}
-            alt={
-              globalData.data.attributes.Navbar.logo.data.attributes
-                .alternativeText
-            }
-            layout="fill"
-          />
-        </div>
+      <Image
+        src={globalData.data.attributes.Navbar.logo.data.attributes.url}
+        alt={
+          globalData.data.attributes.Navbar.logo.data.attributes.alternativeText
+        }
+        layout="fill"
+      />
+    </div>
     <div className={classes.Footer__columns}>
       <div>
-          <div className={classes.Footer__columns_header}>Arcadia Community Church</div>
+        <div className={classes.Footer__columns_header}>
+          Arcadia Community Church
+        </div>
         <div>121 Alice Street</div>
-        <div>Arcadia, CA 91006</div>
+        <div className="u-margin-bottom-small">Arcadia, CA 91006</div>
+        <h4>Service Info</h4>
+        <div>Sunday Service &mdash; 10:30 am</div>
       </div>
       <div>
-        <div className={classes.Footer__columns_header}>Service Info</div>
-        <div>Sunday Service &mdash; 10:30 am</div>
+        <h4>Useful Links</h4>
+        <ul>
+          {globalData.data.attributes.Navbar.links.map((link) => (
+            <li key={link.id}>
+              <Link href={link.url}>
+                <a>{link.text}</a>
+              </Link>
+            </li>
+          ))}
+          <li>
+            <Link href={globalData.data.attributes.Navbar.button.url}>
+              {globalData.data.attributes.Navbar.button.text}
+            </Link>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4>More from ACC</h4>
+        <ul>
+          {globalData.data.attributes.pages.data.map((page) => (
+            <li key={page.id}>
+              <Link href={`/pages/${page.attributes.slug}`}>
+                <a>{page.attributes.shortName}</a>
+              </Link>
+            </li>
+          ))}
+          <li>
+            <Link href={"/jobs"}>
+              <a>Job Openings</a>
+            </Link>
+          </li>
+        </ul>
       </div>
     </div>
     <div className={classes.Footer__bottomText}>
