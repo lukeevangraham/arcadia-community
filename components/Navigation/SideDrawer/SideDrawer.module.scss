@@ -47,6 +47,8 @@
   }
 
   &__search {
+    border-radius: 0.5rem;
+    overflow: hidden;
     grid-row: 2 / 3;
     &__Form {
       position: relative;
