@@ -21,6 +21,20 @@ const Footer = ({ globalData }) => (
         </div>
         <div>121 Alice Street</div>
         <div className="u-margin-bottom-small">Arcadia, CA 91006</div>
+        <div className={classes.Footer__columns_email}>
+          <a href="mailto:info@arcadia.church">
+            <svg>
+              <use xlinkHref="/images/sprite.svg#icon-mail"></use>
+            </svg>
+            <div>info@arcadia.church</div>
+          </a>
+        </div>
+        <div className={`${classes.Footer__columns_phone} u-margin-bottom-small`}>
+          <svg>
+            <use xlinkHref="/images/sprite.svg#icon-phone"></use>
+          </svg>
+          <div>(626) 445-9764</div>
+        </div>
         <h4>Service Info</h4>
         <div>Sunday Service &mdash; 10:30 am</div>
       </div>

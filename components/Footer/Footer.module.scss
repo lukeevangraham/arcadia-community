@@ -35,13 +35,33 @@
     }
 
     & > * {
-      flex: 0 1 20% ;
+      flex: 0 1 20%;
     }
 
     & > :first-child {
-
       flex: 1 1 60%;
+    }
+
+    svg {
+      width: $default-font-size;
+      height: $default-font-size;
+      margin-right: 1rem;
+      fill: $color-white;
+    }
+
+    &_email {
       // background-color: orangered;
+      a {
+        display: flex;
+        align-items: center;
+        margin-bottom: .4rem;
+      }
+    }
+
+    &_phone {
+      display: flex;
+      align-items: center;
+      margin-bottom: 3rem !important;
     }
 
     ul {
