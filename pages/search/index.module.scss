@@ -2,12 +2,10 @@
 
 .Search {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
 
   &__Articles {
-
-
     &_wrapper {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
@@ -17,7 +15,6 @@
     }
   }
   &__Events {
-
     &_wrapper {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
@@ -25,8 +22,6 @@
     }
   }
   &__Ministries {
-
-
     &_wrapper {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
