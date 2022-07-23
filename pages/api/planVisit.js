@@ -17,7 +17,7 @@ export default function handler(req, res) {
     let info = await transporter.sendMail({
       from: '"ARCADIA.CHURCH" <donotreply@arcadia.church>',
       // to: "info@arcadia.church",
-      to: "luke@grahamwebworks.com",
+      to: "luke@grahamwebworks.com, info@arcadia.church",
       subject: "Visit Plan from arcadia.church",
       text: `${req.body.name} (${req.body.email}) just sent this 'plan a visit' form via arcadia.church:
       

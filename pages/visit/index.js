@@ -1,19 +1,23 @@
 import { useState } from "react";
 import Layout from "../../components/Layout/Layout";
+import Sections from "../../components/Sections/Sections";
 import Button from "../../components/UI/Button/Button";
 import { fetchAPI } from "../../lib/api";
 
 import classes from "./index.module.scss";
 
 export async function getStaticProps() {
-  const [globalData] = await Promise.all([fetchAPI("/global?populate=deep")]);
+  const [globalData, visitData] = await Promise.all([
+    fetchAPI("/global?populate=deep"),
+    fetchAPI("/visit?populate=deep"),
+  ]);
   return {
-    props: { globalData },
+    props: { globalData, visitData },
     revalidate: 1,
   };
 }
 
-const Visit = ({ globalData }) => {
+const Visit = ({ globalData, visitData }) => {
   let [messageStatus, setMessageStatus] = useState();
 
   const sendMessage = async (e) => {
@@ -58,9 +62,7 @@ const Visit = ({ globalData }) => {
     default:
       requestForm = (
         <>
-          <div className={classes.Visit__topText}>
-
-          </div>
+          <div className={classes.Visit__topText}></div>
           <form onSubmit={sendMessage} className={classes.Visit__form}>
             <input
               className={classes.marginBottom}
@@ -131,93 +133,19 @@ const Visit = ({ globalData }) => {
           <div className="u-section-heading">
             <h1>Plan A Visit</h1>
           </div>
-
-          <div>
-            <h2>
-              <em>Getting to know each other</em>
-            </h2>
-            <p>
-              “We know meeting someone for the first time can be intimidating,
-              and going to a new church for the first time can be nerve-racking.
-              We want to help make your first experience at Arcadia Community
-              Church a great one.
-            </p>
-            <p>
-              <br />
-            </p>
-            <h3>SERVICE TIME</h3>
-            <p>
-              <strong>Sundays</strong>&nbsp;at&nbsp;<strong>10:30am</strong>
-            </p>
-            <h3>
-              <br />
-            </h3>
-            <h3>LOCATION &amp; DIRECTIONS</h3>
-            <p>121 Alice Street</p>
-            <p>Arcadia, CA 91006-3926</p>
-            <h3>
-              <br />
-            </h3>
-            <h3>PARKING</h3>
-            <p>
-              There are parking lots on the north and south side of the church.
-              Street parking is also permitted. Handicapped parking is found in
-              the north parking lot (on Genoa St.)
-            </p>
-            <h2>
-              <br />
-            </h2>
-            <h2>
-              <em>What can I expect?</em>
-            </h2>
-            <h3>HOW LONG IS AN ARCADIA COMMUNITY CHURCH SERVICE?</h3>
-            <p>
-              In total, an Arcadia Community Church service is about{" "}
-              <strong>60 minutes in length</strong>. Services begin with the
-              Arcadia Community Church band leading the church in music - song
-              lyrics are projected onto the screens so you can sing along and/or
-              engage with worship however you feel most comfortable. After the
-              music portion of service is complete, one of our pastors will come
-              out to share an encouraging and hope-filled message about Jesus.
-            </p>
-            <h3>
-              <br />
-            </h3>
-            <h3>WHAT&apos;S THE CULTURE LIKE AT ARCADIA COMMUNITY CHURCH?</h3>
-            <p>
-              Sunday’s at Arcadia Community Church are <strong>exciting</strong>
-              , <strong>casual</strong>, and <strong>relaxed</strong>. Come as
-              you are and expect to feel welcomed as our guest.
-            </p>
-            <h3>
-              <br />
-            </h3>
-            <h3>WHAT ABOUT MY KIDS?</h3>
-            <p>
-              We believe that kids should have a blast at church every single
-              week - and at Arcadia Kids, we make this a priority. The other
-              thing we make a priority is{" "}
-              <strong>your children’s safety</strong>. Because of that, we have
-              a detailed check-in process for our Arcadia Kids program the first
-              time that you visit. You’ll want to leave yourself an extra ten
-              minutes to get signed in for the Arcadia Kids experience. Arcadia
-              Kids is offered for kids{" "}
-              <strong>ages infant through Grade 8</strong>.
-            </p>
-          </div>
-
-          <div>
-            <h2><br /></h2>
+        </div>
+        <div>
+          <Sections sections={visitData.data.attributes.content} />
+          <div className="u-line-width-limited">
             <h2>Let us know you&apos;re coming</h2>
             <p>
-              Ready to check out Arcadia Community Church in person? We can&apos;t wait to
-              meet you. Simply fill out the form below and we&apos;ll make sure
-              to give you the <strong>VIP treatment</strong> upon your first
-              visit.
+              Ready to check out Arcadia Community Church in person? We
+              can&apos;t wait to meet you. Simply fill out the form below and
+              we&apos;ll make sure to give you the{" "}
+              <strong>VIP treatment</strong> upon your first visit.
             </p>
+            <div>{requestForm}</div>
           </div>
-
-          <div>{requestForm}</div>
         </div>
       </div>
     </Layout>
