@@ -1,6 +1,8 @@
 @import "../../../styles/abstracts/variables.scss";
 
 .Button {
+  text-decoration: none;
+
   &:link,
   &:visited {
     border-radius: 24%;
@@ -32,11 +34,10 @@
       transparent 50%,
       $color-ternary 50%,
       darken($color-primary, 10%) 100%
-
-      );
-      &:hover {
-        color: $color-white;
-      }
+    );
+    &:hover {
+      color: $color-white;
+    }
   }
 
   &:hover {
