@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Toolbar from "../Navigation/Toolbar/Toolbar";
 import SocialRow from "../UI/SocialRow/SocialRow";
@@ -10,9 +10,13 @@ import Arc from "../Home/Header/arc.svg";
 
 import classes from "./Layout.module.scss";
 
-const Layout = ({ children, homeHeaderImage, globalData }) => {
+const Layout = ({ children, homeHeaderImage, globalData, search }) => {
   const [showSideDrawer, setShowSideDrawer] = useState(false);
   const [showSearchBar, setShowSearchBar] = useState(false);
+
+  useEffect(() => {
+    search ? setShowSearchBar(false) : false;
+  }, [search]);
 
   const sideDrawerClosedHandler = () => {
     setShowSideDrawer(false);
@@ -24,6 +28,7 @@ const Layout = ({ children, homeHeaderImage, globalData }) => {
 
   const searchBarToggleHandler = () => {
     setShowSearchBar(!showSearchBar);
+    console.log("showing search")
   };
 
   return (
@@ -71,6 +76,7 @@ const Layout = ({ children, homeHeaderImage, globalData }) => {
         open={showSideDrawer}
         closed={sideDrawerClosedHandler}
         globalData={globalData}
+        searchClicked={searchBarToggleHandler}
       />
 
       <main className={classes.Layout__mainWrapper}>{children}</main>

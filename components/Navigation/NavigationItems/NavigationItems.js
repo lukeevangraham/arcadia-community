@@ -12,11 +12,14 @@ const NavigationItems = ({ links, button, fromSideDrawer, searchClicked }) => (
         </Link>
       </li>
     ))}
-    <li className={classes.Links__Search} onClick={searchClicked}>
-      <svg>
-        <use xlinkHref="/images/sprite.svg#icon-magnifying-glass"></use>
-      </svg>
-    </li>
+    {fromSideDrawer ? null : (
+      <li className={classes.Links__Search} onClick={searchClicked}>
+        <svg>
+          <use xlinkHref="/images/sprite.svg#icon-magnifying-glass"></use>
+        </svg>
+      </li>
+    )}
+
     {button ? (
       <div
         className={

@@ -11,9 +11,7 @@ import Layout from "../../components/Layout/Layout";
 import classes from "./index.module.scss";
 
 export async function getStaticProps() {
-  const [globalData, searchResponse] = await Promise.all([
-    fetchAPI("/global?populate=deep"),
-  ]);
+  const [globalData] = await Promise.all([fetchAPI("/global?populate=deep")]);
   return {
     props: { globalData },
     revalidate: 1,
@@ -35,47 +33,59 @@ const Search = ({ globalData }) => {
   }, [router.isReady, router.query, router]);
 
   return (
-    <Layout globalData={globalData}>
+    <Layout globalData={globalData} search>
       <div className="row">
         {console.log("HERE: ", results)}
-        <div>Search: {router.query.keyword} </div>
+        <h2 style={{ marginTop: "2rem" }}>Search: {router.query.keyword} </h2>
         <div className={classes.Search}>
           <div className={classes.Search__Articles}>
-            <div>News Articles</div>
+            <h3>News Articles</h3>
             <div className={classes.Search__Articles_wrapper}>
-              {results.articleData
-                ? results.articleData.data.map((article) => (
+              {results.articleData ? (
+                results.articleData.data.length > 0 ? (
+                  results.articleData.data.map((article) => (
                     <ArticleCard
                       key={article.id}
                       article={article}
                       globalData={globalData}
                     />
                   ))
-                : null}
+                ) : (
+                  <h4>No news articles found</h4>
+                )
+              ) : null}
             </div>
           </div>
           <div className={classes.Search__Events}>
-            <div>Events</div>
+            <h3>Events</h3>
             <div className={classes.Search__Events_wrapper}>
-              {results.eventData
-                ? results.eventData.data.map((event) => (
+              {results.eventData ? (
+                results.eventData.data.length > 0 ? (
+                  results.eventData.data.map((event) => (
                     <EventCard key={event.id} event={event} />
                   ))
-                : null}
+                ) : (
+                  <h4>No events found</h4>
+                )
+              ) : null}
             </div>
           </div>
           <div className={classes.Search__Ministries}>
-            <div>Ministries</div>
+            <h3>Ministries</h3>
             <div className={classes.Search__Ministries_wrapper}>
-              {results.ministryData
-                ? results.ministryData.data.map((ministry) => (
+              {results.ministryData ? (
+                results.ministryData.data.length > 0 ? (
+                  results.ministryData.data.map((ministry) => (
                     <MinistryCard
                       key={ministry.id}
                       globalData={globalData}
                       ministry={ministry}
                     />
                   ))
-                : null}
+                ) : (
+                  <h4>No ministries found</h4>
+                )
+              ) : null}
             </div>
           </div>
         </div>
