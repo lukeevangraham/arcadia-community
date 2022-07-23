@@ -23,9 +23,10 @@
 
   &__image {
     position: relative;
-    overflow: hidden;
     aspect-ratio: 16 / 9;
     z-index: 1;
+    border-radius: 1rem;
+    overflow: hidden;
   }
 
   &__title {
