@@ -35,13 +35,15 @@ const Page = ({ pageData, globalData }) => {
 
   return (
     <Layout globalData={globalData}>
-      <div className="row">
-        {console.log("PD: ", pageData)}
-        <div className="u-section-heading">
-          <h1>{pageData.attributes.shortName}</h1>
+      <>
+        <div className="row">
+          {console.log("PD: ", pageData)}
+          <div className="u-section-heading">
+            <h1>{pageData.attributes.shortName}</h1>
+          </div>
         </div>
         {renderSections}
-      </div>
+      </>
     </Layout>
   );
 };
