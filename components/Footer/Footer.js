@@ -6,19 +6,26 @@ import classes from "./Footer.module.scss";
 const Footer = ({ globalData }) => (
   <footer className={classes.Footer}>
     <div className={classes.Footer__columns__Logo}>
-      <Image
-        src={globalData.data.attributes.Navbar.logo.data.attributes.url}
-        alt={
-          globalData.data.attributes.Navbar.logo.data.attributes.alternativeText
-        }
-        layout="fill"
-      />
+      <Link href={"/"}>
+        <Image
+          src={globalData.data.attributes.Navbar.logo.data.attributes.url}
+          alt={
+            globalData.data.attributes.Navbar.logo.data.attributes
+              .alternativeText
+          }
+          layout="fill"
+        />
+      </Link>
     </div>
     <div className={classes.Footer__columns}>
       <div>
-        <div className={classes.Footer__columns_header}>
-          Arcadia Community Church
-        </div>
+        <Link href={"/"}>
+          <a>
+            <div className={classes.Footer__columns_header}>
+              Arcadia Community Church
+            </div>
+          </a>
+        </Link>
         <div>121 Alice Street</div>
         <div className="u-margin-bottom-small">Arcadia, CA 91006</div>
         <div className={classes.Footer__columns_email}>
@@ -29,7 +36,9 @@ const Footer = ({ globalData }) => (
             <div>info@arcadia.church</div>
           </a>
         </div>
-        <div className={`${classes.Footer__columns_phone} u-margin-bottom-small`}>
+        <div
+          className={`${classes.Footer__columns_phone} u-margin-bottom-small`}
+        >
           <svg>
             <use xlinkHref="/images/sprite.svg#icon-phone"></use>
           </svg>

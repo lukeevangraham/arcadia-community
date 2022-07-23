@@ -81,6 +81,7 @@
       font-size: calc(100% + 2px);
       margin-bottom: 0.4rem;
       letter-spacing: 1.5px;
+      cursor: pointer;
     }
 
     & > * {
@@ -95,6 +96,7 @@
       width: 6rem;
       margin: 1rem 0;
       // margin: 5rem auto;
+      cursor: pointer;
     }
   }
 
