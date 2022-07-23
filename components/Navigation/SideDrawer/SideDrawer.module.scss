@@ -69,10 +69,10 @@
       }
 
       &_SearchButton {
+        height: 100%;
         position: absolute;
         right: 0;
         top: 0;
-        height: 3.8rem;
         background-color: $color-grey-light-2;
         // transform: translateY(-50%);
         display: flex;

@@ -32,21 +32,30 @@ const Search = ({ globalData }) => {
     getRes(router);
   }, [router.isReady, router.query, router]);
 
+  const eventLength = results.eventData ? results.eventData.data.length : null;
+  const articleLength = results.articleData
+    ? results.articleData.data.length
+    : null;
+  const ministryLength = results.ministryData
+    ? results.ministryData.data.length
+    : null;
+
   return (
     <Layout globalData={globalData} search>
       <div className="row">
-        {console.log("HERE: ", results)}
         <h2 style={{ marginTop: "2rem" }}>Search: {router.query.keyword} </h2>
         <div className={classes.Search}>
-          {results.ministryData
-            ? results.ministryData.data.map((ministry) => (
-                <MinistryCard
-                  key={ministry.id}
-                  globalData={globalData}
-                  ministry={ministry}
-                />
-              ))
-            : null}
+          {eventLength == 0 && articleLength == 0 && ministryLength == 0 ? (
+            <h3>No results found</h3>
+          ) : results.ministryData ? (
+            results.ministryData.data.map((ministry) => (
+              <MinistryCard
+                key={ministry.id}
+                globalData={globalData}
+                ministry={ministry}
+              />
+            ))
+          ) : null}
           {results.articleData
             ? results.articleData.data.map((article) => (
                 <ArticleCard
