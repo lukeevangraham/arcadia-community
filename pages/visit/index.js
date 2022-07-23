@@ -136,15 +136,17 @@ const Visit = ({ globalData, visitData }) => {
         </div>
         <div>
           <Sections sections={visitData.data.attributes.content} />
-          <div className="u-line-width-limited">
-            <h2>Let us know you&apos;re coming</h2>
-            <p>
-              Ready to check out Arcadia Community Church in person? We
-              can&apos;t wait to meet you. Simply fill out the form below and
-              we&apos;ll make sure to give you the{" "}
-              <strong>VIP treatment</strong> upon your first visit.
-            </p>
-            <div>{requestForm}</div>
+          <div className="row">
+            <div className="u-line-width-limited">
+              <h2>Let us know you&apos;re coming</h2>
+              <p>
+                Ready to check out Arcadia Community Church in person? We
+                can&apos;t wait to meet you. Simply fill out the form below and
+                we&apos;ll make sure to give you the{" "}
+                <strong>VIP treatment</strong> upon your first visit.
+              </p>
+              <div>{requestForm}</div>
+            </div>
           </div>
         </div>
       </div>
