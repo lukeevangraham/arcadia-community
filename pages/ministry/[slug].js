@@ -47,7 +47,6 @@ export default function Ministry({ ministryData, globalData }) {
 
   return (
     <Layout globalData={globalData}>
-      {console.log("MD: ", ministryData)}
       <div className={classes.Ministry}>
         <div className="row">
           <div className="u-section-heading">

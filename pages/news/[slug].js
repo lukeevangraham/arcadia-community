@@ -28,13 +28,15 @@ export async function getStaticProps({ params }) {
   };
 }
 
+const dateOptions = { month: "short", day: "numeric", year: "numeric" };
+
 export default function Article({ newsData, globalData }) {
   return (
     <Layout globalData={globalData}>
       <div className="u-section-heading">
         <div className="row">
-          <h1>News Article</h1>
-          <h4>Sharing Insights</h4>
+          <h1>{newsData.attributes.title}</h1>
+          <h4>News Article</h4>
         </div>
       </div>
       {console.log("nd: ", newsData)}
@@ -52,9 +54,29 @@ export default function Article({ newsData, globalData }) {
               <DefaultBgImage globalData={globalData} />
             )}
           </div>
-          <div>{newsData.attributes.title}</div>
-          <div>{newsData.attributes.dateline}</div>
-          <div>{newsData.attributes.author}</div>
+        </div>
+        <div className="u-line-width-limited">
+          {/* <div className={classes.Article__title}>
+            {newsData.attributes.title}
+          </div> */}
+          <div className={classes.Article__Info}>
+            <div>
+              <svg>
+                <use xlinkHref="/images/sprite.svg#icon-user"></use>
+              </svg>
+              <div>{newsData.attributes.author}</div>
+            </div>
+            <div>
+              <svg>
+                <use xlinkHref="/images/sprite.svg#icon-calendar"></use>
+              </svg>
+              <div>{new Date(newsData.attributes.dateline).toLocaleDateString(
+              "en-US",
+              dateOptions
+            )}</div>
+              
+            </div>
+          </div>
           <div
             dangerouslySetInnerHTML={{ __html: newsData.attributes.body }}
           ></div>
