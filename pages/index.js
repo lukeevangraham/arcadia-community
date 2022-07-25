@@ -88,6 +88,7 @@ export default function Home({ homeData, globalData, youTubeData }) {
               <h4>&quot;Through love serve one another&quot; Galatians 5:13</h4>
             </div>
 
+            {console.log("HERE: ", homeData.data.attributes.events)}
             <div className={`${classes.main__Events}`}>
               {homeData.data.attributes.events.data.map((event) => (
                 <EventCard event={event} key={event.id} />
