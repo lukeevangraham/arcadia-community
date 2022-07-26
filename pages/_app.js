@@ -22,19 +22,19 @@ function MyApp({ Component, pageProps }) {
           locale: "en_US",
           images: [
             {
-              url: 'https://res.cloudinary.com/daix3hjqf/image/upload/v1654292460/Arcadia_Community_Church_9ab0277d0b.jpg',
+              url: "https://res.cloudinary.com/daix3hjqf/image/upload/v1654292460/Arcadia_Community_Church_9ab0277d0b.jpg",
               width: 2000,
               height: 1333,
-              alt: 'Arcadia Community Church Building',
+              alt: "Arcadia Community Church Building",
             },
             {
-              url: 'https://res.cloudinary.com/daix3hjqf/image/upload/v1654292461/thumbnail_Arcadia_Community_Church_9ab0277d0b.jpg',
+              url: "https://res.cloudinary.com/daix3hjqf/image/upload/v1654292461/thumbnail_Arcadia_Community_Church_9ab0277d0b.jpg",
               width: 234,
               height: 156,
-              alt: 'Arcadia Community Church Building',
+              alt: "Arcadia Community Church Building",
             },
           ],
-          site_name: "Arcadia Community Church"
+          site_name: "Arcadia Community Church",
         }}
       />
       <Component {...pageProps} />;
