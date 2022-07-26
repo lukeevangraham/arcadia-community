@@ -42,7 +42,6 @@ export default function Event({ eventData, globalData }) {
         </div>
       </div>
       <div className={`row ${classes.Event}`}>
-        {console.log("EDATA: ", eventData)}
         <div className={classes.Event__image}>
           <Image
             src={eventData.attributes.image.data.attributes.url}

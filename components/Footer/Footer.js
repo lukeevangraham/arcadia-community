@@ -79,6 +79,11 @@ const Footer = ({ globalData }) => (
               <a>Job Openings</a>
             </Link>
           </li>
+          <li>
+            <Link href={"/prayer"}>
+              <a>Request Prayer</a>
+            </Link>
+          </li>
         </ul>
       </div>
     </div>
