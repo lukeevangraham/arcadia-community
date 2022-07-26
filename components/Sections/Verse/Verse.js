@@ -4,7 +4,6 @@ import classes from "./Verse.module.scss";
 
 const Verse = ({ globalData, data }) => (
   <div className={classes.Verse}>
-    {console.log("GD: ", data)}
     <h4 className={classes.Verse__Text}>{data}</h4>
     <div className={classes.Verse__Logo}>
       <Image
