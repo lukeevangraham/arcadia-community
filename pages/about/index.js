@@ -56,8 +56,6 @@ const About = ({ globalData, staffData, aboutData }) => (
           </div>
         </section>
 
-        {console.log("ABOUT DA: ", aboutData.data.attributes)}
-
         <section className={classes.About__serviceTime}>
           <div className={classes.About__serviceTime_photo}>
             <Image
@@ -124,7 +122,7 @@ const About = ({ globalData, staffData, aboutData }) => (
           style={{ border: 0 }}
           allowFullScreen=""
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+          referrerPolicy="no-referrer-when-downgrade"
         ></iframe>
         <section>
           <Verse

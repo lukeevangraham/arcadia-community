@@ -1,3 +1,4 @@
+import SEO from "../../components/SEO/SEO";
 import { fetchAPI } from "../../lib/api";
 import MinistryCard from "../../components/Ministries/MinistryCard";
 import Layout from "../../components/Layout/Layout";
@@ -16,27 +17,35 @@ export async function getStaticProps() {
 }
 
 const Ministries = ({ globalData, ministriesData }) => (
-  <Layout globalData={globalData}>
-    <section className={classes.Ministries}>
-      <div className="u-section-heading">
+  <>
+    <SEO
+      metaData={{
+        metaTitle: `Ministries`,
+        metaDescription: `Listing of church ministries for learning, growing, and serving. Contains details including ministry events, and leader info.`,
+      }}
+    />
+    <Layout globalData={globalData}>
+      <section className={classes.Ministries}>
+        <div className="u-section-heading">
+          <div className="row">
+            <h1>Our Ministries</h1>
+            <h4>&quot;Through love serve one another&quot; Galatians 5:13</h4>
+          </div>
+        </div>
         <div className="row">
-          <h1>Our Ministries</h1>
-          <h4>&quot;Through love serve one another&quot; Galatians 5:13</h4>
+          <div className={classes.Ministries__Menu}>
+            {ministriesData.data.map((ministry) => (
+              <MinistryCard
+                key={ministry.id}
+                globalData={globalData}
+                ministry={ministry}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-      <div className="row">
-        <div className={classes.Ministries__Menu}>
-          {ministriesData.data.map((ministry) => (
-            <MinistryCard
-              key={ministry.id}
-              globalData={globalData}
-              ministry={ministry}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-  </Layout>
+      </section>
+    </Layout>
+  </>
 );
 
 export default Ministries;

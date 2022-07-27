@@ -45,7 +45,6 @@ export default function Event({ eventData, globalData }) {
           shareImage: eventData.attributes.image,
         }}
       />
-      {console.log("ED: ", eventData)}
       <Layout globalData={globalData}>
         <div className="u-section-heading">
           <div className="row">

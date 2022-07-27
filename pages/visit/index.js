@@ -1,3 +1,4 @@
+import SEO from "../../components/SEO/SEO";
 import { useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import Sections from "../../components/Sections/Sections";
@@ -127,6 +128,8 @@ const Visit = ({ globalData, visitData }) => {
       break;
   }
   return (
+    <>
+    <SEO metaData={{ metaTitle: "Join Us Sunday" }} />
     <Layout globalData={globalData}>
       <div className={classes.Visit}>
         <div className="row">
@@ -151,6 +154,7 @@ const Visit = ({ globalData, visitData }) => {
         </div>
       </div>
     </Layout>
+    </>
   );
 };
 

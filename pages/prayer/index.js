@@ -1,3 +1,4 @@
+import SEO from "../../components/SEO/SEO";
 import { useState } from "react";
 import Layout from "../../components/Layout/Layout";
 import Button from "../../components/UI/Button/Button";
@@ -90,18 +91,26 @@ const Prayer = ({ globalData }) => {
       break;
   }
   return (
-    <Layout globalData={globalData}>
-      <div className={classes.Prayer}>
-        <div className="row">
-          <div className="u-section-heading">
-            <h1>Prayer Request</h1>
-            <h4>Prayer changes Everything</h4>
-          </div>
+    <>
+      <SEO
+        metaData={{
+          metaTitle: "Prayer",
+          metaDescription: "Share a prayer request with our prayer team",
+        }}
+      />
+      <Layout globalData={globalData}>
+        <div className={classes.Prayer}>
+          <div className="row">
+            <div className="u-section-heading">
+              <h1>Prayer Request</h1>
+              <h4>Prayer changes Everything</h4>
+            </div>
 
-          <div>{requestForm}</div>
+            <div>{requestForm}</div>
+          </div>
         </div>
-      </div>
-    </Layout>
+      </Layout>
+    </>
   );
 };
 

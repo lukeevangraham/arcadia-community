@@ -1,3 +1,4 @@
+import SEO from "../../components/SEO/SEO";
 import { getAllPageSlugs, getPageData, fetchAPI } from "../../lib/api";
 import Layout from "../../components/Layout/Layout";
 import Sections from "../../components/Sections/Sections";
@@ -16,7 +17,6 @@ export async function getStaticProps({ params }) {
     fetchAPI("/global?populate=deep"),
     getPageData(params.slug),
   ]);
-  console.log("PD: ", pageData);
   return {
     props: {
       globalData,
@@ -34,17 +34,46 @@ const Page = ({ pageData, globalData }) => {
   );
 
   return (
-    <Layout globalData={globalData}>
-      <>
-        <div className="row">
-          {console.log("PD: ", pageData)}
-          <div className="u-section-heading">
-            <h1>{pageData.attributes.shortName}</h1>
+    <>
+      <SEO
+        metaData={
+          pageData.attributes.metadata &&
+          pageData.attributes.metadata.metaTitle &&
+          pageData.attributes.metadata.metaDescription &&
+          pageData.attributes.metadata.shareImage
+            ? {
+                metaTitle: pageData.attributes.metadata.metaTitle,
+                metaDescription: pageData.attributes.metadata.metaDescription,
+                shareImage: pageData.attributes.metadata.shareImage,
+              }
+            : pageData.attributes.metadata &&
+              pageData.attributes.metadata.metaTitle &&
+              pageData.attributes.metadata.metaDescription
+            ? {
+                metaTitle: pageData.attributes.metadata.metaTitle,
+                metaDescription: pageData.attributes.metadata.metaDescription,
+              }
+            : pageData.attributes.metadata &&
+              pageData.attributes.metadata.metaTitle
+            ? {
+                metaTitle: pageData.attributes.metadata.metaTitle,
+              }
+            : {
+                metaTitle: pageData.attributes.shortName,
+              }
+        }
+      />
+      <Layout globalData={globalData}>
+        <>
+          <div className="row">
+            <div className="u-section-heading">
+              <h1>{pageData.attributes.shortName}</h1>
+            </div>
           </div>
-        </div>
-        {renderSections}
-      </>
-    </Layout>
+          {renderSections}
+        </>
+      </Layout>
+    </>
   );
 };
 

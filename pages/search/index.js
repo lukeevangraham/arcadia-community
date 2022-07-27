@@ -1,3 +1,4 @@
+import SEO from "../../components/SEO/SEO";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import ArticleCard from "../../components/Articles/ArticleCard/ArticleCard";
@@ -41,6 +42,8 @@ const Search = ({ globalData }) => {
     : null;
 
   return (
+    <>
+    <SEO metaData={{ metaTitle: "Search" }} />
     <Layout globalData={globalData} search>
       <div className="row">
         <h2 style={{ marginTop: "2rem" }}>Search: {router.query.keyword} </h2>
@@ -123,6 +126,8 @@ const Search = ({ globalData }) => {
         </div>
       </div>
     </Layout>
+
+    </>
   );
 };
 
