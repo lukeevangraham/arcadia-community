@@ -138,7 +138,7 @@ const Visit = ({ globalData, visitData }) => {
           </div>
         </div>
         <div>
-          <Sections sections={visitData.data.attributes.content} />
+          <Sections sections={visitData.data.attributes.content} globalData={globalData} />
           <div className="row">
             <div className="u-line-width-limited">
               <h2>Let us know you&apos;re coming</h2>

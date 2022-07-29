@@ -28,7 +28,7 @@ export async function getStaticProps({ params }) {
 
 const Page = ({ pageData, globalData }) => {
   let renderSections = pageData.attributes.contentSections ? (
-    <Sections sections={pageData.attributes.contentSections} />
+    <Sections sections={pageData.attributes.contentSections} globalData={globalData} />
   ) : (
     <div>Loading...</div>
   );

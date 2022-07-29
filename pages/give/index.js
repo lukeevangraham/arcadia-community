@@ -27,7 +27,7 @@ const Give = ({ globalData, givingData }) => (
           </h4>
         </div>
       </div>
-      <Sections sections={givingData.data.attributes.contentSections} />
+      <Sections sections={givingData.data.attributes.contentSections} globalData={globalData} />
     </Layout>
   </>
 );

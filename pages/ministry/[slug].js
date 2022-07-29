@@ -158,7 +158,7 @@ export default function Ministry({ ministryData, globalData }) {
             ) : null}
           </div>
           <div className="row">
-            <Sections sections={ministryData.attributes.contentSections} />
+            <Sections sections={ministryData.attributes.contentSections} globalData={globalData} />
           </div>
         </div>
       </Layout>

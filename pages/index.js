@@ -92,7 +92,7 @@ export default function Home({ homeData, globalData, youTubeData }) {
             </div>
           </section>
 
-          <Sections sections={homeData.data.attributes.contentSections} />
+          <Sections sections={homeData.data.attributes.contentSections} globalData={globalData} />
 
           <section className="row u-padding-top-medium">
             <div className="u-section-heading">

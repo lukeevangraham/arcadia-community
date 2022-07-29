@@ -12,7 +12,7 @@ const sectionComponents = {
 };
 
 // DISPLAY A SECTION INDIVIDUALLY
-const Section = ({ sectionData }) => {
+const Section = ({ sectionData, globalData }) => {
   const SectionComponent = sectionComponents[sectionData.__component];
 
   if (!SectionComponent) {
@@ -20,13 +20,13 @@ const Section = ({ sectionData }) => {
   }
 
   // DISPLAY THE SECTION
-  return <SectionComponent data={sectionData} />;
+  return <SectionComponent data={sectionData} globalData={globalData} />;
 };
 
-const Sections = ({ sections }) => (
+const Sections = ({ sections, globalData }) => (
   <>
     {sections.map((section, index) => (
-      <Section sectionData={section} key={index} />
+      <Section sectionData={section} globalData={globalData} key={index} />
     ))}
   </>
 );
