@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Subscribe from "../Footer/Subscribe/Subscribe";
 
 import classes from "./Footer.module.scss";
 
@@ -85,6 +86,14 @@ const Footer = ({ globalData }) => (
             </Link>
           </li>
         </ul>
+      </div>
+      <div className={classes.Footer__columns__subscribe}>
+        <h4>Subscribe</h4>
+        <div>
+          Receive our email newsletter to get helpful content and keep up to
+          date with our happenings.
+        </div>
+        <Subscribe />
       </div>
     </div>
     <div className={classes.Footer__bottomText}>

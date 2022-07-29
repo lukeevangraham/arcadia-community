@@ -39,7 +39,7 @@
     }
 
     & > :first-child {
-      flex: 1 1 60%;
+      flex: 1 1 35%;
     }
 
     svg {
@@ -54,7 +54,7 @@
       a {
         display: flex;
         align-items: center;
-        margin-bottom: .4rem;
+        margin-bottom: 0.4rem;
       }
     }
 
@@ -97,6 +97,16 @@
       margin: 1rem 0;
       // margin: 5rem auto;
       cursor: pointer;
+    }
+
+    &__subscribe {
+      font-size: 1.6rem;
+      flex-basis: 25%;
+      line-height: 1.5;
+
+      div {
+        padding-top: 0.5rem;
+      }
     }
   }
 

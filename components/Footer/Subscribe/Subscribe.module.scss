@@ -1,0 +1,47 @@
+@import "../../../styles/abstracts/variables";
+
+.Form {
+  // padding-top: 1rem;
+  margin-top: 1.3rem;
+  width: 100%;
+  position: relative;
+  color: inherit;
+
+  input {
+    font-family: "Nunito Sans";
+    padding: 1rem 0.9rem;
+    border: 1px solid rgba(238, 238, 238, 0.294);
+    // margin: 0.6rem 0;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    width: 100%;
+    background-color: transparent;
+    color: rgba(238, 238, 238, 0.794);
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+    }
+  }
+
+  button {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    height: 100%;
+    padding: 0 1rem;
+    color: $color-primary;
+    border-radius: 0 5px 5px 0;
+    border-width: 1px;
+    border-style: solid;
+    border: none;
+    font-size: 2rem;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $color-primary;
+      color: $color-white;
+      transition: all 0.3s;
+    }
+  }
+}
