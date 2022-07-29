@@ -29,7 +29,7 @@ const MinistryCard = ({ ministry, globalData }) => {
   return (
     <div key={ministry.id} className={classes.MinistryCard}>
       {ministry.attributes.RedirectToAnotherSite ? (
-        <a href={ministry.attributes.RedirectToAnotherSite} target="_blank">
+        <a href={ministry.attributes.RedirectToAnotherSite} target="_blank" rel="noreferrer">
           {renderMinCardInterior}
         </a>
       ) : (
