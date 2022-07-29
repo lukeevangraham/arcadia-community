@@ -7,14 +7,17 @@ import { fetchAPI } from "../../lib/api";
 import classes from "./index.module.scss";
 
 export async function getStaticProps() {
-  const [globalData] = await Promise.all([fetchAPI("/global?populate=deep")]);
+  const [globalData, prayerData] = await Promise.all([
+    fetchAPI("/global?populate=deep"),
+    fetchAPI("prayer?populate=deep"),
+  ]);
   return {
-    props: { globalData },
+    props: { globalData, prayerData },
     revalidate: 1,
   };
 }
 
-const Prayer = ({ globalData }) => {
+const Prayer = ({ globalData, prayerData }) => {
   let [messageStatus, setMessageStatus] = useState();
 
   const sendMessage = async (e) => {
@@ -35,7 +38,6 @@ const Prayer = ({ globalData }) => {
     });
 
     const result = await res.json();
-    console.log("RES: ", result);
     result.status == 200 ? setMessageStatus(200) : null;
   };
 
@@ -103,8 +105,10 @@ const Prayer = ({ globalData }) => {
           <div className="row">
             <div className="u-section-heading">
               <h1>Prayer Request</h1>
-              <h4>Prayer changes Everything</h4>
+              <h4>Prayer changes everything</h4>
             </div>
+
+            <div dangerouslySetInnerHTML={{ __html: prayerData.topText }}></div>
 
             <div>{requestForm}</div>
           </div>
