@@ -1,4 +1,5 @@
 @import "../../styles/abstracts/variables";
+@import "../../styles/abstracts/mixins";
 
 .Sermons {
   // background-color: orangered;
@@ -7,8 +8,20 @@
 
   &__Wrapper {
     display: flex;
-    gap: 1%;
+    gap: 1rem;
     width: 100%;
     justify-content: space-evenly;
+
+    & > * {
+      width: 30%;
+    }
+
+    @include respond(tab-port) {
+      flex-direction: column;
+
+      & > * {
+        width: 100%;
+      }
+    }
   }
 }
