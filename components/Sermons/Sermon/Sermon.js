@@ -5,7 +5,7 @@ const Sermon = ({ sermon }) => (
   <div className={classes.Sermon}>
     <div className={classes.Sermon__Image}>
       <a
-        href={`https://www.youtube.com/watch?v=cOW-1RPAO1s&list=PLchW5rz4AxRIYM075lL7iNFXNiyvS46Kd&index=1`}
+        href={`https://www.youtube.com/watch?v=${sermon.contentDetails.videoId}`}
         target="_blank"
         rel="noreferrer"
       >
