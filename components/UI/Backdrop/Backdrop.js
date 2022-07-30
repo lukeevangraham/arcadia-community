@@ -1,7 +1,7 @@
 import classes from "./Backdrop.module.scss";
 
 const Backdrop = ({ show, clicked }) =>
-//   show ? (
+  show ? (
     <div
       className={
         show
@@ -10,6 +10,6 @@ const Backdrop = ({ show, clicked }) =>
       }
       onClick={clicked}
     ></div>
-//   ) : null;
+  ) : null;
 
 export default Backdrop;

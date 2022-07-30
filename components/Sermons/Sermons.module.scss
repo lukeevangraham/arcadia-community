@@ -1,0 +1,14 @@
+@import "../../styles/abstracts/variables";
+
+.Sermons {
+  // background-color: orangered;
+  background-color: $color-grey-light-2;
+  width: 100%;
+
+  &__Wrapper {
+    display: flex;
+    gap: 1%;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+}

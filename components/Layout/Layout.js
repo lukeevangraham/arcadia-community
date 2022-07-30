@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Modal from "../UI/Modal/Modal";
 import Toolbar from "../Navigation/Toolbar/Toolbar";
 import SocialRow from "../UI/SocialRow/SocialRow";
 import Header from "../Home/Header/Header";
@@ -13,6 +14,7 @@ import classes from "./Layout.module.scss";
 const Layout = ({ children, homeHeaderImage, globalData, search }) => {
   const [showSideDrawer, setShowSideDrawer] = useState(false);
   const [showSearchBar, setShowSearchBar] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     search ? setShowSearchBar(false) : false;
@@ -28,21 +30,42 @@ const Layout = ({ children, homeHeaderImage, globalData, search }) => {
 
   const searchBarToggleHandler = () => {
     setShowSearchBar(!showSearchBar);
-    console.log("showing search")
+    console.log("showing search");
   };
 
   return (
-    <div className={classes.Layout}>
-      <SocialRow />
-      {homeHeaderImage ? (
-        <>
-          <Header homeHeaderImage={homeHeaderImage}>
+    <>
+      <Modal show={showModal} modalClosed={setShowModal}></Modal>
+      <div className={classes.Layout}>
+        <SocialRow />
+        {homeHeaderImage ? (
+          <>
+            <Header homeHeaderImage={homeHeaderImage}>
+              <Toolbar
+                drawerToggleClicked={sideDrawerToggleHandler}
+                globalData={globalData}
+                searchClicked={searchBarToggleHandler}
+                home
+              />
+              {/* <div className={classes.Arc}>
+            <Image
+              src={Arc}
+              layout="fill"
+              objectFit="fill"
+              className={classes.ArcImage}
+            ></Image>
+          </div> */}
+            </Header>
+            <SearchBar open={showSearchBar} home />
+          </>
+        ) : (
+          <>
             <Toolbar
-              drawerToggleClicked={sideDrawerToggleHandler}
               globalData={globalData}
               searchClicked={searchBarToggleHandler}
-              home
+              drawerToggleClicked={sideDrawerToggleHandler}
             />
+            <SearchBar open={showSearchBar} />
             {/* <div className={classes.Arc}>
             <Image
               src={Arc}
@@ -51,37 +74,19 @@ const Layout = ({ children, homeHeaderImage, globalData, search }) => {
               className={classes.ArcImage}
             ></Image>
           </div> */}
-          </Header>
-          <SearchBar open={showSearchBar} home />
-        </>
-      ) : (
-        <>
-          <Toolbar
-            globalData={globalData}
-            searchClicked={searchBarToggleHandler}
-            drawerToggleClicked={sideDrawerToggleHandler}
-          />
-          <SearchBar open={showSearchBar} />
-          {/* <div className={classes.Arc}>
-            <Image
-              src={Arc}
-              layout="fill"
-              objectFit="fill"
-              className={classes.ArcImage}
-            ></Image>
-          </div> */}
-        </>
-      )}
-      <SideDrawer
-        open={showSideDrawer}
-        closed={sideDrawerClosedHandler}
-        globalData={globalData}
-        searchClicked={searchBarToggleHandler}
-      />
+          </>
+        )}
+        <SideDrawer
+          open={showSideDrawer}
+          closed={sideDrawerClosedHandler}
+          globalData={globalData}
+          searchClicked={searchBarToggleHandler}
+        />
 
-      <main className={classes.Layout__mainWrapper}>{children}</main>
-      <Footer globalData={globalData} />
-    </div>
+        <main className={classes.Layout__mainWrapper}>{children}</main>
+        <Footer globalData={globalData} />
+      </div>
+    </>
   );
 };
 

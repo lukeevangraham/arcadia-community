@@ -1,32 +1,44 @@
 // import { NextSeo } from "next-seo";
 import SEO from "../components/SEO/SEO";
 import Image from "next/image";
+import Sermons from "../components/Sermons/Sermons";
 import Layout from "../components/Layout/Layout";
 import EventCard from "../components/Events/EventCard/EventCard";
 import ArticleCard from "../components/Articles/ArticleCard/ArticleCard";
 import Sections from "../components/Sections/Sections";
 import { fetchAPI } from "../lib/api";
-import { streamYouTubeOptions } from "../lib/youTube";
+import { streamYouTubeOptions, sermonYouTubeOptions } from "../lib/youTube";
 
 import classes from "./index.module.scss";
 
 export async function getStaticProps() {
-  const [homeData, globalData, youTubeData] = await Promise.all([
+  const [homeData, globalData, youTubeData, sermonData] = await Promise.all([
     fetchAPI("/home?populate=deep"),
     fetchAPI("/global?populate=deep"),
     streamYouTubeOptions("PLchW5rz4AxRI3q73zPOnHzdAYcO1k7Djh"),
+    sermonYouTubeOptions("PLchW5rz4AxRIYM075lL7iNFXNiyvS46Kd"),
   ]);
+
   return {
-    props: { homeData, globalData, youTubeData },
+    props: {
+      homeData,
+      globalData,
+      youTubeData,
+      sermonData: JSON.stringify(sermonData),
+    },
     revalidate: 1,
   };
 }
 
-export default function Home({ homeData, globalData, youTubeData }) {
+export default function Home({
+  homeData,
+  globalData,
+  youTubeData,
+  sermonData,
+}) {
   return (
     <>
       <SEO metaData={homeData.data.attributes.SEO[0]} />
-
       <Layout
         homeHeaderImage={homeData.data.attributes.headerImage.data.attributes}
         globalData={globalData}
@@ -92,7 +104,12 @@ export default function Home({ homeData, globalData, youTubeData }) {
             </div>
           </section>
 
-          <Sections sections={homeData.data.attributes.contentSections} globalData={globalData} />
+          <Sermons sermons={JSON.parse(sermonData)} />
+
+          <Sections
+            sections={homeData.data.attributes.contentSections}
+            globalData={globalData}
+          />
 
           <section className="row u-padding-top-medium">
             <div className="u-section-heading">

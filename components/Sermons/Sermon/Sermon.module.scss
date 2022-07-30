@@ -1,0 +1,63 @@
+@import "../../../styles/abstracts/variables";
+
+.Sermon {
+  position: relative;
+  width: 31%;
+  // box-shadow: 0 0 5px $color-grey-light-3;
+
+  &:hover {
+    div:nth-child(2) {
+      background-color: $color-primary;
+      color: $color-white;
+      top: 10rem;
+    }
+  }
+
+  &__Image {
+    position: relative;
+    width: 100%;
+    height: 20rem;
+    aspect-ratio: 16 / 9;
+    box-shadow: 0 0 7px $color-grey-light-3;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__Date {
+    position: absolute;
+    top: 15rem;
+    left: 1.5rem;
+    background-color: $color-white;
+    display: flex;
+    flex-direction: column;
+    width: 8rem;
+    height: 8rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25%;
+    box-shadow: 0 0 1.2rem $color-grey-light-3;
+    transition: all .3s;
+
+    &_day {
+      font-size: 2.8rem;
+      font-weight: 200;
+    }
+    &_month {
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+  }
+
+  &__Title {
+    margin-top: 4rem;
+    font-size: 2.5rem;
+    font-weight: 200;
+  }
+  &__Speaker {
+    font-size: 1.6rem;
+    font-weight: 600;
+    opacity: .7;
+    color: $color-primary-dark;
+  }
+}
