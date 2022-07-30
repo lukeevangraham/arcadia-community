@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Modal from "../UI/Modal/Modal";
 import Toolbar from "../Navigation/Toolbar/Toolbar";
 import SocialRow from "../UI/SocialRow/SocialRow";
 import Header from "../Home/Header/Header";
@@ -14,7 +13,6 @@ import classes from "./Layout.module.scss";
 const Layout = ({ children, homeHeaderImage, globalData, search }) => {
   const [showSideDrawer, setShowSideDrawer] = useState(false);
   const [showSearchBar, setShowSearchBar] = useState(false);
-  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     search ? setShowSearchBar(false) : false;
@@ -35,7 +33,6 @@ const Layout = ({ children, homeHeaderImage, globalData, search }) => {
 
   return (
     <>
-      <Modal show={showModal} modalClosed={setShowModal}></Modal>
       <div className={classes.Layout}>
         <SocialRow />
         {homeHeaderImage ? (

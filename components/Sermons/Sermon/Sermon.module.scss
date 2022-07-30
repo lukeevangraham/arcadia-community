@@ -9,7 +9,7 @@
     div:nth-child(2) {
       background-color: $color-primary;
       color: $color-white;
-      top: 10rem;
+      top: 12rem;
     }
   }
 
@@ -21,6 +21,10 @@
     box-shadow: 0 0 7px $color-grey-light-3;
     border-radius: 8px;
     overflow: hidden;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__Date {
@@ -36,7 +40,7 @@
     align-items: center;
     border-radius: 25%;
     box-shadow: 0 0 1.2rem $color-grey-light-3;
-    transition: all .3s;
+    transition: all 0.3s;
 
     &_day {
       font-size: 2.8rem;
@@ -53,11 +57,51 @@
     margin-top: 4rem;
     font-size: 2.5rem;
     font-weight: 200;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
   &__Speaker {
     font-size: 1.6rem;
     font-weight: 600;
-    opacity: .7;
+    opacity: 0.7;
     color: $color-primary-dark;
+  }
+
+  .Modal {
+    &__TopBar {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding-bottom: 0.5rem;
+
+      &_title {
+        font-size: 1.6rem;
+        justify-self: center;
+        flex-grow: 2;
+        text-align: center;
+        font-weight: 700;
+      }
+
+      &_close {
+        flex-grow: 0;
+        color: $color-grey-dark;
+        justify-self: flex-end;
+        font-size: 3rem;
+        text-decoration: none;
+        line-height: 1;
+        transition: color 0.2s;
+
+        &:hover {
+          color: $color-primary;
+          cursor: pointer;
+        }
+      }
+    }
+
+    iframe {
+      border-radius: 2%;
+    }
   }
 }
