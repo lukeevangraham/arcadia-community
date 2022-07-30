@@ -49,18 +49,14 @@ const Sermon = ({ sermon }) => {
               &times;
             </fig>
           </div>
-          {/* <iframe
-          src={`https://www.youtube.com/embed/${sermon.contentDetails.videoId}`}
-          frameborder="0"
-          style={{ width: "100%", aspectRatio: "16 / 9" }}
-        ></iframe> */}
+
           <iframe
             src={`https://www.youtube.com/embed/${sermon.contentDetails.videoId}`}
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             style={{ width: "100%", aspectRatio: "16 / 9" }}
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
       </Modal>
