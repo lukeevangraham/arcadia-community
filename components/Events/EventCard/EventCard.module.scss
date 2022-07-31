@@ -2,6 +2,7 @@
 @import "../../../styles/abstracts/mixins";
 
 .EventCard {
+  width: 100%;
   background-image: linear-gradient(
     to bottom right,
     $color-secondary-light-1,

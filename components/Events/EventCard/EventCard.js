@@ -5,7 +5,7 @@ import classes from "./EventCard.module.scss";
 
 export default function EventCard({ event, style }) {
   return (
-    <div style={{...style, display: "flex"}}>
+    <div style={{ ...style, display: "flex", width: "100%" }}>
       <div className={classes.EventCard}>
         <Link href={`/events/${event.attributes.Slug}`}>
           <a>
