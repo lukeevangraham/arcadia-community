@@ -1,8 +1,10 @@
 @import "../../../styles/abstracts/variables";
 
 .Article {
+  width: 100%;
   background-color: $color-grey-light-2;
   border-radius: 10px;
+  transition: transform .3s;
   &_image {
     position: relative;
     width: 100%;
@@ -52,5 +54,9 @@
       font-size: $default-font-size;
       opacity: 0.7;
     }
+  }
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.03);
   }
 }

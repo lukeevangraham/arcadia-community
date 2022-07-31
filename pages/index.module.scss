@@ -81,7 +81,7 @@
 
     & > * {
       max-width: 30%;
-      overflow: hidden;
+      // overflow: hidden;
       margin-bottom: 4rem;
     }
     @include respond(tab-port) {
