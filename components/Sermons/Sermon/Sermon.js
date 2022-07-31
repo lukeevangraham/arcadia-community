@@ -3,11 +3,11 @@ import Image from "next/image";
 import Modal from "../../UI/Modal/Modal";
 import classes from "./Sermon.module.scss";
 
-const Sermon = ({ sermon }) => {
+const Sermon = ({ sermon, style }) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className={classes.Sermon}>
+    <div style={style} className={classes.Sermon}>
       <div className={classes.Sermon__Image} onClick={() => setShowModal(true)}>
         {/* <a
         href={`https://www.youtube.com/watch?v=${sermon.contentDetails.videoId}`}
@@ -34,7 +34,9 @@ const Sermon = ({ sermon }) => {
           })}
         </div>
       </div>
-      <div className={classes.Sermon__Title} onClick={() => setShowModal(true)}>{sermon.title}</div>
+      <div className={classes.Sermon__Title} onClick={() => setShowModal(true)}>
+        {sermon.title}
+      </div>
       <div className={classes.Sermon__Speaker}>
         Sermon from: {sermon.speaker}
       </div>

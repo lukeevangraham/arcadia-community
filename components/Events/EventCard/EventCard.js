@@ -3,10 +3,10 @@ import Link from "next/link";
 
 import classes from "./EventCard.module.scss";
 
-export default function EventCard({ event }) {
+export default function EventCard({ event, style }) {
   return (
     <>
-      <div className={classes.EventCard}>
+      <div style={style} className={classes.EventCard}>
         <Link href={`/events/${event.attributes.Slug}`}>
           <a>
             <div className={classes.EventCard__image}>

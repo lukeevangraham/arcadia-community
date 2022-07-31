@@ -7,8 +7,8 @@ import classes from "./ArticleCard.module.scss";
 
 const dateOptions = { month: "short", day: "numeric", year: "numeric" };
 
-const ArticleCard = ({ article, globalData }) => (
-  <div className={classes.Article} key={article.id}>
+const ArticleCard = ({ article, globalData, style }) => (
+  <div style={style} className={classes.Article} key={article.id}>
     <Link href={`/news/${article.attributes.slug}`}>
       <a>
         <div className={classes.Article_image}>

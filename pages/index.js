@@ -9,6 +9,8 @@ import Sections from "../components/Sections/Sections";
 import { fetchAPI } from "../lib/api";
 import { streamYouTubeOptions, sermonYouTubeOptions } from "../lib/youTube";
 
+import Fade from "react-reveal/Fade";
+
 import classes from "./index.module.scss";
 
 export async function getStaticProps() {
@@ -68,40 +70,54 @@ export default function Home({
         </div>
         <main className={classes.main}>
           <div className="row">
-            <div className="u-section-heading">
-              <h1>Welcome To Arcadia Community Church</h1>
-              <h4>&quot;Through love serve one another&quot; Galatians 5:13</h4>
-            </div>
+            <Fade bottom>
+              <div className="u-section-heading">
+                <h1>Welcome To Arcadia Community Church</h1>
+                <h4>
+                  &quot;Through love serve one another&quot; Galatians 5:13
+                </h4>
+              </div>
+            </Fade>
             <div
               className={`${classes.main__underWelcome} u-margin-bottom-medium`}
             >
-              <iframe
-                src={`https://www.youtube.com/embed/${youTubeData.snippet.resourceId.videoId}`}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa,
-                ad dicta! Nisi, aspernatur hic ipsum magnam ullam quaerat
-                facilis sequi quod, illum quia nostrum ipsam quos numquam vero
-                magni quisquam.
-              </p>
+              <Fade left duration={1500}>
+                <iframe
+                  src={`https://www.youtube.com/embed/${youTubeData.snippet.resourceId.videoId}`}
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </Fade>
+              <Fade right duration={1500}>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Ipsa, ad dicta! Nisi, aspernatur hic ipsum magnam ullam
+                  quaerat facilis sequi quod, illum quia nostrum ipsam quos
+                  numquam vero magni quisquam.
+                </p>
+              </Fade>
             </div>
           </div>
 
           <section className="row u-margin-bottom-medium">
-            <div className="u-section-heading">
-              <h2>Featured Events</h2>
-              <h4>&quot;Through love serve one another&quot; Galatians 5:13</h4>
-            </div>
+            <Fade bottom>
+              <div className="u-section-heading">
+                <h2>Featured Events</h2>
+                <h4>
+                  &quot;Through love serve one another&quot; Galatians 5:13
+                </h4>
+              </div>
+            </Fade>
 
-            <div className={`${classes.main__Events}`}>
-              {homeData.data.attributes.events.data.map((event) => (
-                <EventCard event={event} key={event.id} />
-              ))}
-            </div>
+            <Fade bottom cascade duration={1500}>
+              <div className={`${classes.main__Events}`}>
+                {homeData.data.attributes.events.data.map((event) => (
+                  <EventCard event={event} key={event.id} />
+                ))}
+              </div>
+            </Fade>
           </section>
 
           <Sermons sermons={JSON.parse(sermonData)} />
@@ -112,16 +128,22 @@ export default function Home({
           />
 
           <section className="row u-padding-top-medium">
-            <div className="u-section-heading">
-              <h2>Featured News</h2>
-              <h4>&quot;Through love serve one another&quot; Galatians 5:13</h4>
-            </div>
+            <Fade bottom>
+              <div className="u-section-heading">
+                <h2>Featured News</h2>
+                <h4>
+                  &quot;Through love serve one another&quot; Galatians 5:13
+                </h4>
+              </div>
+            </Fade>
 
-            <div className={`${classes.main__Articles}`}>
-              {homeData.data.attributes.articles.data.map((article) => (
-                <ArticleCard article={article} key={article.id} />
-              ))}
-            </div>
+            <Fade bottom duration={1500} cascade>
+              <div className={`${classes.main__Articles}`}>
+                {homeData.data.attributes.articles.data.map((article) => (
+                  <ArticleCard article={article} key={article.id} />
+                ))}
+              </div>
+            </Fade>
           </section>
         </main>
       </Layout>
