@@ -5,8 +5,8 @@ import classes from "./EventCard.module.scss";
 
 export default function EventCard({ event, style }) {
   return (
-    <>
-      <div style={style} className={classes.EventCard}>
+    <div style={{...style, display: "flex"}}>
+      <div className={classes.EventCard}>
         <Link href={`/events/${event.attributes.Slug}`}>
           <a>
             <div className={classes.EventCard__image}>
@@ -81,6 +81,6 @@ export default function EventCard({ event, style }) {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
