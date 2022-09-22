@@ -91,12 +91,11 @@ export default function Home({
                 ></iframe>
               </Fade>
               <Fade right duration={1500}>
-                <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Ipsa, ad dicta! Nisi, aspernatur hic ipsum magnam ullam
-                  quaerat facilis sequi quod, illum quia nostrum ipsam quos
-                  numquam vero magni quisquam.
-                </p>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: homeData.data.attributes.TopText,
+                  }}
+                ></div>
               </Fade>
             </div>
           </div>

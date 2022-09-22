@@ -50,7 +50,7 @@ const Subscribe = () => {
       )}
       {state === "Success" && (
         <div className={classes.Form__success}>
-          Awesome, you`&apos;ve been subscribed!
+          Awesome, you&apos;ve been subscribed!
         </div>
       )}
     </>

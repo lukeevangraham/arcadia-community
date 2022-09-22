@@ -7,6 +7,9 @@ import classes from "./Header.module.scss";
 const Header = ({ children, homeHeaderImage }) => (
   <div className={classes.Header}>
     {children}
+    {/* <video autoPlay loop muted className={classes.homeHeaderImage}>
+      <source src={homeHeaderImage.url} />
+    </video> */}
     <Image
       src={homeHeaderImage.url}
       alt={homeHeaderImage.alternativeText}
