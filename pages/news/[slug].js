@@ -103,6 +103,27 @@ export default function Article({ newsData, globalData }) {
             <div
               dangerouslySetInnerHTML={{ __html: newsData.attributes.body }}
             ></div>
+            {newsData.attributes.PDFtoEmbed &&
+            newsData.attributes.PDFtoEmbed.data ? (
+              // <embed
+              //   src={`http://docs.google.com/gview?url=${newsData.attributes.PDFtoEmbed.data.attributes.url}`}
+              //   type="application/pdf"
+              //   width={"100%"}
+              // />
+
+              // <iframe
+              //   src={`${newsData.attributes.PDFtoEmbed.data.attributes.url}`}
+              //   frameborder="0"
+              //   width={"100%"}
+              //   height="500px"
+              // ></iframe>
+
+              <iframe
+                src={`http://docs.google.com/gview?url=${newsData.attributes.PDFtoEmbed.data.attributes.url}&embedded=true`}
+                style={{ width: "600px", height: "500px" }}
+                frameborder="0"
+              ></iframe>
+            ) : null}
           </div>
         </div>
       </Layout>
