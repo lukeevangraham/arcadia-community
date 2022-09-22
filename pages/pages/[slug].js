@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import SEO from "../../components/SEO/SEO";
 import { getAllPageSlugs, getPageData, fetchAPI } from "../../lib/api";
 import Layout from "../../components/Layout/Layout";
@@ -8,7 +9,7 @@ export async function getStaticPaths() {
   const paths = await getAllPageSlugs();
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
@@ -27,8 +28,17 @@ export async function getStaticProps({ params }) {
 }
 
 const Page = ({ pageData, globalData }) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
+
   let renderSections = pageData.attributes.contentSections ? (
-    <Sections sections={pageData.attributes.contentSections} globalData={globalData} />
+    <Sections
+      sections={pageData.attributes.contentSections}
+      globalData={globalData}
+    />
   ) : (
     <div>Loading...</div>
   );

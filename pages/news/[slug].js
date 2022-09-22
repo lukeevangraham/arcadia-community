@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import SEO from "../../components/SEO/SEO";
 import { fetchAPI, getAllNewsSlugs, getNewsData } from "../../lib/api";
 import Image from "next/image";
@@ -32,6 +33,12 @@ export async function getStaticProps({ params }) {
 const dateOptions = { month: "short", day: "numeric", year: "numeric" };
 
 export default function Article({ newsData, globalData }) {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <SEO

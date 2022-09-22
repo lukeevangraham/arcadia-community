@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import SEO from "../../components/SEO/SEO";
 import {
   fetchAPI,
@@ -16,7 +17,7 @@ export async function getStaticPaths() {
   const paths = await getAllMinistriesSlugs();
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
@@ -35,6 +36,12 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Ministry({ ministryData, globalData }) {
+  const router = useRouter();
+  
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
+
   // GETTING RID OF EVENTS THAT HAPPENED AND DON'T REPEAT
   const oldEventsRemoved = ministryData.attributes.events.data.filter(
     (event) => event.attributes.endDate >= new Date().toISOString()
@@ -45,6 +52,7 @@ export default function Ministry({ ministryData, globalData }) {
 
   // SORTING THE DATES LEFT
   const sortedDates = recurringEventsMadeCurrent.sort(compareAndSortDates);
+
 
   return (
     <>
@@ -158,7 +166,10 @@ export default function Ministry({ ministryData, globalData }) {
             ) : null}
           </div>
           <div className="row">
-            <Sections sections={ministryData.attributes.contentSections} globalData={globalData} />
+            <Sections
+              sections={ministryData.attributes.contentSections}
+              globalData={globalData}
+            />
           </div>
         </div>
       </Layout>

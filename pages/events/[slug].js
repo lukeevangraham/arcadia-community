@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import SEO from "../../components/SEO/SEO";
 import { getAllEventsSlugs, getEventData, fetchAPI } from "../../lib/api";
 import { keepEventsCurrent } from "../../lib/events";
@@ -10,7 +11,7 @@ export async function getStaticPaths() {
   const paths = await getAllEventsSlugs();
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
@@ -30,7 +31,14 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Event({ eventData, globalData }) {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
+
   keepEventsCurrent([eventData]);
+
   return (
     <>
       <SEO

@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import SEO from "../../components/SEO/SEO";
 import { getAllJobSlugs, getJobData, fetchAPI } from "../../lib/api";
 import Layout from "../../components/Layout/Layout";
@@ -6,7 +7,7 @@ export async function getStaticPaths() {
   const paths = await getAllJobSlugs();
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
@@ -25,7 +26,14 @@ export async function getStaticProps({ params }) {
   };
 }
 
-const Job = ({ jobData, globalData }) => (
+const Job = ({ jobData, globalData }) => {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
+
+  return (
   <>
     <SEO
       metaData={{
@@ -57,6 +65,6 @@ const Job = ({ jobData, globalData }) => (
       </div>
     </Layout>
   </>
-);
+)};
 
 export default Job;
