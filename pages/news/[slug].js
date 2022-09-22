@@ -118,11 +118,21 @@ export default function Article({ newsData, globalData }) {
               //   height="500px"
               // ></iframe>
 
-              <iframe
-                src={`http://docs.google.com/gview?url=${newsData.attributes.PDFtoEmbed.data.attributes.url}&embedded=true`}
-                style={{ width: "600px", height: "500px" }}
-                frameBorder="0"
-              ></iframe>
+              // <iframe
+              //   src={`http://docs.google.com/gview?url=${newsData.attributes.PDFtoEmbed.data.attributes.url}&embedded=true`}
+              //   style={{ width: "600px", height: "500px" }}
+              //   frameBorder="0"
+              // ></iframe>
+
+//               <embed src={newsData.attributes.PDFtoEmbed.data.attributes.url} width="100%" height="500px" 
+//  type="application/pdf"></embed>
+
+
+ <object data={newsData.attributes.PDFtoEmbed.data.attributes.url} type="application/pdf" width="100%" height="800px"> 
+  <p>It appears you don't have a PDF plugin for this browser.
+   No biggie... you can <a href={newsData.attributes.PDFtoEmbed.data.attributes.url}>click here to
+  download the PDF file.</a></p>  
+</object>
             ) : null}
           </div>
         </div>
