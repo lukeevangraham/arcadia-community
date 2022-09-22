@@ -7,12 +7,44 @@
   border-radius: 1rem;
   overflow: hidden;
 
-  &__image {
+  &__ImageWrapper {
     position: relative;
-    aspect-ratio: 5 / 4;
-    z-index: 1;
-    border-radius: .5rem;
+    border-radius: 1rem;
     overflow: hidden;
+
+    &:hover &__overlay {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &__image {
+      position: relative;
+      aspect-ratio: 5 / 4;
+      z-index: 1;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      filter: grayscale(100%);
+    }
+
+    &__overlay {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      color: $color-white;
+      background-color: rgba($color-primary, 0.85);
+      z-index: 1;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 0.2s;
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+
+      p {
+        line-height: 1.5;
+      }
+    }
   }
 
   &__text {
@@ -32,7 +64,7 @@
     }
 
     &_title {
-      opacity: .7;
+      opacity: 0.7;
     }
   }
 }
