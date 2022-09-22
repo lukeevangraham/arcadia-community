@@ -121,7 +121,7 @@ export default function Article({ newsData, globalData }) {
               <iframe
                 src={`http://docs.google.com/gview?url=${newsData.attributes.PDFtoEmbed.data.attributes.url}&embedded=true`}
                 style={{ width: "600px", height: "500px" }}
-                frameborder="0"
+                frameBorder="0"
               ></iframe>
             ) : null}
           </div>
