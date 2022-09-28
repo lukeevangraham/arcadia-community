@@ -97,11 +97,48 @@ const Footer = ({ globalData }) => (
       </div>
     </div>
     <div className={classes.Footer__bottomText}>
-      &copy; {new Date().getFullYear()} Arcadia Community Church
+      <div>&copy; {new Date().getFullYear()} Arcadia Community Church</div>
       <div className={classes.Footer__bottomText_gww}>
-        {" "}
         <a rel="noreferrer" href="http://grahamwebworks.com" target="_blank">
           Graham Web Works
+        </a>
+      </div>
+      <div className={classes.Footer__bottomText__social}>
+        <a
+          href="http://www.facebook.com/arcadiacommunitychurch"
+          target={"_blank"}
+          rel="noreferrer"
+        >
+          <svg>
+            <use xlinkHref="/images/sprite.svg#icon-facebook"></use>
+          </svg>
+        </a>
+        <a
+          href="http://www.instagram.com/arcadia_church"
+          target={"_blank"}
+          rel="noreferrer"
+        >
+          <svg>
+            <use xlinkHref="/images/sprite.svg#icon-instagram"></use>
+          </svg>
+        </a>
+        <a
+          href="http://www.vimeo.com/arcadiacommunitychurch"
+          target={"_blank"}
+          rel="noreferrer"
+        >
+          <svg>
+            <use xlinkHref="/images/sprite.svg#icon-vimeo"></use>
+          </svg>
+        </a>
+        <a
+          href="https://www.youtube.com/channel/UCmQ2luPyV1EFmghznWebCPA"
+          target={"_blank"}
+          rel="noreferrer"
+        >
+          <svg>
+            <use xlinkHref="/images/sprite.svg#icon-youtube"></use>
+          </svg>
         </a>
       </div>
     </div>
