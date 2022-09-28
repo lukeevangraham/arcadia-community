@@ -73,6 +73,12 @@
     @include respond(tab-port) {
       flex-direction: column;
     }
+
+    &__userText {
+      p {
+        line-height: 1.5;
+      }
+    }
   }
 
   &__Articles {
