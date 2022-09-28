@@ -16,8 +16,10 @@
   &__BGVid {
     position: absolute;
     height: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
+    object-fit: cover;
+    // left: 50%;
+    // transform: translateX(-50%);
     // width: 100%;
     border-radius: 0 0 90% 90% / 10vw;
   }
@@ -49,7 +51,7 @@
 
   .Overlay {
     position: absolute;
-    width: 109%;
+    width: 100%;
     height: 100%;
     left: 50%;
     transform: translateX(-50%);
@@ -69,7 +71,7 @@
     grid-column: 1 / 2;
     height: 6rem;
     width: 100%;
-    opacity: 18%;
+    opacity: 0%;
     z-index: 3;
 
     .ArcImage {
