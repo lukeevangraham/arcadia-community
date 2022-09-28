@@ -15,12 +15,14 @@ const Subscribe = () => {
 
     try {
       const response = await axios.post("/api/subscribe", { email });
-      console.log(response);
       setState("Success");
       setEmail("");
     } catch (e) {
-      console.log(e.response.data.error);
-      setErrorMsg(e.response.data.error);
+      e.response.data.status === 400
+        ? setErrorMsg(
+            `There was an error subscribing to the newsletter. Email us at info@arcadia.church and we'll add you to the list.`
+          )
+        : setErrorMsg(e.response.data.config.data);
       setState("Error");
     }
   };

@@ -8,6 +8,7 @@ import ArticleCard from "../components/Articles/ArticleCard/ArticleCard";
 import Sections from "../components/Sections/Sections";
 import { fetchAPI } from "../lib/api";
 import { streamYouTubeOptions, sermonYouTubeOptions } from "../lib/youTube";
+import { keepEventsCurrent, compareAndSortDates } from "../lib/events";
 
 import Fade from "react-reveal/Fade";
 
@@ -38,6 +39,13 @@ export default function Home({
   youTubeData,
   sermonData,
 }) {
+  console.log("HD: ", homeData.data.attributes.events.data);
+
+  const eventsKeptCurrent = keepEventsCurrent(
+    homeData.data.attributes.events.data
+  );
+  eventsKeptCurrent.sort(compareAndSortDates);
+
   return (
     <>
       <SEO metaData={homeData.data.attributes.SEO[0]} />
@@ -112,7 +120,7 @@ export default function Home({
 
             <Fade bottom cascade duration={1500}>
               <div className={`${classes.main__Events}`}>
-                {homeData.data.attributes.events.data.map((event) => (
+                {eventsKeptCurrent.map((event) => (
                   <EventCard event={event} key={event.id} />
                 ))}
               </div>
