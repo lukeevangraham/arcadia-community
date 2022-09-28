@@ -39,7 +39,6 @@ export default function Home({
   youTubeData,
   sermonData,
 }) {
-  console.log("HD: ", homeData.data.attributes.events.data);
 
   const eventsKeptCurrent = keepEventsCurrent(
     homeData.data.attributes.events.data
