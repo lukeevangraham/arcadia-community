@@ -39,7 +39,6 @@ export default function Home({
   youTubeData,
   sermonData,
 }) {
-
   const eventsKeptCurrent = keepEventsCurrent(
     homeData.data.attributes.events.data
   );
@@ -101,7 +100,8 @@ export default function Home({
                 <div
                   dangerouslySetInnerHTML={{
                     __html: homeData.data.attributes.TopText,
-                  }} className={classes.main__underWelcome__userText}
+                  }}
+                  className={classes.main__underWelcome__userText}
                 ></div>
               </Fade>
             </div>
