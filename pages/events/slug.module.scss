@@ -19,35 +19,51 @@
     }
   }
 
-  &__time {
+  &__WhenAndWhere {
     display: flex;
+    gap: 1rem;
     align-items: center;
 
-    svg {
-      fill: $color-black;
-      width: 1.8rem;
-      height: 1.6rem;
-      margin-right: 0.7rem;
-      // background-color: orangered;
+    &__Date {
+      background-color: $color-primary;
+      color: $color-white;
+      padding: 1rem 2.5rem;
+      border-radius: 1rem;
+      text-align: center;
     }
-  }
 
-  &__place {
-    display: flex;
-    align-items: center;
+    &__time {
+      // margin-top: 0.7rem;
+      display: flex;
+      align-items: center;
+      line-height: 1.5;
 
-    svg {
-      fill: $color-black;
-      width: 1.8rem;
-      height: 1.6rem;
-      margin-right: 0.7rem;
+      svg {
+        fill: $color-primary;
+        width: 1.8rem;
+        height: 1.6rem;
+        margin-right: 0.7rem;
+        // background-color: orangered;
+      }
+    }
+
+    &__place {
+      line-height: 1.5;
+      display: flex;
+      align-items: center;
+
+      svg {
+        fill: $color-primary;
+        width: 1.8rem;
+        height: 1.6rem;
+        margin-right: 0.7rem;
+      }
     }
   }
 
   &__body {
     // background-color: orangered;
     margin-top: 2rem;
-
   }
 
   &__bottomEmbed {

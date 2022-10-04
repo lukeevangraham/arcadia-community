@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import DateBox from "../DateBox/DateBox";
 
 import classes from "./EventCard.module.scss";
 
@@ -54,7 +55,8 @@ export default function EventCard({ event, style }) {
             </div>
           </div>
           <div className={classes.EventCard__BelowImage__dateBox}>
-            <div className={classes.EventCard__BelowImage__dateBox_month}>
+          <DateBox event={event} />
+            {/* <div className={classes.EventCard__BelowImage__dateBox_month}>
               {new Date(event.attributes.startDate).toLocaleDateString(
                 "en-US",
                 {
@@ -77,7 +79,7 @@ export default function EventCard({ event, style }) {
                   weekday: "short",
                 }
               )}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

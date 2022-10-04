@@ -4,6 +4,7 @@ import { getAllEventsSlugs, getEventData, fetchAPI } from "../../lib/api";
 import { keepEventsCurrent } from "../../lib/events";
 import Image from "next/image";
 import Layout from "../../components/Layout/Layout";
+import DateBox from "../../components/Events/DateBox/DateBox";
 
 import classes from "./slug.module.scss";
 
@@ -72,25 +73,28 @@ export default function Event({ eventData, globalData }) {
             />
           </div>
           <h1>{eventData.attributes.title}</h1>
-          <div className={classes.Event__datebox}>
-            <div>
-              {new Date(eventData.attributes.startDate).toLocaleDateString()}
-              <br />
+          <div className={classes.Event__WhenAndWhere}>
+            <div className={classes.Event__WhenAndWhere__Date}>
+              <DateBox event={eventData} />
             </div>
-          </div>
-          <div className={classes.Event__time}>
-            <svg>
-              <use xlinkHref="../images/sprite.svg#icon-clock"></use>
-            </svg>
             <div>
-              {new Date(eventData.attributes.startDate).toLocaleTimeString()}
+              <div className={classes.Event__WhenAndWhere__time}>
+                <svg>
+                  <use xlinkHref="../images/sprite.svg#icon-clock"></use>
+                </svg>
+                <div>
+                  {new Date(
+                    eventData.attributes.startDate
+                  ).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                </div>
+              </div>
+              <div className={classes.Event__WhenAndWhere__place}>
+                <svg>
+                  <use xlinkHref="../images/sprite.svg#icon-location-pin"></use>
+                </svg>
+                <div>{eventData.attributes.location}</div>
+              </div>
             </div>
-          </div>
-          <div className={classes.Event__place}>
-            <svg>
-              <use xlinkHref="../images/sprite.svg#icon-location-pin"></use>
-            </svg>
-            <div>{eventData.attributes.location}</div>
           </div>
           <div className={`${classes.Event__body} u-margin-bottom-medium`}>
             <div
