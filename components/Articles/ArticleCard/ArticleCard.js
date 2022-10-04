@@ -8,7 +8,7 @@ import classes from "./ArticleCard.module.scss";
 const dateOptions = { month: "short", day: "numeric", year: "numeric" };
 
 const ArticleCard = ({ article, globalData, style }) => (
-  <div style={{ ...style, display: "flex", width: "100%" }}>
+  <div style={{ ...style, display: "flex" }}>
     <div className={classes.Article}>
       <Link href={`/news/${article.attributes.slug}`}>
         <a>
