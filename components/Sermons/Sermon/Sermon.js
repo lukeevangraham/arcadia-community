@@ -7,38 +7,46 @@ const Sermon = ({ sermon, style }) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div style={style} className={classes.Sermon}>
-      <div className={classes.Sermon__Image} onClick={() => setShowModal(true)}>
-        {/* <a
+    <>
+      <div style={style} className={classes.Sermon}>
+        <div
+          className={classes.Sermon__Image}
+          onClick={() => setShowModal(true)}
+        >
+          {/* <a
         href={`https://www.youtube.com/watch?v=${sermon.contentDetails.videoId}`}
         target="_blank"
         rel="noreferrer"
       > */}
-        <Image
-          src={sermon.snippet.thumbnails.standard.url}
-          alt={sermon.snippet.title}
-          layout="fill"
-          objectFit="cover"
-        />
-        {/* </a> */}
-      </div>
-      <div className={classes.Sermon__Date}>
-        <div className={classes.Sermon__Date_day}>
-          {new Date(sermon.parsedDate).toLocaleDateString("en-US", {
-            day: "numeric",
-          })}
+          <Image
+            src={sermon.snippet.thumbnails.standard.url}
+            alt={sermon.snippet.title}
+            layout="fill"
+            objectFit="cover"
+          />
+          {/* </a> */}
         </div>
-        <div className={classes.Sermon__Date_month}>
-          {new Date(sermon.parsedDate).toLocaleDateString("en-US", {
-            month: "short",
-          })}
+        <div className={classes.Sermon__Date}>
+          <div className={classes.Sermon__Date_day}>
+            {new Date(sermon.parsedDate).toLocaleDateString("en-US", {
+              day: "numeric",
+            })}
+          </div>
+          <div className={classes.Sermon__Date_month}>
+            {new Date(sermon.parsedDate).toLocaleDateString("en-US", {
+              month: "short",
+            })}
+          </div>
         </div>
-      </div>
-      <div className={classes.Sermon__Title} onClick={() => setShowModal(true)}>
-        {sermon.title}
-      </div>
-      <div className={classes.Sermon__Speaker}>
-        Sermon from: {sermon.speaker}
+        <div
+          className={classes.Sermon__Title}
+          onClick={() => setShowModal(true)}
+        >
+          {sermon.title}
+        </div>
+        <div className={classes.Sermon__Speaker}>
+          Sermon from: {sermon.speaker}
+        </div>
       </div>
       <Modal show={showModal} modalClosed={() => setShowModal(false)}>
         <div className={classes.Modal}>
@@ -62,7 +70,7 @@ const Sermon = ({ sermon, style }) => {
           ></iframe>
         </div>
       </Modal>
-    </div>
+    </>
   );
 };
 

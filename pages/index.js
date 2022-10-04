@@ -126,10 +126,20 @@ export default function Home({
             </Fade>
           </section>
 
+          <Sections
+            sections={homeData.data.attributes.contentSections.filter(
+              (section, index) => index !== 0
+            )}
+            globalData={globalData}
+          />
+
           <Sermons sermons={JSON.parse(sermonData)} />
 
+
           <Sections
-            sections={homeData.data.attributes.contentSections}
+            sections={homeData.data.attributes.contentSections.filter(
+              (section, index) => index !== 1
+            )}
             globalData={globalData}
           />
 

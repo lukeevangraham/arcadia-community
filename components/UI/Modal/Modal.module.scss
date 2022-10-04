@@ -17,6 +17,6 @@
   @include respond(tab-port) {
     // width: 100%;
     left: 5%;
-    width: 90%;
+    width: 90% !important;
   }
 }

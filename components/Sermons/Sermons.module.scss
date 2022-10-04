@@ -8,13 +8,13 @@
 
   &__Wrapper {
     display: flex;
-    gap: 1rem;
+    gap: 3rem;
     width: 100%;
     justify-content: space-evenly;
 
-    & > * {
-      width: 30%;
-    }
+    // & > * {
+    //   width: 30%;
+    // }
 
     @include respond(tab-port) {
       flex-direction: column;
