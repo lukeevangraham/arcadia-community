@@ -10,11 +10,11 @@
 
   &__people {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
     grid-gap: 1.5rem;
 
     &_staff {
-      grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
     }
   }
 
