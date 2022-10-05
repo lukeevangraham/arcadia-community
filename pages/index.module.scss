@@ -11,7 +11,7 @@
   right: 0;
   margin: 0 auto;
   text-align: center;
-  width: 65%;
+  width: 85%;
   height: 15rem;
   display: flex;
   // align-items: center;
@@ -26,7 +26,7 @@
 
   &__image {
     position: relative;
-    flex: 0 1 40%;
+    flex: 0 1 25%;
     margin: 1rem;
     filter: grayscale(100%);
 
@@ -42,6 +42,7 @@
     align-self: center;
     padding-left: 2rem;
     line-height: 1.5;
+    // flex: 0 0 30%;
 
     @include respond(tab-port) {
       padding-bottom: 2rem;

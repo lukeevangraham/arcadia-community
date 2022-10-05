@@ -6,6 +6,7 @@ import Layout from "../components/Layout/Layout";
 import EventCard from "../components/Events/EventCard/EventCard";
 import ArticleCard from "../components/Articles/ArticleCard/ArticleCard";
 import Sections from "../components/Sections/Sections";
+import Countdown from "../components/UI/Countdown/Countdown";
 import { fetchAPI } from "../lib/api";
 import { streamYouTubeOptions, sermonYouTubeOptions } from "../lib/youTube";
 import { keepEventsCurrent, compareAndSortDates } from "../lib/events";
@@ -73,6 +74,7 @@ export default function Home({
               Sunday school provided for Preschool - 5th grade.
             </div>
           </div>
+          <Countdown event={null} />
         </div>
         <main className={classes.main}>
           <div className="row">
@@ -134,7 +136,6 @@ export default function Home({
           />
 
           <Sermons sermons={JSON.parse(sermonData)} />
-
 
           <Sections
             sections={homeData.data.attributes.contentSections.filter(
