@@ -34,7 +34,7 @@ const Countdown = ({ event }) => {
       setSecs(parseInt(seconds_left % 60));
     }, 1000);
     return () => clearInterval(timer);
-  }, []);
+  }, [dateToCountTo]);
 
   return (
     <div className={classes.Countdown}>
