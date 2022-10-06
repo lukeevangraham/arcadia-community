@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev -p 8922",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start -p 8922",
     "lint": "next lint"
   },
@@ -14,6 +15,7 @@
     "classnames": "^2.3.1",
     "next": "12.1.6",
     "next-seo": "^5.5.0",
+    "next-sitemap": "^3.1.23",
     "nodemailer": "^6.7.6",
     "qs": "^6.10.5",
     "react": "18.1.0",
