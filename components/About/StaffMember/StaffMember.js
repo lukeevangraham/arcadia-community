@@ -25,6 +25,16 @@ const StaffMember = ({ person }) => (
       <div className={classes.Person__text_title}>
         {person.attributes.jobTitle}
       </div>
+      {person.attributes.email ? (
+        <div className={classes.Person__text_email}>
+          <a href={`mailto:${person.attributes.email}`}>
+            <svg>
+              <use xlinkHref="/images/sprite.svg#icon-mail"></use>
+            </svg>
+            <div>{person.attributes.email}</div>
+          </a>
+        </div>
+      ) : null}
     </div>
   </div>
 );

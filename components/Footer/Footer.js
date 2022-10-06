@@ -94,6 +94,29 @@ const Footer = ({ globalData }) => (
           date with our happenings.
         </div>
         <Subscribe />
+        <div className={classes.Footer__columns__subscribe__watch}>
+          <h4>Watch</h4>
+          <ul>
+            <li>
+              <a
+                href="https://www.youtube.com/playlist?list=PLchW5rz4AxRIYM075lL7iNFXNiyvS46Kd"
+                target="blank"
+                rel="noreferrer"
+              >
+                Sermon Archive
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/playlist?list=PLchW5rz4AxRI3q73zPOnHzdAYcO1k7Djh"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Livestream Archive
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <div className={classes.Footer__bottomText}>
