@@ -10,7 +10,7 @@ import classes from "./index.module.scss";
 export async function getStaticProps() {
   const [globalData, newsData] = await Promise.all([
     fetchAPI("/global?populate=deep"),
-    fetchAPI("/articles?populate=deep"),
+    fetchAPI("/articles?populate=deep&sort=dateline:desc"),
   ]);
   return {
     props: { globalData, newsData },
