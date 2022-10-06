@@ -13,7 +13,9 @@
     overflow: hidden;
 
     img {
-      transition: all .3s;
+      transition: all 0.3s;
+      border-radius: 10px;
+      overflow: hidden;
     }
   }
 
@@ -63,6 +65,8 @@
   &:hover {
     img {
       transform: scale(1.03);
+      border-radius: 10px;
+      overflow: hidden;
     }
   }
 }
