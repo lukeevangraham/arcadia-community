@@ -87,7 +87,10 @@
     justify-content: space-evenly;
 
     & > * {
-      max-width: 30%;
+      // max-width: 30%;
+      // flex-shrink: 0;
+      // flex-grow: 0;
+      flex: 0 0 30%;
       // overflow: hidden;
       margin-bottom: 4rem;
     }

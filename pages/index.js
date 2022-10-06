@@ -157,7 +157,7 @@ export default function Home({
             <Fade bottom duration={1500} cascade>
               <div className={`${classes.main__Articles}`}>
                 {homeData.data.attributes.articles.data.map((article) => (
-                  <ArticleCard article={article} key={article.id} />
+                  <ArticleCard article={article} key={article.id} globalData={globalData} />
                 ))}
               </div>
             </Fade>
