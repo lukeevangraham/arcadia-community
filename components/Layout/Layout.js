@@ -28,7 +28,6 @@ const Layout = ({ children, homeHeaderImage, globalData, search }) => {
 
   const searchBarToggleHandler = () => {
     setShowSearchBar(!showSearchBar);
-    console.log("showing search");
   };
 
   return (

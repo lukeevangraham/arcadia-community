@@ -12,7 +12,7 @@ const SocialRow = () => (
       <svg>
         <use xlinkHref="/images/sprite.svg#icon-phone"></use>
       </svg>
-      <div>(626) 445-9764</div>
+      <div>(626) 445-7470</div>
     </div>
 
     <div className={classes.SocialRow__Social}>
