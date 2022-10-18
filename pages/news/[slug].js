@@ -11,7 +11,7 @@ export async function getStaticPaths() {
   const paths = await getAllNewsSlugs();
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
