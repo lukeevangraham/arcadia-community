@@ -70,5 +70,8 @@
     border-radius: 7px;
     overflow: hidden;
     text-align: center;
+    & * {
+      max-width: 98vw;
+    }
   }
 }
