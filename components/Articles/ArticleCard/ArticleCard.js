@@ -5,7 +5,7 @@ import DefaultBgImage from "../../UI/DefaultBgImage/DefaultBgImage";
 
 import classes from "./ArticleCard.module.scss";
 
-const dateOptions = { month: "short", day: "numeric", year: "numeric" };
+const dateOptions = { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" };
 
 const ArticleCard = ({ article, globalData, style }) => (
   <div style={{ ...style, display: "flex" }}>

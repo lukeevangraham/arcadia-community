@@ -30,10 +30,12 @@ export async function getStaticProps({ params }) {
   };
 }
 
-const dateOptions = { month: "short", day: "numeric", year: "numeric" };
+const dateOptions = { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" };
 
 export default function Article({ newsData, globalData }) {
   const router = useRouter();
+
+  console.log("HERE: ", newsData)
 
   if (router.isFallback) {
     return <div>Loading...</div>;
