@@ -93,6 +93,7 @@ export default function Home({
                 <a
                   href="https://www.youtube.com/channel/UCmQ2luPyV1EFmghznWebCPA"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   <Image
                     src={
