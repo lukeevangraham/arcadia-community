@@ -90,13 +90,24 @@ export default function Home({
               className={`${classes.main__underWelcome} u-margin-bottom-medium`}
             >
               <Fade left duration={1500}>
-                <iframe
+                <a
+                  href="https://www.youtube.com/channel/UCmQ2luPyV1EFmghznWebCPA"
+                  target="_blank"
+                >
+                  <Image
+                    src={
+                      "https://res.cloudinary.com/daix3hjqf/image/upload/v1670649950/youtube_e4ba107241.jpg?updated_at=2022-12-10T05:25:51.173Z"
+                    }
+                    layout="fill"
+                  />
+                </a>
+                {/* <iframe
                   src={`https://www.youtube.com/embed/${youTubeData.snippet.resourceId.videoId}`}
                   title="YouTube video player"
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                ></iframe>
+                ></iframe> */}
               </Fade>
               <Fade right duration={1500}>
                 <div
@@ -157,7 +168,11 @@ export default function Home({
             <Fade bottom duration={1500} cascade>
               <div className={`${classes.main__Articles}`}>
                 {homeData.data.attributes.articles.data.map((article) => (
-                  <ArticleCard article={article} key={article.id} globalData={globalData} />
+                  <ArticleCard
+                    article={article}
+                    key={article.id}
+                    globalData={globalData}
+                  />
                 ))}
               </div>
             </Fade>
