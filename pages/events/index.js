@@ -40,9 +40,9 @@ export default function Events({ globalData, eventsData }) {
           </div>
           <div className={classes.Events__cards}>
             {console.log("ED: ", eventsData)}
-            {eventsData.map((event) => (
+            {eventsData ? eventsData.map((event) => (
               <EventCard key={event.id} event={event} />
-            ))}
+            )) : <div>No events are currently listed. Check back soon.</div> }
           </div>
         </div>
       </Layout>
