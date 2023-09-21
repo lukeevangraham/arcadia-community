@@ -16,7 +16,7 @@ export default function handler(req, res) {
     content: {
       from: {
         email: "luke@mail.grahamwebworks.com",
-        name: "ARCADIA>CHURCH",
+        name: "ARCADIA.CHURCH",
       },
       subject: "Prayer Request from arcadia.church",
       text: `${req.body.name} (${req.body.email}) just sent this prayer request via arcadia.church:
