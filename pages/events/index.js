@@ -39,6 +39,7 @@ export default function Events({ globalData, eventsData }) {
             </div>
           </div>
           <div className={classes.Events__cards}>
+            {console.log("ED: ", eventsData)}
             {eventsData.map((event) => (
               <EventCard key={event.id} event={event} />
             ))}
