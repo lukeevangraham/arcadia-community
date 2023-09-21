@@ -30,12 +30,15 @@ export async function getStaticProps({ params }) {
   };
 }
 
-const dateOptions = { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" };
+const dateOptions = {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+  timeZone: "UTC",
+};
 
 export default function Article({ newsData, globalData }) {
   const router = useRouter();
-
-  console.log("HERE: ", newsData)
 
   if (router.isFallback) {
     return <div>Loading...</div>;
@@ -126,15 +129,23 @@ export default function Article({ newsData, globalData }) {
               //   frameBorder="0"
               // ></iframe>
 
-//               <embed src={newsData.attributes.PDFtoEmbed.data.attributes.url} width="100%" height="500px" 
-//  type="application/pdf"></embed>
+              //               <embed src={newsData.attributes.PDFtoEmbed.data.attributes.url} width="100%" height="500px"
+              //  type="application/pdf"></embed>
 
-
- <object data={newsData.attributes.PDFtoEmbed.data.attributes.url} type="application/pdf" width="100%" height="800px"> 
-  <p>It appears you don&apos;t have a PDF plugin for this browser.
-   No biggie... you can <a href={newsData.attributes.PDFtoEmbed.data.attributes.url}>click here to
-  download the PDF file.</a></p>  
-</object>
+              <object
+                data={newsData.attributes.PDFtoEmbed.data.attributes.url}
+                type="application/pdf"
+                width="100%"
+                height="800px"
+              >
+                <p>
+                  It appears you don&apos;t have a PDF plugin for this browser.
+                  No biggie... you can{" "}
+                  <a href={newsData.attributes.PDFtoEmbed.data.attributes.url}>
+                    click here to download the PDF file.
+                  </a>
+                </p>
+              </object>
             ) : null}
           </div>
         </div>
