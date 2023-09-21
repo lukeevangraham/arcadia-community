@@ -42,7 +42,7 @@ export default function Events({ globalData, eventsData }) {
             {console.log("ED: ", eventsData)}
             {eventsData ? eventsData.map((event) => (
               <EventCard key={event.id} event={event} />
-            )) : <p>No events are currently listed. Check back soon.</p> }
+            )) : <p style={{ textAlign: "center" }}>No events are currently listed. Check back soon.</p> }
           </div>
         </div>
       </Layout>
