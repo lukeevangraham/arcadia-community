@@ -42,7 +42,7 @@ export default function Events({ globalData, eventsData }) {
             {console.log("ED: ", eventsData)}
             {eventsData ? eventsData.map((event) => (
               <EventCard key={event.id} event={event} />
-            )) : <div>No events are currently listed. Check back soon.</div> }
+            )) : <p>No events are currently listed. Check back soon.</p> }
           </div>
         </div>
       </Layout>
