@@ -7,7 +7,7 @@ import classes from "./Header.module.scss";
 const Header = ({ children, homeHeaderImage }) => (
   <div className={classes.Header}>
     {children}
-    <video autoPlay loop muted className={classes.Header__BGVid}>
+    <video autoPlay loop muted playsInline className={classes.Header__BGVid}>
       <source src={homeHeaderImage.url} />
     </video>
     {/* <Image
