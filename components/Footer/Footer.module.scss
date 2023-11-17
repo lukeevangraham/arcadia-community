@@ -118,6 +118,7 @@
     padding: 4rem 12rem;
     border-bottom: 1px solid rgba($color-white, 0.2);
     color: transparentize($color-white, 0.5);
+    text-align: center;
 
     @include respond(tab-port) {
       padding: 4rem 2rem;
