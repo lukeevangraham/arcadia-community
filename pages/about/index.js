@@ -114,6 +114,12 @@ const About = ({ globalData, staffData, aboutData }) => (
                 <StaffMember person={person} key={person.id} />
               ))}
           </div>
+          <div className={classes.About__appointment}>
+            As always, church business takes place both on and off-campus. And
+            although we practice an open-door policy, if you desire to meet with
+            a specific staff person, it would be advisable to make an
+            appointment in advance.
+          </div>
         </section>
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3302.577130767618!2d-118.02988554925243!3d34.13157402089753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2dbd083e890f7%3A0x4907c229645c3830!2sArcadia%20Community%20Church!5e0!3m2!1sen!2sus!4v1658296717908!5m2!1sen!2sus"

@@ -119,6 +119,12 @@ const Footer = ({ globalData }) => (
         </div>
       </div>
     </div>
+    <div className={classes.Footer__appointment}>
+      As always, church business takes place both on and off-campus. And
+      although we practice an open-door policy, if you desire to meet with a
+      specific staff person, it would be advisable to make an appointment in
+      advance.
+    </div>
     <div className={classes.Footer__bottomText}>
       <div>&copy; {new Date().getFullYear()} Journey Community Church</div>
       <div className={classes.Footer__bottomText_gww}>

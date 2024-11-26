@@ -18,6 +18,10 @@
     }
   }
 
+  &__appointment {
+    margin: 6rem 4rem;
+  }
+
   &__top {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
