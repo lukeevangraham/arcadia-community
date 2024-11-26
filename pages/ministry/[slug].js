@@ -79,7 +79,7 @@ export default function Ministry({ ministryData, globalData }) {
           <div className="row">
             <div className="u-section-heading">
               <h1>
-                {ministryData.attributes.ministryName} in Arcadia Community
+                {ministryData.attributes.ministryName} in Journey Community
                 Church
               </h1>
               <h4>&quot;Through love serve one another&quot; Galatians 5:13</h4>

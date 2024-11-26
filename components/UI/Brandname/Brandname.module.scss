@@ -1,3 +1,5 @@
+@import "../../../styles/abstracts/mixins";
+
 .Brandname {
   position: relative;
   // text-transform: lowercase;
@@ -22,6 +24,12 @@
     letter-spacing: 0.2rem;
     text-transform: uppercase;
     font-size: 1rem;
-padding-left: 3px;
+    padding-left: 3px;
+
+    @include respond(tab-port) {
+      // letter-spacing: 0;
+      white-space: nowrap;
+      // background-color: orangered;
+    }
   }
 }
