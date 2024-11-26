@@ -13,10 +13,10 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <DefaultSeo
-        titleTemplate={`%s · Arcadia Community Church`}
-        title={"Arcadia Community Church, Arcadia, California"}
+        titleTemplate={`%s · Journey Community Church`}
+        title={"Journey Community Church, Arcadia, California"}
         description={
-          "Arcadia Community Church led by Rev. John M. Scholte is committed to sharing the gospel of Jesus Christ with Arcadia, Los Angeles and beyond."
+          "Journey Community Church led by Rev. John M. Scholte is committed to sharing the gospel of Jesus Christ with Arcadia, Los Angeles and beyond."
         }
         openGraph={{
           type: "website",
@@ -26,16 +26,16 @@ function MyApp({ Component, pageProps }) {
               url: "https://res.cloudinary.com/daix3hjqf/image/upload/v1654292460/Arcadia_Community_Church_9ab0277d0b.jpg",
               width: 2000,
               height: 1333,
-              alt: "Arcadia Community Church Building",
+              alt: "Journey Community Church Building",
             },
             {
               url: "https://res.cloudinary.com/daix3hjqf/image/upload/v1654292461/thumbnail_Arcadia_Community_Church_9ab0277d0b.jpg",
               width: 234,
               height: 156,
-              alt: "Arcadia Community Church Building",
+              alt: "Journey Community Church Building",
             },
           ],
-          site_name: "Arcadia Community Church",
+          site_name: "Journey Community Church",
         }}
         additionalLinkTags={[
           {

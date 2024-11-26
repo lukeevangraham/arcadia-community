@@ -80,7 +80,7 @@ export default function Home({
           <div className="row">
             <Fade bottom>
               <div className="u-section-heading">
-                <h1>Welcome To Arcadia Community Church</h1>
+                <h1>Welcome To Journey Community Church</h1>
                 <h4>
                   &quot;Through love serve one another&quot; Galatians 5:13
                 </h4>

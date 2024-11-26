@@ -1,10 +1,27 @@
 .Brandname {
-    text-transform: lowercase;
-    font-size: 2rem;
-    font-weight: 300;
-    letter-spacing: .3rem;
-    align-self: center;
-    padding: 0 1rem;
-    line-height: 95%;
-    text-shadow: 0 0 .5rem rgba(0, 0, 0, 0.561);
+  position: relative;
+  // text-transform: lowercase;
+  //   font-size: 2rem;
+  //   font-weight: 300;
+  //   letter-spacing: 0.3rem;
+  //   align-self: center;
+  padding: 0 1rem;
+  //   line-height: 95%;
+  text-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.561);
+  height: 100%;
+
+  &__big {
+    position: absolute;
+    bottom: 0;
+    font-size: 5rem;
+  }
+
+  &__small {
+    position: absolute;
+    bottom: 0;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+padding-left: 3px;
+  }
 }

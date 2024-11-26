@@ -21,7 +21,7 @@ const Jobs = ({ globalData, jobsData }) => (
     <SEO
       metaData={{
         metaTitle: `Job Opportunities`,
-        metaDescription: `Current job opportunities in Arcadia Community Church, Arcadia, California`,
+        metaDescription: `Current job opportunities in Journey Community Church, Arcadia, California`,
       }}
     />
     <Layout globalData={globalData}>

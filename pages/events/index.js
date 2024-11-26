@@ -23,7 +23,7 @@ export default function Events({ globalData, eventsData }) {
         metaData={{
           metaTitle: "Events",
           metaDescription:
-            "Events held and schedule by Arcadia Community Church in Arcadia, California",
+            "Events held and scheduled by Journey Community Church in Arcadia, California",
         }}
       />
 

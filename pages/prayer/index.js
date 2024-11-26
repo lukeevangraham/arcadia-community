@@ -61,13 +61,13 @@ const Prayer = ({ globalData, prayerData }) => {
         <>
           <div className={classes.Prayer__topText}>
             <p>
-              At Arcadia Community Church, we believe prayer makes a difference.
+              At Journey Community Church, we believe prayer makes a difference.
               How can we pray for you this week? Let us know using the form
               below.
             </p>
             <p>
               <i>
-                NOTE: Any prayer request you share with Arcadia Community Church
+                NOTE: Any prayer request you share with Journey Community Church
                 will remain confidential and only will be shared with our lead
                 team for the purposes of prayer.
               </i>

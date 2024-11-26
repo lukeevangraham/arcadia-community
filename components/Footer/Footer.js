@@ -23,7 +23,7 @@ const Footer = ({ globalData }) => (
         <Link href={"/"}>
           <a>
             <div className={classes.Footer__columns_header}>
-              Arcadia Community Church
+              Journey Community Church
             </div>
           </a>
         </Link>
@@ -120,7 +120,7 @@ const Footer = ({ globalData }) => (
       </div>
     </div>
     <div className={classes.Footer__bottomText}>
-      <div>&copy; {new Date().getFullYear()} Arcadia Community Church</div>
+      <div>&copy; {new Date().getFullYear()} Journey Community Church</div>
       <div className={classes.Footer__bottomText_gww}>
         <a rel="noreferrer" href="http://grahamwebworks.com" target="_blank">
           Graham Web Works
