@@ -17,7 +17,7 @@ const SocialRow = () => (
 
     <div className={classes.SocialRow__Social}>
       <a
-        href="http://www.facebook.com/arcadiacommunitychurch"
+        href="http://www.facebook.com/churchcommunityjourney"
         target={"_blank"} rel="noreferrer"
       >
         <svg>

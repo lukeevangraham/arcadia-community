@@ -134,7 +134,7 @@ const Footer = ({ globalData }) => (
       </div>
       <div className={classes.Footer__bottomText__social}>
         <a
-          href="http://www.facebook.com/arcadiacommunitychurch"
+          href="http://www.facebook.com/churchcommunityjourney"
           target={"_blank"}
           rel="noreferrer"
         >
