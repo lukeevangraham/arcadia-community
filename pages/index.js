@@ -23,6 +23,8 @@ export async function getStaticProps() {
     sermonYouTubeOptions("PLchW5rz4AxRIYM075lL7iNFXNiyvS46Kd"),
   ]);
 
+  console.log("sermonData: ", sermonData);
+
   return {
     props: {
       homeData,
