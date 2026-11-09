@@ -2,8 +2,9 @@ import { useState } from "react";
 import Image from "next/image";
 import Modal from "../../UI/Modal/Modal";
 import classes from "./Sermon.module.scss";
+import DefaultBgImage from "../../UI/DefaultBgImage/DefaultBgImage";
 
-const Sermon = ({ sermon, style }) => {
+const Sermon = ({ sermon, style, globalData }) => {
   const [showModal, setShowModal] = useState(false);
 
   return (
@@ -18,12 +19,17 @@ const Sermon = ({ sermon, style }) => {
         target="_blank"
         rel="noreferrer"
       > */}
-          <Image
-            src={sermon.snippet.thumbnails.standard.url}
-            alt={sermon.snippet.title}
-            layout="fill"
-            objectFit="cover"
-          />
+
+          {sermon?.snippet?.thumbnails?.standard?.url ? (
+            <Image
+              src={sermon?.snippet?.thumbnails?.standard?.url}
+              alt={sermon.snippet.title}
+              layout="fill"
+              objectFit="cover"
+            />
+          ) : (
+            <DefaultBgImage globalData={globalData} />
+          )}
           {/* </a> */}
         </div>
         <div className={classes.Sermon__Date}>

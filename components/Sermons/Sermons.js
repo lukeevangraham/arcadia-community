@@ -3,7 +3,7 @@ import Fade from "react-reveal/Fade";
 
 import classes from "./Sermons.module.scss";
 
-const Sermons = ({ sermons }) => (
+const Sermons = ({ sermons, globalData }) => (
   <div className={classes.Sermons}>
     <div className="row u-padding-top-medium u-padding-bottom-medium">
       <Fade bottom>
@@ -18,7 +18,7 @@ const Sermons = ({ sermons }) => (
       <Fade bottom duration={1500} cascade>
         <div className={classes.Sermons__Wrapper}>
           {sermons.map((sermon, index) => (
-            <Sermon key={index} sermon={sermon} />
+            <Sermon key={index} sermon={sermon} globalData={globalData} />
           ))}
         </div>
       </Fade>

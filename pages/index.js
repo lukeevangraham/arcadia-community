@@ -41,7 +41,7 @@ export default function Home({
   sermonData,
 }) {
   const eventsKeptCurrent = keepEventsCurrent(
-    homeData.data.attributes.events.data
+    homeData.data.attributes.events.data,
   );
   eventsKeptCurrent.sort(compareAndSortDates);
 
@@ -120,7 +120,6 @@ export default function Home({
               </Fade>
             </div>
           </div>
-
           <section className="row u-margin-bottom-medium">
             <Fade bottom>
               <div className="u-section-heading">
@@ -139,23 +138,19 @@ export default function Home({
               </div>
             </Fade>
           </section>
-
           <Sections
             sections={homeData.data.attributes.contentSections.filter(
-              (section, index) => index !== 0
+              (section, index) => index !== 0,
             )}
             globalData={globalData}
           />
-
-          <Sermons sermons={JSON.parse(sermonData)} />
-
+          <Sermons sermons={JSON.parse(sermonData)} globalData={globalData} />
           <Sections
             sections={homeData.data.attributes.contentSections.filter(
-              (section, index) => index !== 1
+              (section, index) => index !== 1,
             )}
             globalData={globalData}
           />
-
           <section className="row u-padding-top-medium">
             <Fade bottom>
               <div className="u-section-heading">
